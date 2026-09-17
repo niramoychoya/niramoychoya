@@ -1,0 +1,2093 @@
+```html
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="নিরাময় ছোঁয়া — স্বাস্থ্য, পণ্য পরিচিতি এবং সচেতনতামূলক ভিডিও।">
+
+<title>Videos | নিরাময় ছোঁয়া</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap');
+
+:root{
+    --green:#11834a;
+    --green-dark:#0b6238;
+    --dark:#103b2b;
+    --light:#eef9f2;
+    --text:#17241e;
+    --muted:#69766f;
+    --border:#e2ece6;
+    --shadow:0 15px 40px rgba(16,59,43,.10);
+}
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Hind Siliguri",sans-serif;
+    color:var(--text);
+    background:#fff;
+    line-height:1.65;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button,
+input{
+    font:inherit;
+}
+
+/* ================= TOP BAR ================= */
+
+.top{
+    background:var(--dark);
+    color:#e9f7ee;
+    text-align:center;
+    padding:7px;
+    font-size:13px;
+}
+
+/* ================= HEADER ================= */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:rgba(255,255,255,.96);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--border);
+}
+
+.nav{
+    max-width:1200px;
+    min-height:75px;
+    margin:auto;
+    padding:0 20px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+
+    display:grid;
+    place-items:center;
+
+    background:linear-gradient(
+        145deg,
+        var(--green),
+        var(--green-dark)
+    );
+
+    color:white;
+    font-size:24px;
+}
+
+.bt{
+    font-size:21px;
+    font-weight:700;
+    color:var(--dark);
+    line-height:1.1;
+}
+
+.bs{
+    font-family:Montserrat,sans-serif;
+    font-size:8px;
+    letter-spacing:2px;
+    color:var(--green);
+}
+
+.links{
+    display:flex;
+    align-items:center;
+    gap:22px;
+    font-weight:600;
+}
+
+.links a:hover{
+    color:var(--green);
+}
+
+.links a.active{
+    color:var(--green);
+}
+
+.orderNav{
+    background:var(--green);
+    color:white !important;
+    padding:9px 17px;
+    border-radius:50px;
+}
+
+.menu{
+    display:none;
+    border:0;
+    background:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
+/* ================= PAGE HERO ================= */
+
+.pageHero{
+    background:
+    radial-gradient(circle at 90% 10%,#e5ae3f30,transparent 25%),
+    radial-gradient(circle at 5% 90%,#11834a22,transparent 28%),
+    linear-gradient(135deg,#f7fcf8,#e8f6ed);
+}
+
+.pageHeroIn{
+    max-width:1200px;
+    margin:auto;
+    padding:70px 20px;
+
+    text-align:center;
+}
+
+.badge{
+    display:inline-block;
+    background:white;
+    border:1px solid var(--border);
+    border-radius:50px;
+    padding:7px 15px;
+    color:var(--green);
+    font-weight:700;
+    margin-bottom:15px;
+}
+
+.pageHero h1{
+    color:var(--dark);
+    font-size:clamp(40px,6vw,62px);
+    line-height:1.1;
+    margin-bottom:12px;
+}
+
+.pageHero h1 span{
+    color:var(--green);
+}
+
+.pageHero p{
+    max-width:650px;
+    margin:auto;
+    color:var(--muted);
+    font-size:17px;
+}
+
+/* ================= GENERAL ================= */
+
+section{
+    padding:70px 20px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+.head{
+    max-width:720px;
+    text-align:center;
+    margin:0 auto 35px;
+}
+
+.tag{
+    color:var(--green);
+    font-weight:700;
+}
+
+.head h2{
+    color:var(--dark);
+    font-size:38px;
+    line-height:1.2;
+    margin:5px 0 10px;
+}
+
+.head p{
+    color:var(--muted);
+}
+
+/* ================= SEARCH ================= */
+
+.searchBox{
+    max-width:650px;
+    margin:0 auto 35px;
+    position:relative;
+}
+
+.searchBox input{
+    width:100%;
+
+    padding:15px 50px 15px 20px;
+
+    border:1px solid var(--border);
+    border-radius:50px;
+
+    outline:none;
+
+    font-size:16px;
+
+    box-shadow:0 5px 20px rgba(16,59,43,.05);
+}
+
+.searchBox input:focus{
+    border-color:var(--green);
+}
+
+.searchIcon{
+    position:absolute;
+    right:19px;
+    top:50%;
+    transform:translateY(-50%);
+}
+
+/* ================= VIDEO SECTION ================= */
+
+.videos{
+    background:#f8fcf9;
+}
+
+.videoGrid{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:22px;
+}
+
+.videoCard{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:22px;
+    overflow:hidden;
+
+    box-shadow:0 5px 20px rgba(16,59,43,.05);
+
+    transition:.2s;
+}
+
+.videoCard:hover{
+    transform:translateY(-5px);
+    box-shadow:var(--shadow);
+}
+
+.videoBox{
+    height:220px;
+    background:#102d22;
+
+    position:relative;
+    overflow:hidden;
+}
+
+.videoBox video{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+.videoPlaceholder{
+    width:100%;
+    height:100%;
+
+    display:grid;
+    place-items:center;
+
+    background:
+    radial-gradient(circle at center,#205b43,#102d22);
+
+    color:white;
+    text-align:center;
+
+    cursor:pointer;
+}
+
+.play{
+    width:65px;
+    height:65px;
+
+    margin:0 auto 10px;
+
+    background:white;
+    color:var(--green);
+
+    border-radius:50%;
+
+    display:grid;
+    place-items:center;
+
+    font-size:25px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.20);
+}
+
+.videoPlaceholder b{
+    font-size:18px;
+}
+
+.videoBody{
+    padding:18px;
+}
+
+.videoBody h3{
+    color:var(--dark);
+    font-size:21px;
+    margin-bottom:3px;
+}
+
+.videoBody p{
+    color:var(--muted);
+    font-size:14px;
+}
+
+.videoMeta{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+
+    margin-top:12px;
+}
+
+.category{
+    display:inline-block;
+
+    background:var(--light);
+    color:var(--green);
+
+    padding:3px 10px;
+
+    border-radius:50px;
+
+    font-size:11px;
+    font-weight:700;
+}
+
+.watchBtn{
+    border:0;
+    background:var(--green);
+    color:white;
+
+    padding:7px 13px;
+
+    border-radius:50px;
+
+    font-size:12px;
+    font-weight:700;
+
+    cursor:pointer;
+}
+
+/* ================= NO RESULT ================= */
+
+.noVideo{
+    grid-column:1/-1;
+
+    text-align:center;
+
+    padding:60px 20px;
+
+    color:var(--muted);
+}
+
+/* ================= INFO ================= */
+
+.infoSec{
+    background:white;
+}
+
+.infoGrid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.infoCard{
+    border:1px solid var(--border);
+    border-radius:22px;
+
+    padding:25px;
+
+    text-align:center;
+
+    background:#f8fcf9;
+}
+
+.infoIcon{
+    width:58px;
+    height:58px;
+
+    margin:0 auto 12px;
+
+    border-radius:18px;
+
+    background:var(--light);
+
+    display:grid;
+    place-items:center;
+
+    font-size:26px;
+}
+
+.infoCard h3{
+    color:var(--dark);
+    margin-bottom:5px;
+}
+
+.infoCard p{
+    color:var(--muted);
+    font-size:14px;
+}
+
+/* ================= CTA ================= */
+
+.cta{
+    background:
+    linear-gradient(
+        135deg,
+        var(--dark),
+        #145d3c
+    );
+
+    color:white;
+}
+
+.ctaBox{
+    max-width:850px;
+    margin:auto;
+
+    text-align:center;
+}
+
+.ctaBox h2{
+    font-size:36px;
+    margin-bottom:8px;
+}
+
+.ctaBox p{
+    color:#d4e7dd;
+    margin-bottom:20px;
+}
+
+.btn{
+    border:1px solid transparent;
+    border-radius:50px;
+
+    padding:12px 20px;
+
+    font-weight:700;
+
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+
+    cursor:pointer;
+}
+
+.primary{
+    background:white;
+    color:var(--dark);
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#0b2d20;
+    color:#b9cdc3;
+
+    padding:35px 20px 20px;
+}
+
+.footerInner{
+    max-width:1200px;
+    margin:auto;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    gap:20px;
+}
+
+.footerBrand h3{
+    color:white;
+    font-size:22px;
+}
+
+.footerBrand p{
+    font-size:13px;
+}
+
+.footerLinks{
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+}
+
+.footerLinks a{
+    font-size:14px;
+}
+
+.footerLinks a:hover{
+    color:white;
+}
+
+.copy{
+    max-width:1200px;
+    margin:25px auto 0;
+
+    padding-top:17px;
+
+    border-top:1px solid #ffffff15;
+
+    text-align:center;
+
+    font-size:12px;
+}
+
+/* ================= VIDEO MODAL ================= */
+
+.modal{
+    display:none;
+
+    position:fixed;
+    inset:0;
+
+    background:rgba(8,35,24,.78);
+
+    z-index:300;
+
+    place-items:center;
+
+    padding:18px;
+}
+
+.modal.show{
+    display:grid;
+}
+
+.modalBox{
+    position:relative;
+
+    width:min(850px,100%);
+    max-height:90vh;
+
+    overflow:auto;
+
+    background:white;
+
+    border-radius:25px;
+
+    padding:20px;
+}
+
+.close{
+    position:absolute;
+
+    right:12px;
+    top:12px;
+
+    width:40px;
+    height:40px;
+
+    border:0;
+
+    border-radius:50%;
+
+    background:white;
+
+    font-size:25px;
+
+    cursor:pointer;
+
+    z-index:2;
+}
+
+.modalVideo{
+    width:100%;
+    max-height:500px;
+
+    border-radius:18px;
+
+    background:#102d22;
+
+    display:block;
+}
+
+.modalTitle{
+    color:var(--dark);
+    font-size:27px;
+
+    margin-top:15px;
+}
+
+.modalText{
+    color:var(--muted);
+    font-size:14px;
+
+    margin-top:5px;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:900px){
+
+    .links{
+        display:none;
+    }
+
+    .menu{
+        display:block;
+    }
+
+    .links.open{
+        display:flex;
+
+        position:absolute;
+
+        top:75px;
+        left:0;
+        right:0;
+
+        background:white;
+
+        flex-direction:column;
+        align-items:stretch;
+
+        padding:15px 20px;
+
+        border-bottom:1px solid var(--border);
+    }
+
+    .videoGrid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .infoGrid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .footerInner{
+        flex-direction:column;
+        text-align:center;
+    }
+}
+
+@media(max-width:580px){
+
+    section{
+        padding:55px 16px;
+    }
+
+    .bt{
+        font-size:18px;
+    }
+
+    .pageHeroIn{
+        padding:55px 16px;
+    }
+
+    .pageHero h1{
+        font-size:43px;
+    }
+
+    .head h2{
+        font-size:31px;
+    }
+
+    .videoGrid{
+        grid-template-columns:1fr;
+    }
+
+    .videoBox{
+        height:200px;
+    }
+
+    .infoGrid{
+        grid-template-columns:1fr;
+    }
+
+    .ctaBox h2{
+        font-size:29px;
+    }
+
+    .footerLinks{
+        justify-content:center;
+    }
+
+    .modalBox{
+        padding:15px;
+    }
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= TOP BAR ================= -->
+
+<div class="top">
+🌿 মানসম্মত পণ্য • 💚 যত্নশীল সেবা • 📦 সারাদেশে হোম ডেলিভারি
+</div>
+
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+<nav class="nav">
+
+
+<a class="brand" href="index.html">
+
+<div class="logo">
+🌿
+</div>
+
+<div>
+
+<div class="bt">
+নিরাময় ছোঁয়া
+</div>
+
+<div class="bs">
+NIRAMOY CHHOYA
+</div>
+
+</div>
+
+</a>
+
+
+<button
+class="menu"
+onclick="toggleMenu()"
+aria-label="Menu"
+>
+☰
+</button>
+
+
+<div class="links" id="links">
+
+<a href="index.html">
+Home
+</a>
+
+<a
+href="Videos.html"
+class="active"
+>
+Videos
+</a>
+
+<a href="Products.html">
+Products
+</a>
+
+<a
+href="Order.html"
+class="orderNav"
+>
+🛒 Order
+</a>
+
+<a href="Reviews.html">
+Reviews
+</a>
+
+<a href="About.html">
+About
+</a>
+
+</div>
+
+</nav>
+
+</header>
+
+
+
+<main>
+
+
+<!-- ================= PAGE HERO ================= -->
+
+<section class="pageHero">
+
+<div class="pageHeroIn">
+
+<div class="badge">
+🎥 স্বাস্থ্য ও সচেতনতা
+</div>
+
+<h1>
+ভিডিও <span>কর্নার</span>
+</h1>
+
+<p>
+স্বাস্থ্য সচেতনতা, পণ্য পরিচিতি এবং দৈনন্দিন স্বাস্থ্য ও যত্ন সম্পর্কিত
+গুরুত্বপূর্ণ ভিডিওগুলো এক জায়গায় দেখুন।
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= VIDEOS ================= -->
+
+<section class="videos">
+
+<div class="container">
+
+
+<div class="head">
+
+<div class="tag">
+আমাদের Videos
+</div>
+
+<h2>
+স্বাস্থ্য ও মেডিসিন বিষয়ক ভিডিও
+</h2>
+
+<p>
+আপনার প্রয়োজনীয় ভিডিও খুঁজে পেতে Search ব্যবহার করুন।
+</p>
+
+</div>
+
+
+<!-- SEARCH -->
+
+<div class="searchBox">
+
+<input
+type="search"
+id="videoSearch"
+placeholder="🔍 Video search করুন..."
+oninput="searchVideos()"
+>
+
+<div class="searchIcon">
+🔎
+</div>
+
+</div>
+
+
+<!-- VIDEO GRID -->
+
+<div
+class="videoGrid"
+id="videoGrid"
+>
+
+
+<!-- VIDEO 1 -->
+
+<article
+class="videoCard"
+data-title="স্বাস্থ্য সচেতনতা"
+data-category="স্বাস্থ্য"
+>
+
+<div
+class="videoBox"
+onclick="openVideo(1)"
+>
+
+<div class="videoPlaceholder">
+
+<div>
+
+<div class="play">
+▶
+</div>
+
+<b>
+স্বাস্থ্য সচেতনতা
+</b>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="videoBody">
+
+<h3>
+স্বাস্থ্য সচেতনতা
+</h3>
+
+<p>
+সুস্থ জীবনযাপনের জন্য প্রয়োজনীয় কিছু সাধারণ স্বাস্থ্য সচেতনতা।
+</p>
+
+
+<div class="videoMeta">
+
+<span class="category">
+স্বাস্থ্য
+</span>
+
+<button
+class="watchBtn"
+onclick="openVideo(1)"
+>
+▶ দেখুন
+</button>
+
+</div>
+
+</div>
+
+</article>
+
+
+
+<!-- VIDEO 2 -->
+
+<article
+class="videoCard"
+data-title="পণ্য পরিচিতি"
+data-category="পণ্য"
+>
+
+<div
+class="videoBox"
+onclick="openVideo(2)"
+>
+
+<div class="videoPlaceholder">
+
+<div>
+
+<div class="play">
+▶
+</div>
+
+<b>
+পণ্য পরিচিতি
+</b>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="videoBody">
+
+<h3>
+পণ্য পরিচিতি
+</h3>
+
+<p>
+নিরাময় ছোঁয়ার বিভিন্ন পণ্য সম্পর্কে প্রয়োজনীয় তথ্য জানুন।
+</p>
+
+
+<div class="videoMeta">
+
+<span class="category">
+পণ্য
+</span>
+
+<button
+class="watchBtn"
+onclick="openVideo(2)"
+>
+▶ দেখুন
+</button>
+
+</div>
+
+</div>
+
+</article>
+
+
+
+<!-- VIDEO 3 -->
+
+<article
+class="videoCard"
+data-title="Health Tips"
+data-category="Health Tips"
+>
+
+<div
+class="videoBox"
+onclick="openVideo(3)"
+>
+
+<div class="videoPlaceholder">
+
+<div>
+
+<div class="play">
+▶
+</div>
+
+<b>
+Health Tips
+</b>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="videoBody">
+
+<h3>
+Health Tips
+</h3>
+
+<p>
+দৈনন্দিন জীবনে স্বাস্থ্য ভালো রাখার কিছু সাধারণ টিপস।
+</p>
+
+
+<div class="videoMeta">
+
+<span class="category">
+Health Tips
+</span>
+
+<button
+class="watchBtn"
+onclick="openVideo(3)"
+>
+▶ দেখুন
+</button>
+
+</div>
+
+</div>
+
+</article>
+
+
+
+<!-- VIDEO 4 -->
+
+<article
+class="videoCard"
+data-title="Medicine Tips"
+data-category="Medicine"
+>
+
+<div
+class="videoBox"
+onclick="openVideo(4)"
+>
+
+<div class="videoPlaceholder">
+
+<div>
+
+<div class="play">
+▶
+</div>
+
+<b>
+Medicine Tips
+</b>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="videoBody">
+
+<h3>
+Medicine Tips
+</h3>
+
+<p>
+মেডিসিন ও স্বাস্থ্যসেবা পণ্য ব্যবহারের আগে সাধারণ সচেতনতা।
+</p>
+
+
+<div class="videoMeta">
+
+<span class="category">
+Medicine
+</span>
+
+<button
+class="watchBtn"
+onclick="openVideo(4)"
+>
+▶ দেখুন
+</button>
+
+</div>
+
+</div>
+
+</article>
+
+
+
+<!-- VIDEO 5 -->
+
+<article
+class="videoCard"
+data-title="Wellness Tips"
+data-category="Wellness"
+>
+
+<div
+class="videoBox"
+onclick="openVideo(5)"
+>
+
+<div class="videoPlaceholder">
+
+<div>
+
+<div class="play">
+▶
+</div>
+
+<b>
+Wellness Tips
+</b>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="videoBody">
+
+<h3>
+Wellness Tips
+</h3>
+
+<p>
+শরীর ও দৈনন্দিন জীবনের যত্নের জন্য প্রয়োজনীয় কিছু তথ্য।
+</p>
+
+
+<div class="videoMeta">
+
+<span class="category">
+Wellness
+</span>
+
+<button
+class="watchBtn"
+onclick="openVideo(5)"
+>
+▶ দেখুন
+</button>
+
+</div>
+
+</div>
+
+</article>
+
+
+
+<!-- VIDEO 6 -->
+
+<article
+class="videoCard"
+data-title="Healthy Lifestyle"
+data-category="Lifestyle"
+>
+
+<div
+class="videoBox"
+onclick="openVideo(6)"
+>
+
+<div class="videoPlaceholder">
+
+<div>
+
+<div class="play">
+▶
+</div>
+
+<b>
+Healthy Lifestyle
+</b>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="videoBody">
+
+<h3>
+Healthy Lifestyle
+</h3>
+
+<p>
+স্বাস্থ্যকর জীবনযাপনের অভ্যাস সম্পর্কে সহজ কিছু আলোচনা।
+</p>
+
+
+<div class="videoMeta">
+
+<span class="category">
+Lifestyle
+</span>
+
+<button
+class="watchBtn"
+onclick="openVideo(6)"
+>
+▶ দেখুন
+</button>
+
+</div>
+
+</div>
+
+</article>
+
+
+
+<!-- VIDEO 7 -->
+
+<article
+class="videoCard"
+data-title="Daily Care"
+data-category="Care"
+>
+
+<div
+class="videoBox"
+onclick="openVideo(7)"
+>
+
+<div class="videoPlaceholder">
+
+<div>
+
+<div class="play">
+▶
+</div>
+
+<b>
+Daily Care
+</b>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="videoBody">
+
+<h3>
+Daily Care
+</h3>
+
+<p>
+প্রতিদিনের স্বাস্থ্য ও ব্যক্তিগত যত্নের কিছু সাধারণ বিষয়।
+</p>
+
+
+<div class="videoMeta">
+
+<span class="category">
+Care
+</span>
+
+<button
+class="watchBtn"
+onclick="openVideo(7)"
+>
+▶ দেখুন
+</button>
+
+</div>
+
+</div>
+
+</article>
+
+
+
+<!-- VIDEO 8 -->
+
+<article
+class="videoCard"
+data-title="Nutrition Tips"
+data-category="Nutrition"
+>
+
+<div
+class="videoBox"
+onclick="openVideo(8)"
+>
+
+<div class="videoPlaceholder">
+
+<div>
+
+<div class="play">
+▶
+</div>
+
+<b>
+Nutrition Tips
+</b>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="videoBody">
+
+<h3>
+Nutrition Tips
+</h3>
+
+<p>
+দৈনন্দিন খাদ্য ও পুষ্টি সম্পর্কে সাধারণ প্রয়োজনীয় তথ্য।
+</p>
+
+
+<div class="videoMeta">
+
+<span class="category">
+Nutrition
+</span>
+
+<button
+class="watchBtn"
+onclick="openVideo(8)"
+>
+▶ দেখুন
+</button>
+
+</div>
+
+</div>
+
+</article>
+
+
+
+<!-- VIDEO 9 -->
+
+<article
+class="videoCard"
+data-title="Personal Care"
+data-category="Care"
+>
+
+<div
+class="videoBox"
+onclick="openVideo(9)"
+>
+
+<div class="videoPlaceholder">
+
+<div>
+
+<div class="play">
+▶
+</div>
+
+<b>
+Personal Care
+</b>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="videoBody">
+
+<h3>
+Personal Care
+</h3>
+
+<p>
+ব্যক্তিগত স্বাস্থ্য ও পরিচর্যা সম্পর্কে প্রয়োজনীয় সচেতনতা।
+</p>
+
+
+<div class="videoMeta">
+
+<span class="category">
+Care
+</span>
+
+<button
+class="watchBtn"
+onclick="openVideo(9)"
+>
+▶ দেখুন
+</button>
+
+</div>
+
+</div>
+
+</article>
+
+
+
+<!-- VIDEO 10 -->
+
+<article
+class="videoCard"
+data-title="Healthy Habits"
+data-category="Habits"
+>
+
+<div
+class="videoBox"
+onclick="openVideo(10)"
+>
+
+<div class="videoPlaceholder">
+
+<div>
+
+<div class="play">
+▶
+</div>
+
+<b>
+Healthy Habits
+</b>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="videoBody">
+
+<h3>
+Healthy Habits
+</h3>
+
+<p>
+ভালো স্বাস্থ্য ধরে রাখতে দৈনন্দিন কিছু ভালো অভ্যাস।
+</p>
+
+
+<div class="videoMeta">
+
+<span class="category">
+Habits
+</span>
+
+<button
+class="watchBtn"
+onclick="openVideo(10)"
+>
+▶ দেখুন
+</button>
+
+</div>
+
+</div>
+
+</article>
+
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= INFORMATION ================= -->
+
+<section class="infoSec">
+
+<div class="container">
+
+<div class="head">
+
+<div class="tag">
+ভিডিও সম্পর্কে
+</div>
+
+<h2>
+সহজে শিখুন, সচেতন থাকুন
+</h2>
+
+<p>
+আমাদের ভিডিও কর্নারে স্বাস্থ্য ও যত্ন সম্পর্কিত বিভিন্ন বিষয় সহজভাবে তুলে ধরা হবে।
+</p>
+
+</div>
+
+
+<div class="infoGrid">
+
+
+<div class="infoCard">
+
+<div class="infoIcon">
+🎥
+</div>
+
+<h3>
+Health Videos
+</h3>
+
+<p>
+স্বাস্থ্য ও দৈনন্দিন জীবনযাপন সম্পর্কে সচেতনতামূলক ভিডিও।
+</p>
+
+</div>
+
+
+<div class="infoCard">
+
+<div class="infoIcon">
+🌿
+</div>
+
+<h3>
+Product Videos
+</h3>
+
+<p>
+পণ্যের ব্যবহার ও প্রয়োজনীয় তথ্য সম্পর্কে ভিডিও।
+</p>
+
+</div>
+
+
+<div class="infoCard">
+
+<div class="infoIcon">
+💚
+</div>
+
+<h3>
+Wellness
+</h3>
+
+<p>
+সুস্থ ও সচেতন জীবনযাপনের জন্য প্রয়োজনীয় সাধারণ তথ্য।
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= CTA ================= -->
+
+<section class="cta">
+
+<div class="container">
+
+<div class="ctaBox">
+
+<h2>
+পছন্দের পণ্যটি খুঁজছেন?
+</h2>
+
+<p>
+আমাদের Products page থেকে পণ্যগুলো দেখুন এবং প্রয়োজনীয় তথ্য জেনে Order করুন।
+</p>
+
+<a
+href="Products.html"
+class="btn primary"
+>
+🛍️ Products দেখুন
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<div class="footerInner">
+
+
+<div class="footerBrand">
+
+<h3>
+🌿 নিরাময় ছোঁয়া
+</h3>
+
+<p>
+মানসম্মত পণ্য, প্রয়োজনীয় তথ্য ও সহজ অর্ডার।
+</p>
+
+</div>
+
+
+<div class="footerLinks">
+
+<a href="index.html">
+Home
+</a>
+
+<a href="Videos.html">
+Videos
+</a>
+
+<a href="Products.html">
+Products
+</a>
+
+<a href="Order.html">
+Order
+</a>
+
+<a href="Reviews.html">
+Reviews
+</a>
+
+<a href="About.html">
+About
+</a>
+
+</div>
+
+</div>
+
+
+<div class="copy">
+
+© 2026 Niramoy Chhoya. All Rights Reserved.
+
+</div>
+
+</footer>
+
+
+
+<!-- ================= VIDEO MODAL ================= -->
+
+<div
+class="modal"
+id="videoModal"
+onclick="closeOutside(event)"
+>
+
+<div class="modalBox">
+
+<button
+class="close"
+onclick="closeVideo()"
+>
+×
+</button>
+
+
+<video
+id="modalVideo"
+class="modalVideo"
+controls
+playsinline
+>
+</video>
+
+
+<h2
+id="modalTitle"
+class="modalTitle"
+>
+</h2>
+
+
+<p
+id="modalText"
+class="modalText"
+>
+</p>
+
+</div>
+
+</div>
+
+
+
+<script>
+
+/* ================= VIDEO DATA ================= */
+
+const videos = [
+
+{
+    id:1,
+    title:"স্বাস্থ্য সচেতনতা",
+    category:"স্বাস্থ্য",
+    description:"সুস্থ জীবনযাপনের জন্য প্রয়োজনীয় কিছু সাধারণ স্বাস্থ্য সচেতনতা।",
+    file:""
+},
+
+{
+    id:2,
+    title:"পণ্য পরিচিতি",
+    category:"পণ্য",
+    description:"নিরাময় ছোঁয়ার বিভিন্ন পণ্য সম্পর্কে প্রয়োজনীয় তথ্য জানুন।",
+    file:""
+},
+
+{
+    id:3,
+    title:"Health Tips",
+    category:"Health Tips",
+    description:"দৈনন্দিন জীবনে স্বাস্থ্য ভালো রাখার কিছু সাধারণ টিপস।",
+    file:""
+},
+
+{
+    id:4,
+    title:"Medicine Tips",
+    category:"Medicine",
+    description:"মেডিসিন ও স্বাস্থ্যসেবা পণ্য ব্যবহারের আগে সাধারণ সচেতনতা।",
+    file:""
+},
+
+{
+    id:5,
+    title:"Wellness Tips",
+    category:"Wellness",
+    description:"শরীর ও দৈনন্দিন জীবনের যত্নের জন্য প্রয়োজনীয় কিছু তথ্য।",
+    file:""
+},
+
+{
+    id:6,
+    title:"Healthy Lifestyle",
+    category:"Lifestyle",
+    description:"স্বাস্থ্যকর জীবনযাপনের অভ্যাস সম্পর্কে সহজ কিছু আলোচনা।",
+    file:""
+},
+
+{
+    id:7,
+    title:"Daily Care",
+    category:"Care",
+    description:"প্রতিদিনের স্বাস্থ্য ও ব্যক্তিগত যত্নের কিছু সাধারণ বিষয়।",
+    file:""
+},
+
+{
+    id:8,
+    title:"Nutrition Tips",
+    category:"Nutrition",
+    description:"দৈনন্দিন খাদ্য ও পুষ্টি সম্পর্কে সাধারণ প্রয়োজনীয় তথ্য।",
+    file:""
+},
+
+{
+    id:9,
+    title:"Personal Care",
+    category:"Care",
+    description:"ব্যক্তিগত স্বাস্থ্য ও পরিচর্যা সম্পর্কে প্রয়োজনীয় সচেতনতা।",
+    file:""
+},
+
+{
+    id:10,
+    title:"Healthy Habits",
+    category:"Habits",
+    description:"ভালো স্বাস্থ্য ধরে রাখতে দৈনন্দিন কিছু ভালো অভ্যাস।",
+    file:""
+}
+
+];
+
+
+/* ================= MOBILE MENU ================= */
+
+function toggleMenu(){
+
+    document
+    .getElementById("links")
+    .classList.toggle("open");
+
+}
+
+
+/* ================= OPEN VIDEO ================= */
+
+function openVideo(id){
+
+    const video =
+        videos.find(function(v){
+            return v.id === id;
+        });
+
+    if(!video) return;
+
+
+    document
+    .getElementById("modalTitle")
+    .textContent = video.title;
+
+
+    document
+    .getElementById("modalText")
+    .textContent =
+        video.description;
+
+
+    const player =
+        document.getElementById("modalVideo");
+
+
+    /*
+       এখানে পরে ভিডিওর file path বসাবে।
+       উদাহরণ:
+       file:"videos/health.mp4"
+    */
+
+
+    if(video.file){
+
+        player.src = video.file;
+
+        player.style.display = "block";
+
+        player.load();
+
+    }else{
+
+        player.removeAttribute("src");
+
+        player.style.display = "none";
+
+    }
+
+
+    document
+    .getElementById("videoModal")
+    .classList.add("show");
+
+
+    if(video.file){
+
+        player.play().catch(function(){});
+
+    }
+
+}
+
+
+/* ================= CLOSE VIDEO ================= */
+
+function closeVideo(){
+
+    const modal =
+        document.getElementById("videoModal");
+
+    const player =
+        document.getElementById("modalVideo");
+
+
+    player.pause();
+
+    player.removeAttribute("src");
+
+    player.load();
+
+
+    modal.classList.remove("show");
+
+}
+
+
+/* ================= CLOSE OUTSIDE ================= */
+
+function closeOutside(event){
+
+    if(event.target.id === "videoModal"){
+
+        closeVideo();
+
+    }
+
+}
+
+
+/* ================= SEARCH VIDEOS ================= */
+
+function searchVideos(){
+
+    const value =
+        document
+        .getElementById("videoSearch")
+        .value
+        .toLowerCase()
+        .trim();
+
+
+    const cards =
+        document.querySelectorAll(".videoCard");
+
+
+    let found = 0;
+
+
+    cards.forEach(function(card){
+
+        const title =
+            card.dataset.title.toLowerCase();
+
+        const category =
+            card.dataset.category.toLowerCase();
+
+
+        if(
+            title.includes(value) ||
+            category.includes(value)
+        ){
+
+            card.style.display = "";
+
+            found++;
+
+        }else{
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+
+    let noVideo =
+        document.getElementById("noVideo");
+
+
+    if(found === 0){
+
+        if(!noVideo){
+
+            noVideo =
+            document.createElement("div");
+
+            noVideo.id = "noVideo";
+
+            noVideo.className = "noVideo";
+
+            noVideo.innerHTML =
+                "😔 কোনো Video পাওয়া যায়নি।";
+
+            document
+            .getElementById("videoGrid")
+            .appendChild(noVideo);
+
+        }
+
+    }else{
+
+        if(noVideo){
+
+            noVideo.remove();
+
+        }
+
+    }
+
+}
+
+
+/* ================= ESC KEY ================= */
+
+document.addEventListener(
+    "keydown",
+    function(event){
+
+        if(event.key === "Escape"){
+
+            closeVideo();
+
+        }
+
+    }
+);
+
+</script>
+
+
+</body>
+</html>
+```
