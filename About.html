@@ -1,0 +1,1380 @@
+```html
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>About | নিরাময় ছোঁয়া</title>
+  <meta name="description" content="নিরাময় ছোঁয়া সম্পর্কে জানুন — স্বাস্থ্য, যত্ন এবং সহজ সেবার একটি প্ল্যাটফর্ম।">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+
+    :root{
+      --green:#11834a;
+      --green-dark:#0b6238;
+      --dark:#103b2b;
+      --light:#eef9f2;
+      --text:#17241e;
+      --muted:#69766f;
+      --border:#e2ece6;
+      --white:#ffffff;
+      --shadow:0 15px 40px rgba(16,59,43,.10);
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:"Hind Siliguri",sans-serif;
+      background:#fff;
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+
+    /* TOP BAR */
+
+    .topbar{
+      background:var(--dark);
+      color:#fff;
+      text-align:center;
+      padding:8px 15px;
+      font-size:14px;
+    }
+
+
+    /* HEADER */
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(255,255,255,.96);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--border);
+    }
+
+    .nav{
+      max-width:1200px;
+      margin:auto;
+      padding:13px 20px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .logo{
+      width:45px;
+      height:45px;
+      border-radius:50%;
+      background:var(--green);
+      color:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:23px;
+      box-shadow:0 7px 18px rgba(17,131,74,.25);
+    }
+
+    .brand h2{
+      font-family:"Montserrat",sans-serif;
+      font-size:18px;
+      color:var(--dark);
+      line-height:1.2;
+    }
+
+    .brand span{
+      display:block;
+      font-family:"Montserrat",sans-serif;
+      font-size:9px;
+      letter-spacing:2px;
+      color:var(--muted);
+      margin-top:3px;
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:7px;
+    }
+
+    .nav-links a{
+      padding:9px 13px;
+      border-radius:10px;
+      font-size:15px;
+      font-weight:600;
+      transition:.2s;
+    }
+
+    .nav-links a:hover{
+      background:var(--light);
+      color:var(--green);
+    }
+
+    .nav-links .order-link{
+      background:var(--green);
+      color:#fff;
+      border-radius:25px;
+      padding:9px 17px;
+    }
+
+    .nav-links .order-link:hover{
+      background:var(--green-dark);
+      color:#fff;
+    }
+
+    .menu-btn{
+      display:none;
+      border:0;
+      background:var(--light);
+      color:var(--green);
+      width:42px;
+      height:42px;
+      border-radius:10px;
+      font-size:23px;
+      cursor:pointer;
+    }
+
+
+    /* HERO */
+
+    .hero{
+      background:
+        radial-gradient(circle at 10% 20%,rgba(17,131,74,.10),transparent 30%),
+        radial-gradient(circle at 90% 80%,rgba(17,131,74,.08),transparent 30%),
+        var(--light);
+      padding:70px 20px 60px;
+      text-align:center;
+    }
+
+    .hero-badge{
+      display:inline-block;
+      background:#fff;
+      color:var(--green);
+      border:1px solid #d7eadf;
+      padding:7px 14px;
+      border-radius:30px;
+      font-size:14px;
+      font-weight:600;
+      margin-bottom:15px;
+    }
+
+    .hero h1{
+      font-family:"Montserrat",sans-serif;
+      color:var(--dark);
+      font-size:42px;
+      line-height:1.2;
+      margin-bottom:12px;
+    }
+
+    .hero p{
+      max-width:680px;
+      margin:auto;
+      color:var(--muted);
+      font-size:17px;
+    }
+
+
+    /* CONTAINER */
+
+    .container{
+      max-width:1100px;
+      margin:auto;
+      padding:65px 20px;
+    }
+
+
+    /* ABOUT INTRO */
+
+    .about-intro{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:35px;
+      align-items:center;
+    }
+
+    .about-image{
+      min-height:390px;
+      border-radius:25px;
+      background:
+        linear-gradient(
+          145deg,
+          rgba(17,131,74,.95),
+          rgba(11,98,56,.98)
+        );
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      position:relative;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+
+    .about-image::before{
+      content:"";
+      width:260px;
+      height:260px;
+      border:2px solid rgba(255,255,255,.16);
+      border-radius:50%;
+      position:absolute;
+    }
+
+    .about-image::after{
+      content:"";
+      width:360px;
+      height:360px;
+      border:2px solid rgba(255,255,255,.10);
+      border-radius:50%;
+      position:absolute;
+    }
+
+    .about-icon{
+      width:115px;
+      height:115px;
+      border-radius:50%;
+      background:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:58px;
+      z-index:2;
+      box-shadow:0 15px 35px rgba(0,0,0,.15);
+    }
+
+    .about-content .small-title{
+      color:var(--green);
+      font-weight:700;
+      font-size:15px;
+      margin-bottom:6px;
+    }
+
+    .about-content h2{
+      color:var(--dark);
+      font-size:32px;
+      line-height:1.3;
+      margin-bottom:15px;
+    }
+
+    .about-content p{
+      color:var(--muted);
+      font-size:16px;
+      margin-bottom:13px;
+    }
+
+
+    /* MISSION */
+
+    .mission-section{
+      background:var(--light);
+      padding:65px 20px;
+    }
+
+    .section-inner{
+      max-width:1100px;
+      margin:auto;
+    }
+
+    .section-heading{
+      text-align:center;
+      margin-bottom:35px;
+    }
+
+    .section-heading h2{
+      color:var(--dark);
+      font-size:31px;
+      margin-bottom:5px;
+    }
+
+    .section-heading p{
+      color:var(--muted);
+    }
+
+    .mission-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+    }
+
+    .mission-card{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:20px;
+      padding:27px 23px;
+      text-align:center;
+      box-shadow:0 8px 25px rgba(16,59,43,.05);
+    }
+
+    .mission-icon{
+      width:65px;
+      height:65px;
+      border-radius:18px;
+      background:var(--light);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:31px;
+      margin:0 auto 15px;
+    }
+
+    .mission-card h3{
+      color:var(--dark);
+      margin-bottom:8px;
+      font-size:21px;
+    }
+
+    .mission-card p{
+      color:var(--muted);
+      font-size:14px;
+    }
+
+
+    /* WHY US */
+
+    .why-section{
+      padding-bottom:10px;
+    }
+
+    .why-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
+    }
+
+    .why-card{
+      display:flex;
+      gap:17px;
+      align-items:flex-start;
+      border:1px solid var(--border);
+      border-radius:17px;
+      padding:20px;
+      background:#fff;
+    }
+
+    .why-icon{
+      flex:0 0 48px;
+      width:48px;
+      height:48px;
+      background:var(--light);
+      border-radius:13px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:22px;
+    }
+
+    .why-card h3{
+      color:var(--dark);
+      font-size:18px;
+      margin-bottom:3px;
+    }
+
+    .why-card p{
+      color:var(--muted);
+      font-size:14px;
+    }
+
+
+    /* PROCESS */
+
+    .process{
+      margin-top:65px;
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:24px;
+      padding:35px;
+      box-shadow:var(--shadow);
+    }
+
+    .process-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:15px;
+      margin-top:25px;
+    }
+
+    .process-item{
+      text-align:center;
+      position:relative;
+    }
+
+    .process-number{
+      width:50px;
+      height:50px;
+      border-radius:50%;
+      background:var(--green);
+      color:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin:0 auto 10px;
+      font-family:"Montserrat",sans-serif;
+      font-weight:700;
+    }
+
+    .process-item h4{
+      color:var(--dark);
+      font-size:17px;
+      margin-bottom:3px;
+    }
+
+    .process-item p{
+      color:var(--muted);
+      font-size:13px;
+    }
+
+
+    /* CONTACT */
+
+    .contact-section{
+      background:var(--light);
+      padding:60px 20px;
+    }
+
+    .contact-box{
+      max-width:900px;
+      margin:auto;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .contact-card{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:23px;
+      text-align:center;
+    }
+
+    .contact-icon{
+      font-size:27px;
+      margin-bottom:8px;
+    }
+
+    .contact-card h3{
+      color:var(--dark);
+      font-size:18px;
+      margin-bottom:4px;
+    }
+
+    .contact-card p,
+    .contact-card a{
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .contact-card a:hover{
+      color:var(--green);
+    }
+
+
+    /* CTA */
+
+    .cta{
+      background:var(--dark);
+      color:#fff;
+      text-align:center;
+      padding:60px 20px;
+    }
+
+    .cta h2{
+      font-size:31px;
+      margin-bottom:8px;
+    }
+
+    .cta p{
+      color:#cddbd4;
+      margin-bottom:20px;
+    }
+
+    .cta-buttons{
+      display:flex;
+      justify-content:center;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .cta a{
+      display:inline-block;
+      background:#fff;
+      color:var(--green-dark);
+      padding:11px 20px;
+      border-radius:25px;
+      font-weight:700;
+    }
+
+    .cta .secondary{
+      background:transparent;
+      color:#fff;
+      border:1px solid rgba(255,255,255,.35);
+    }
+
+
+    /* FOOTER */
+
+    footer{
+      background:#09291e;
+      color:#cbd8d2;
+      padding:40px 20px 20px;
+    }
+
+    .footer-inner{
+      max-width:1100px;
+      margin:auto;
+      display:grid;
+      grid-template-columns:1.3fr 1fr 1fr;
+      gap:35px;
+    }
+
+    footer h3{
+      color:#fff;
+      margin-bottom:12px;
+    }
+
+    footer p,
+    footer a{
+      font-size:14px;
+      color:#b8c9c0;
+    }
+
+    footer a:hover{
+      color:#fff;
+    }
+
+    .footer-links{
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+    }
+
+    .copyright{
+      max-width:1100px;
+      margin:30px auto 0;
+      padding-top:18px;
+      border-top:1px solid rgba(255,255,255,.1);
+      text-align:center;
+      font-size:13px;
+      color:#91a79b;
+    }
+
+
+    /* MOBILE */
+
+    @media(max-width:850px){
+
+      .nav-links{
+        display:none;
+        position:absolute;
+        left:15px;
+        right:15px;
+        top:70px;
+        background:#fff;
+        border:1px solid var(--border);
+        border-radius:15px;
+        padding:10px;
+        box-shadow:var(--shadow);
+        flex-direction:column;
+        align-items:stretch;
+      }
+
+      .nav-links.show{
+        display:flex;
+      }
+
+      .nav-links a{
+        width:100%;
+      }
+
+      .menu-btn{
+        display:block;
+      }
+
+      .about-intro{
+        grid-template-columns:1fr;
+      }
+
+      .about-image{
+        min-height:300px;
+      }
+
+      .mission-grid{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .process-grid{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .contact-box{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .footer-inner{
+        grid-template-columns:1fr;
+        gap:25px;
+      }
+
+    }
+
+
+    @media(max-width:550px){
+
+      .topbar{
+        font-size:12px;
+      }
+
+      .nav{
+        padding:10px 15px;
+      }
+
+      .brand h2{
+        font-size:16px;
+      }
+
+      .brand span{
+        font-size:8px;
+      }
+
+      .hero{
+        padding:50px 15px;
+      }
+
+      .hero h1{
+        font-size:29px;
+      }
+
+      .hero p{
+        font-size:15px;
+      }
+
+      .container{
+        padding:45px 15px;
+      }
+
+      .about-content h2{
+        font-size:27px;
+      }
+
+      .mission-section{
+        padding:45px 15px;
+      }
+
+      .mission-grid{
+        grid-template-columns:1fr;
+      }
+
+      .why-grid{
+        grid-template-columns:1fr;
+      }
+
+      .process{
+        padding:23px 17px;
+      }
+
+      .process-grid{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .contact-section{
+        padding:45px 15px;
+      }
+
+      .contact-box{
+        grid-template-columns:1fr;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+  <!-- TOP BAR -->
+
+  <div class="topbar">
+    🌿 মানসম্মত পণ্য • 💚 যত্নশীল সেবা • 📦 সারাদেশে হোম ডেলিভারি
+  </div>
+
+
+  <!-- HEADER -->
+
+  <header>
+
+    <div class="nav">
+
+      <a href="index.html" class="brand">
+
+        <div class="logo">
+          🌿
+        </div>
+
+        <div>
+          <h2>নিরাময় ছোঁয়া</h2>
+          <span>NIRAMOY CHHOYA</span>
+        </div>
+
+      </a>
+
+
+      <button
+        class="menu-btn"
+        onclick="toggleMenu()"
+      >
+        ☰
+      </button>
+
+
+      <nav
+        class="nav-links"
+        id="navLinks"
+      >
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="Videos.html">
+          Videos
+        </a>
+
+        <a href="Products.html">
+          Products
+        </a>
+
+        <a
+          href="Order.html"
+          class="order-link"
+        >
+          🛒 Order
+        </a>
+
+        <a href="Reviews.html">
+          Reviews
+        </a>
+
+        <a href="About.html">
+          About
+        </a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="hero-badge">
+      🌿 About Niramoy Chhoya
+    </div>
+
+    <h1>
+      নিরাময় ছোঁয়া সম্পর্কে
+    </h1>
+
+    <p>
+      স্বাস্থ্য ও যত্নের পণ্য, তথ্যবহুল ভিডিও এবং
+      সহজ অর্ডার সুবিধাকে একসাথে নিয়ে আমাদের এই উদ্যোগ।
+    </p>
+
+  </section>
+
+
+  <!-- ABOUT INTRO -->
+
+  <main class="container">
+
+    <section class="about-intro">
+
+
+      <div class="about-image">
+
+        <div class="about-icon">
+          🌿
+        </div>
+
+      </div>
+
+
+      <div class="about-content">
+
+        <div class="small-title">
+          NIRAMOY CHHOYA
+        </div>
+
+        <h2>
+          স্বাস্থ্য ও যত্নে একটি সহজ অনলাইন প্ল্যাটফর্ম
+        </h2>
+
+        <p>
+          <strong>নিরাময় ছোঁয়া</strong> একটি সহজ ও ব্যবহারবান্ধব
+          অনলাইন প্ল্যাটফর্ম, যেখানে স্বাস্থ্য ও যত্নের বিভিন্ন
+          পণ্য সম্পর্কে জানা এবং সেগুলো অর্ডার করার সুবিধা রয়েছে।
+        </p>
+
+        <p>
+          আমাদের লক্ষ্য হলো পণ্যের তথ্য সহজভাবে উপস্থাপন করা,
+          যাতে একজন গ্রাহক তার প্রয়োজন অনুযায়ী পণ্য সম্পর্কে
+          জানতে পারেন এবং সহজেই অর্ডার করতে পারেন।
+        </p>
+
+        <p>
+          পাশাপাশি আমাদের Video Corner-এ স্বাস্থ্য ও দৈনন্দিন
+          যত্ন সম্পর্কিত বিভিন্ন তথ্যবহুল ভিডিও যুক্ত করার
+          সুযোগ রয়েছে।
+        </p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- MISSION -->
+
+  <section class="mission-section">
+
+    <div class="section-inner">
+
+      <div class="section-heading">
+
+        <h2>
+          আমাদের উদ্দেশ্য
+        </h2>
+
+        <p>
+          নিরাময় ছোঁয়ার মূল লক্ষ্য ও মূল্যবোধ
+        </p>
+
+      </div>
+
+
+      <div class="mission-grid">
+
+
+        <div class="mission-card">
+
+          <div class="mission-icon">
+            🌱
+          </div>
+
+          <h3>
+            সহজ তথ্য
+          </h3>
+
+          <p>
+            পণ্য ও স্বাস্থ্য-সম্পর্কিত তথ্য সহজ ও
+            পরিষ্কারভাবে উপস্থাপন করা।
+          </p>
+
+        </div>
+
+
+        <div class="mission-card">
+
+          <div class="mission-icon">
+            💚
+          </div>
+
+          <h3>
+            যত্নশীল সেবা
+          </h3>
+
+          <p>
+            গ্রাহকদের জন্য সহজ যোগাযোগ ও অর্ডারের
+            সুবিধা তৈরি করা।
+          </p>
+
+        </div>
+
+
+        <div class="mission-card">
+
+          <div class="mission-icon">
+            📦
+          </div>
+
+          <h3>
+            সহজ Order
+          </h3>
+
+          <p>
+            পছন্দের পণ্য নির্বাচন করে সহজে অর্ডার
+            করার ব্যবস্থা রাখা।
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- WHY US -->
+
+  <section class="container why-section">
+
+    <div class="section-heading">
+
+      <h2>
+        কেন নিরাময় ছোঁয়া?
+      </h2>
+
+      <p>
+        আমাদের প্ল্যাটফর্মের কিছু সুবিধা
+      </p>
+
+    </div>
+
+
+    <div class="why-grid">
+
+
+      <div class="why-card">
+
+        <div class="why-icon">
+          🔎
+        </div>
+
+        <div>
+
+          <h3>
+            সহজে Product খুঁজুন
+          </h3>
+
+          <p>
+            Search ও category ব্যবহার করে আপনার
+            প্রয়োজনীয় পণ্য সহজে খুঁজে নিতে পারবেন।
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="why-card">
+
+        <div class="why-icon">
+          🎥
+        </div>
+
+        <div>
+
+          <h3>
+            তথ্যবহুল Videos
+          </h3>
+
+          <p>
+            বিভিন্ন স্বাস্থ্য ও যত্ন সম্পর্কিত
+            ভিডিও এক জায়গায় দেখার সুবিধা।
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="why-card">
+
+        <div class="why-icon">
+          🛒
+        </div>
+
+        <div>
+
+          <h3>
+            সহজ Order System
+          </h3>
+
+          <p>
+            Product নির্বাচন করে নাম, ফোন ও ঠিকানা
+            দিয়ে সহজেই অর্ডার পাঠানো যায়।
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="why-card">
+
+        <div class="why-icon">
+          💬
+        </div>
+
+        <div>
+
+          <h3>
+            সরাসরি যোগাযোগ
+          </h3>
+
+          <p>
+            WhatsApp ও Email-এর মাধ্যমে আমাদের
+            সাথে সরাসরি যোগাযোগ করা যায়।
+          </p>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+    <!-- ORDER PROCESS -->
+
+    <div class="process">
+
+      <div class="section-heading">
+
+        <h2>
+          কীভাবে Order করবেন?
+        </h2>
+
+        <p>
+          মাত্র কয়েকটি সহজ ধাপে আপনার Order পাঠান।
+        </p>
+
+      </div>
+
+
+      <div class="process-grid">
+
+
+        <div class="process-item">
+
+          <div class="process-number">
+            01
+          </div>
+
+          <h4>
+            Product নির্বাচন
+          </h4>
+
+          <p>
+            আপনার পছন্দের Product বেছে নিন।
+          </p>
+
+        </div>
+
+
+        <div class="process-item">
+
+          <div class="process-number">
+            02
+          </div>
+
+          <h4>
+            তথ্য দিন
+          </h4>
+
+          <p>
+            নাম, ফোন ও Delivery Address দিন।
+          </p>
+
+        </div>
+
+
+        <div class="process-item">
+
+          <div class="process-number">
+            03
+          </div>
+
+          <h4>
+            Order পাঠান
+          </h4>
+
+          <p>
+            WhatsApp-এর মাধ্যমে Order পাঠান।
+          </p>
+
+        </div>
+
+
+        <div class="process-item">
+
+          <div class="process-number">
+            04
+          </div>
+
+          <h4>
+            Confirmation
+          </h4>
+
+          <p>
+            Order যাচাই করে যোগাযোগ করা হবে।
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+
+  <section class="contact-section">
+
+    <div class="section-inner">
+
+      <div class="section-heading">
+
+        <h2>
+          যোগাযোগ করুন
+        </h2>
+
+        <p>
+          প্রয়োজনে আমাদের সাথে সরাসরি যোগাযোগ করতে পারেন।
+        </p>
+
+      </div>
+
+
+      <div class="contact-box">
+
+
+        <div class="contact-card">
+
+          <div class="contact-icon">
+            📍
+          </div>
+
+          <h3>
+            Address
+          </h3>
+
+          <p>
+            Haydrabad Bridge,<br>
+            Tongi, Gazipur
+          </p>
+
+        </div>
+
+
+        <div class="contact-card">
+
+          <div class="contact-icon">
+            💬
+          </div>
+
+          <h3>
+            WhatsApp
+          </h3>
+
+          <a
+            href="https://wa.me/8801841088731"
+            target="_blank"
+          >
+            01841088731
+          </a>
+
+        </div>
+
+
+        <div class="contact-card">
+
+          <div class="contact-icon">
+            ✉️
+          </div>
+
+          <h3>
+            Email
+          </h3>
+
+          <a href="mailto:niramoychowa@gmail.com">
+            niramoychowa@gmail.com
+          </a>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CTA -->
+
+  <section class="cta">
+
+    <h2>
+      নিরাময় ছোঁয়ার সাথে থাকুন
+    </h2>
+
+    <p>
+      আমাদের Products দেখুন অথবা আপনার পছন্দের পণ্যটি Order করুন।
+    </p>
+
+
+    <div class="cta-buttons">
+
+      <a href="Products.html">
+        🌿 Products দেখুন
+      </a>
+
+      <a
+        href="Order.html"
+        class="secondary"
+      >
+        🛒 Order করুন
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="footer-inner">
+
+
+      <div>
+
+        <h3>
+          নিরাময় ছোঁয়া
+        </h3>
+
+        <p>
+          স্বাস্থ্য ও যত্নের পণ্য, তথ্যবহুল ভিডিও এবং
+          সহজ অর্ডার সুবিধা — সবকিছু একসাথে।
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <h3>
+          Quick Links
+        </h3>
+
+        <div class="footer-links">
+
+          <a href="index.html">
+            Home
+          </a>
+
+          <a href="Videos.html">
+            Videos
+          </a>
+
+          <a href="Products.html">
+            Products
+          </a>
+
+          <a href="Order.html">
+            Order
+          </a>
+
+          <a href="Reviews.html">
+            Reviews
+          </a>
+
+          <a href="About.html">
+            About
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div>
+
+        <h3>
+          Contact
+        </h3>
+
+        <div class="footer-links">
+
+          <p>
+            📍 Haydrabad Bridge, Tongi, Gazipur
+          </p>
+
+          <a
+            href="https://wa.me/8801841088731"
+            target="_blank"
+          >
+            💬 WhatsApp: 01841088731
+          </a>
+
+          <a href="mailto:niramoychowa@gmail.com">
+            ✉️ niramoychowa@gmail.com
+          </a>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+    <div class="copyright">
+      © 2026 Niramoy Chhoya. All Rights Reserved.
+    </div>
+
+  </footer>
+
+
+  <script>
+
+    function toggleMenu(){
+
+      document
+        .getElementById("navLinks")
+        .classList
+        .toggle("show");
+
+    }
+
+  </script>
+
+</body>
+</html>
+```
