@@ -1,1027 +1,1056 @@
-```html
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Order | নিরাময় ছোঁয়া</title>
-  <meta name="description" content="নিরাময় ছোঁয়া থেকে সহজে আপনার পছন্দের পণ্য অর্ডার করুন।">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
-
-  <style>
-    :root{
-      --green:#11834a;
-      --green-dark:#0b6238;
-      --dark:#103b2b;
-      --light:#eef9f2;
-      --text:#17241e;
-      --muted:#69766f;
-      --border:#e2ece6;
-      --white:#ffffff;
-      --shadow:0 15px 40px rgba(16,59,43,.10);
-    }
-
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
-
-    html{
-      scroll-behavior:smooth;
-    }
-
-    body{
-      font-family:"Hind Siliguri",sans-serif;
-      background:#fff;
-      color:var(--text);
-      line-height:1.6;
-    }
-
-    a{
-      text-decoration:none;
-      color:inherit;
-    }
-
-    .topbar{
-      background:var(--dark);
-      color:#fff;
-      text-align:center;
-      padding:8px 15px;
-      font-size:14px;
-    }
-
-    header{
-      position:sticky;
-      top:0;
-      z-index:1000;
-      background:rgba(255,255,255,.96);
-      backdrop-filter:blur(10px);
-      border-bottom:1px solid var(--border);
-    }
-
-    .nav{
-      max-width:1200px;
-      margin:auto;
-      padding:13px 20px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:20px;
-    }
-
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:10px;
-    }
-
-    .logo{
-      width:45px;
-      height:45px;
-      border-radius:50%;
-      background:var(--green);
-      color:#fff;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:23px;
-      box-shadow:0 7px 18px rgba(17,131,74,.25);
-    }
-
-    .brand h2{
-      font-family:"Montserrat",sans-serif;
-      font-size:18px;
-      color:var(--dark);
-      line-height:1.2;
-    }
-
-    .brand span{
-      display:block;
-      font-family:"Montserrat",sans-serif;
-      font-size:9px;
-      letter-spacing:2px;
-      color:var(--muted);
-      margin-top:3px;
-    }
-
-    .nav-links{
-      display:flex;
-      align-items:center;
-      gap:7px;
-    }
-
-    .nav-links a{
-      padding:9px 13px;
-      border-radius:10px;
-      font-size:15px;
-      font-weight:600;
-      transition:.2s;
-    }
-
-    .nav-links a:hover{
-      background:var(--light);
-      color:var(--green);
-    }
-
-    .nav-links .order-link{
-      background:var(--green);
-      color:#fff;
-      border-radius:25px;
-      padding:9px 17px;
-    }
-
-    .nav-links .order-link:hover{
-      background:var(--green-dark);
-      color:#fff;
-    }
-
-    .menu-btn{
-      display:none;
-      border:0;
-      background:var(--light);
-      color:var(--green);
-      width:42px;
-      height:42px;
-      border-radius:10px;
-      font-size:23px;
-      cursor:pointer;
-    }
-
-    .hero{
-      background:
-        radial-gradient(circle at 10% 20%, rgba(17,131,74,.10), transparent 30%),
-        radial-gradient(circle at 90% 80%, rgba(17,131,74,.08), transparent 30%),
-        var(--light);
-      padding:70px 20px 60px;
-      text-align:center;
-    }
-
-    .hero-badge{
-      display:inline-block;
-      background:#fff;
-      color:var(--green);
-      border:1px solid #d7eadf;
-      padding:7px 14px;
-      border-radius:30px;
-      font-size:14px;
-      font-weight:600;
-      margin-bottom:15px;
-    }
-
-    .hero h1{
-      font-family:"Montserrat",sans-serif;
-      color:var(--dark);
-      font-size:42px;
-      line-height:1.2;
-      margin-bottom:12px;
-    }
-
-    .hero p{
-      max-width:650px;
-      margin:auto;
-      color:var(--muted);
-      font-size:17px;
-    }
-
-    .container{
-      max-width:1100px;
-      margin:auto;
-      padding:60px 20px;
-    }
-
-    .order-layout{
-      display:grid;
-      grid-template-columns:1.35fr .85fr;
-      gap:25px;
-      align-items:start;
-    }
-
-    .card{
-      background:#fff;
-      border:1px solid var(--border);
-      border-radius:22px;
-      box-shadow:var(--shadow);
-      padding:30px;
-    }
-
-    .card-title{
-      color:var(--dark);
-      font-size:25px;
-      margin-bottom:5px;
-      font-weight:700;
-    }
-
-    .card-subtitle{
-      color:var(--muted);
-      font-size:14px;
-      margin-bottom:25px;
-    }
-
-    .form-group{
-      margin-bottom:18px;
-    }
-
-    label{
-      display:block;
-      font-weight:600;
-      margin-bottom:7px;
-      color:var(--dark);
-    }
-
-    .required{
-      color:#d33;
-    }
-
-    input,
-    select,
-    textarea{
-      width:100%;
-      border:1px solid var(--border);
-      border-radius:12px;
-      padding:12px 14px;
-      font-family:inherit;
-      font-size:15px;
-      outline:none;
-      background:#fff;
-      color:var(--text);
-      transition:.2s;
-    }
-
-    input:focus,
-    select:focus,
-    textarea:focus{
-      border-color:var(--green);
-      box-shadow:0 0 0 3px rgba(17,131,74,.08);
-    }
-
-    textarea{
-      min-height:110px;
-      resize:vertical;
-    }
-
-    .two-col{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:15px;
-    }
-
-    .price-box{
-      background:var(--light);
-      border:1px solid #dceee4;
-      border-radius:16px;
-      padding:15px;
-      margin-top:5px;
-    }
-
-    .price-row{
-      display:flex;
-      justify-content:space-between;
-      gap:15px;
-      padding:7px 0;
-      color:var(--muted);
-      font-size:15px;
-    }
-
-    .price-row strong{
-      color:var(--dark);
-    }
-
-    .total-row{
-      border-top:1px dashed #cbded3;
-      margin-top:7px;
-      padding-top:13px;
-      font-size:19px;
-      color:var(--dark);
-      font-weight:700;
-    }
-
-    .submit-btn{
-      width:100%;
-      border:0;
-      background:var(--green);
-      color:#fff;
-      padding:14px 20px;
-      border-radius:13px;
-      font-family:inherit;
-      font-size:17px;
-      font-weight:700;
-      cursor:pointer;
-      margin-top:8px;
-      transition:.2s;
-    }
-
-    .submit-btn:hover{
-      background:var(--green-dark);
-      transform:translateY(-1px);
-    }
-
-    .summary-icon{
-      width:60px;
-      height:60px;
-      background:var(--light);
-      border-radius:16px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:30px;
-      margin-bottom:15px;
-    }
-
-    .summary-product{
-      font-size:21px;
-      font-weight:700;
-      color:var(--dark);
-      margin-bottom:4px;
-    }
-
-    .summary-small{
-      color:var(--muted);
-      font-size:14px;
-      margin-bottom:20px;
-    }
-
-    .info-box{
-      background:#f8fbf9;
-      border:1px solid var(--border);
-      border-radius:15px;
-      padding:15px;
-      margin-top:20px;
-    }
-
-    .info-box h4{
-      color:var(--dark);
-      margin-bottom:6px;
-    }
-
-    .info-box p{
-      color:var(--muted);
-      font-size:14px;
-    }
-
-    .whatsapp-note{
-      margin-top:15px;
-      text-align:center;
-      font-size:13px;
-      color:var(--muted);
-    }
-
-    .success-message{
-      display:none;
-      margin-top:18px;
-      background:#eaf8ef;
-      border:1px solid #c9e8d5;
-      color:var(--green-dark);
-      padding:13px;
-      border-radius:12px;
-      text-align:center;
-      font-size:14px;
-    }
-
-    .cta{
-      background:var(--dark);
-      color:#fff;
-      text-align:center;
-      padding:55px 20px;
-    }
-
-    .cta h2{
-      font-size:30px;
-      margin-bottom:8px;
-    }
-
-    .cta p{
-      color:#cddbd4;
-      margin-bottom:20px;
-    }
-
-    .cta a{
-      display:inline-block;
-      background:#fff;
-      color:var(--green-dark);
-      padding:11px 20px;
-      border-radius:25px;
-      font-weight:700;
-    }
-
-    footer{
-      background:#09291e;
-      color:#cbd8d2;
-      padding:40px 20px 20px;
-    }
-
-    .footer-inner{
-      max-width:1100px;
-      margin:auto;
-      display:grid;
-      grid-template-columns:1.3fr 1fr 1fr;
-      gap:35px;
-    }
-
-    footer h3{
-      color:#fff;
-      margin-bottom:12px;
-    }
-
-    footer p,
-    footer a{
-      font-size:14px;
-      color:#b8c9c0;
-    }
-
-    footer a:hover{
-      color:#fff;
-    }
-
-    .footer-links{
-      display:flex;
-      flex-direction:column;
-      gap:6px;
-    }
-
-    .copyright{
-      max-width:1100px;
-      margin:30px auto 0;
-      padding-top:18px;
-      border-top:1px solid rgba(255,255,255,.1);
-      text-align:center;
-      font-size:13px;
-      color:#91a79b;
-    }
-
-    @media(max-width:850px){
-      .nav-links{
-        display:none;
-        position:absolute;
-        left:15px;
-        right:15px;
-        top:70px;
-        background:#fff;
-        border:1px solid var(--border);
-        border-radius:15px;
-        padding:10px;
-        box-shadow:var(--shadow);
-        flex-direction:column;
-        align-items:stretch;
-      }
-
-      .nav-links.show{
-        display:flex;
-      }
-
-      .nav-links a{
-        width:100%;
-      }
-
-      .menu-btn{
-        display:block;
-      }
-
-      .order-layout{
-        grid-template-columns:1fr;
-      }
-
-      .hero h1{
-        font-size:32px;
-      }
-
-      .footer-inner{
-        grid-template-columns:1fr;
-        gap:25px;
-      }
-    }
-
-    @media(max-width:550px){
-      .topbar{
-        font-size:12px;
-      }
-
-      .nav{
-        padding:10px 15px;
-      }
-
-      .brand h2{
-        font-size:16px;
-      }
-
-      .brand span{
-        font-size:8px;
-      }
-
-      .hero{
-        padding:50px 15px;
-      }
-
-      .hero h1{
-        font-size:28px;
-      }
-
-      .hero p{
-        font-size:15px;
-      }
-
-      .container{
-        padding:40px 15px;
-      }
-
-      .card{
-        padding:22px 17px;
-        border-radius:18px;
-      }
-
-      .two-col{
-        grid-template-columns:1fr;
-        gap:0;
-      }
-
-      .card-title{
-        font-size:22px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>অর্ডার করুন | নিরাময় ছোঁয়া</title>
+
+    <meta name="description"
+          content="নিরাময় ছোঁয়া থেকে সহজে আপনার পছন্দের পণ্য অর্ডার করুন।">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Montserrat:wght@500;600;700&display=swap"
+          rel="stylesheet">
+
+    <style>
+        :root{
+            --green:#11834a;
+            --green-dark:#0b6238;
+            --dark:#103b2b;
+            --light:#eef9f2;
+            --text:#17241e;
+            --muted:#69766f;
+            --border:#e2ece6;
+            --white:#ffffff;
+            --shadow:0 15px 40px rgba(16,59,43,.10);
+        }
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            font-family:"Hind Siliguri",sans-serif;
+            background:#f7fbf8;
+            color:var(--text);
+            line-height:1.6;
+        }
+
+        a{
+            text-decoration:none;
+            color:inherit;
+        }
+
+        .topbar{
+            background:var(--dark);
+            color:white;
+            text-align:center;
+            padding:8px 15px;
+            font-size:14px;
+        }
+
+        header{
+            background:white;
+            position:sticky;
+            top:0;
+            z-index:1000;
+            box-shadow:0 3px 15px rgba(0,0,0,.06);
+        }
+
+        .navbar{
+            max-width:1180px;
+            margin:auto;
+            min-height:72px;
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            padding:0 20px;
+        }
+
+        .brand{
+            display:flex;
+            align-items:center;
+            gap:10px;
+        }
+
+        .logo{
+            width:45px;
+            height:45px;
+            border-radius:50%;
+            background:var(--green);
+            color:white;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            font-size:23px;
+        }
+
+        .brand-text h2{
+            color:var(--dark);
+            font-size:21px;
+            line-height:1.1;
+        }
+
+        .brand-text span{
+            font-family:Montserrat,sans-serif;
+            color:var(--muted);
+            font-size:10px;
+            letter-spacing:.5px;
+        }
+
+        nav{
+            display:flex;
+            align-items:center;
+            gap:7px;
+        }
+
+        nav a{
+            padding:9px 12px;
+            border-radius:9px;
+            font-size:15px;
+            font-weight:500;
+            transition:.2s;
+        }
+
+        nav a:hover{
+            background:var(--light);
+            color:var(--green);
+        }
+
+        nav a.active{
+            color:var(--green);
+            font-weight:700;
+        }
+
+        nav a.order-link{
+            background:var(--green);
+            color:white;
+            padding:10px 16px;
+        }
+
+        nav a.order-link:hover{
+            background:var(--green-dark);
+        }
+
+        .menu-btn{
+            display:none;
+            border:0;
+            background:none;
+            font-size:27px;
+            cursor:pointer;
+        }
+
+        .hero{
+            background:linear-gradient(135deg,#eef9f2,#ffffff);
+            padding:55px 20px 45px;
+            text-align:center;
+        }
+
+        .hero h1{
+            font-size:38px;
+            color:var(--dark);
+            margin-bottom:8px;
+        }
+
+        .hero p{
+            color:var(--muted);
+            max-width:600px;
+            margin:auto;
+            font-size:16px;
+        }
+
+        .container{
+            max-width:850px;
+            margin:40px auto;
+            padding:0 20px;
+        }
+
+        .order-card{
+            background:white;
+            border:1px solid var(--border);
+            border-radius:20px;
+            padding:30px;
+            box-shadow:var(--shadow);
+        }
+
+        .section-title{
+            color:var(--dark);
+            font-size:24px;
+            margin-bottom:22px;
+            font-weight:700;
+        }
+
+        .form-group{
+            margin-bottom:19px;
+        }
+
+        label{
+            display:block;
+            margin-bottom:7px;
+            font-size:15px;
+            font-weight:600;
+            color:var(--dark);
+        }
+
+        input,
+        select,
+        textarea{
+            width:100%;
+            border:1px solid var(--border);
+            border-radius:10px;
+            padding:12px 14px;
+            font-family:"Hind Siliguri",sans-serif;
+            font-size:16px;
+            outline:none;
+            background:white;
+            color:var(--text);
+            transition:.2s;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus{
+            border-color:var(--green);
+            box-shadow:0 0 0 3px rgba(17,131,74,.08);
+        }
+
+        textarea{
+            resize:vertical;
+            min-height:95px;
+        }
+
+        .price-table{
+            width:100%;
+            border-collapse:collapse;
+            margin:10px 0 25px;
+            overflow:hidden;
+            border-radius:12px;
+            border:1px solid var(--border);
+        }
+
+        .price-table th,
+        .price-table td{
+            padding:13px 12px;
+            border-bottom:1px solid var(--border);
+            text-align:left;
+        }
+
+        .price-table th{
+            background:var(--light);
+            color:var(--dark);
+            font-weight:700;
+        }
+
+        .price-table tr:last-child td{
+            border-bottom:0;
+        }
+
+        .total-row td{
+            font-weight:700;
+            font-size:18px;
+            color:var(--green-dark);
+            background:#f5fbf7;
+        }
+
+        .whatsapp-btn{
+            width:100%;
+            border:0;
+            background:#25D366;
+            color:white;
+            padding:14px 20px;
+            border-radius:12px;
+            font-family:"Hind Siliguri",sans-serif;
+            font-size:18px;
+            font-weight:700;
+            cursor:pointer;
+            transition:.2s;
+            margin-top:5px;
+        }
+
+        .whatsapp-btn:hover{
+            background:#1ebe5d;
+            transform:translateY(-1px);
+        }
+
+        .note{
+            text-align:center;
+            color:var(--muted);
+            font-size:13px;
+            margin-top:12px;
+        }
+
+        footer{
+            background:var(--dark);
+            color:white;
+            margin-top:60px;
+            padding:45px 20px 20px;
+        }
+
+        .footer-inner{
+            max-width:1180px;
+            margin:auto;
+            display:grid;
+            grid-template-columns:1.3fr 1fr 1fr;
+            gap:35px;
+        }
+
+        footer h3{
+            margin-bottom:12px;
+            font-size:20px;
+        }
+
+        footer p,
+        footer a{
+            color:#cbd9d1;
+            font-size:14px;
+        }
+
+        footer a:hover{
+            color:white;
+        }
+
+        .footer-links{
+            display:flex;
+            flex-direction:column;
+            gap:5px;
+        }
+
+        .copyright{
+            border-top:1px solid rgba(255,255,255,.12);
+            margin-top:30px;
+            padding-top:18px;
+            text-align:center;
+            color:#aebdb5;
+            font-size:13px;
+        }
+
+        @media(max-width:800px){
+
+            .menu-btn{
+                display:block;
+            }
+
+            nav{
+                display:none;
+                position:absolute;
+                top:72px;
+                left:0;
+                right:0;
+                background:white;
+                padding:12px 20px 18px;
+                box-shadow:0 8px 20px rgba(0,0,0,.08);
+                flex-direction:column;
+                align-items:stretch;
+            }
+
+            nav.show{
+                display:flex;
+            }
+
+            nav a{
+                width:100%;
+            }
+
+            .hero h1{
+                font-size:30px;
+            }
+
+            .order-card{
+                padding:20px;
+            }
+
+            .price-table{
+                font-size:14px;
+            }
+
+            .price-table th,
+            .price-table td{
+                padding:10px 7px;
+            }
+
+            .footer-inner{
+                grid-template-columns:1fr;
+                gap:25px;
+            }
+        }
+
+        @media(max-width:500px){
+
+            .brand-text h2{
+                font-size:18px;
+            }
+
+            .logo{
+                width:40px;
+                height:40px;
+            }
+
+            .hero{
+                padding:40px 15px;
+            }
+
+            .container{
+                padding:0 12px;
+            }
+
+            .price-table{
+                font-size:13px;
+            }
+
+            .price-table th,
+            .price-table td{
+                padding:9px 5px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-  <!-- TOP BAR -->
-  <div class="topbar">
-    🌿 মানসম্মত পণ্য • 💚 যত্নশীল সেবা • 📦 সারাদেশে হোম ডেলিভারি
-  </div>
-
-  <!-- HEADER -->
-  <header>
-    <div class="nav">
-
-      <a href="index.html" class="brand">
-        <div class="logo">🌿</div>
-
-        <div>
-          <h2>নিরাময় ছোঁয়া</h2>
-          <span>NIRAMOY CHHOYA</span>
-        </div>
-      </a>
-
-      <button class="menu-btn" onclick="toggleMenu()">☰</button>
-
-      <nav class="nav-links" id="navLinks">
-        <a href="index.html">Home</a>
-        <a href="Videos.html">Videos</a>
-        <a href="Products.html">Products</a>
-        <a href="Order.html" class="order-link">🛒 Order</a>
-        <a href="Reviews.html">Reviews</a>
-        <a href="About.html">About</a>
-      </nav>
-
-    </div>
-  </header>
-
-
-  <!-- HERO -->
-  <section class="hero">
-
-    <div class="hero-badge">
-      🛒 সহজ ও দ্রুত অর্ডার
+    <!-- TOP BAR -->
+    <div class="topbar">
+        🌿 মানসম্মত পণ্য • 💚 যত্নশীল সেবা • 📦 সারাদেশে হোম ডেলিভারি
     </div>
 
-    <h1>
-      আপনার পছন্দের পণ্য<br>
-      অর্ডার করুন
-    </h1>
+    <!-- NAVBAR -->
+    <header>
+        <div class="navbar">
 
-    <p>
-      নিচের ফর্মটি পূরণ করুন। অর্ডারের তথ্য যাচাই করে
-      WhatsApp-এর মাধ্যমে আমাদের সাথে অর্ডার নিশ্চিত করতে পারবেন।
-    </p>
+            <a href="index.html" class="brand">
+                <div class="logo">🌿</div>
 
-  </section>
+                <div class="brand-text">
+                    <h2>নিরাময় ছোঁয়া</h2>
+                    <span>NIRAMOY CHHOYA</span>
+                </div>
+            </a>
 
+            <button class="menu-btn" onclick="toggleMenu()">☰</button>
 
-  <!-- ORDER SECTION -->
-  <main class="container">
+            <nav id="navMenu">
 
-    <div class="order-layout">
+                <a href="index.html">Home</a>
 
-      <!-- FORM -->
-      <div class="card">
+                <a href="Videos.html">Videos</a>
 
-        <h2 class="card-title">Order Form</h2>
+                <a href="Products.html">Products</a>
 
-        <p class="card-subtitle">
-          আপনার সঠিক তথ্য দিয়ে নিচের ফর্মটি পূরণ করুন।
-        </p>
+                <a href="Order.html" class="order-link active">
+                    🛒 Order
+                </a>
 
+                <a href="Reviews.html">Reviews</a>
 
-        <form id="orderForm">
+                <a href="About.html">About</a>
 
-          <!-- PRODUCT -->
-          <div class="form-group">
-
-            <label for="product">
-              Product <span class="required">*</span>
-            </label>
-
-            <select id="product" required>
-              <option value="">-- Product নির্বাচন করুন --</option>
-
-              <option value="Vitalking Syrup" data-price="350" data-icon="🍯">
-                Vitalking Syrup — ৳ 350
-              </option>
-
-              <option value="Herbal Care Syrup" data-price="420" data-icon="🌿">
-                Herbal Care Syrup — ৳ 420
-              </option>
-
-              <option value="Vitamin C Tablet" data-price="280" data-icon="💊">
-                Vitamin C Tablet — ৳ 280
-              </option>
-
-              <option value="Multivitamin Capsule" data-price="550" data-icon="💊">
-                Multivitamin Capsule — ৳ 550
-              </option>
-
-              <option value="Herbal Tablet" data-price="300" data-icon="🌿">
-                Herbal Tablet — ৳ 300
-              </option>
-
-              <option value="Vitamin Drops" data-price="250" data-icon="💧">
-                Vitamin Drops — ৳ 250
-              </option>
-
-              <option value="Skin Care Cream" data-price="320" data-icon="🧴">
-                Skin Care Cream — ৳ 320
-              </option>
-
-              <option value="Herbal Lotion" data-price="380" data-icon="🌱">
-                Herbal Lotion — ৳ 380
-              </option>
-
-              <option value="Health Suspension" data-price="290" data-icon="🧪">
-                Health Suspension — ৳ 290
-              </option>
-
-              <option value="Wellness Powder" data-price="550" data-icon="🥛">
-                Wellness Powder — ৳ 550
-              </option>
-
-              <option value="Herbal Spray" data-price="420" data-icon="🌿">
-                Herbal Spray — ৳ 420
-              </option>
-
-              <option value="Health Capsule" data-price="450" data-icon="💊">
-                Health Capsule — ৳ 450
-              </option>
-
-              <option value="Nature Care Oil" data-price="350" data-icon="🫒">
-                Nature Care Oil — ৳ 350
-              </option>
-
-              <option value="Herbal Care Cream" data-price="390" data-icon="🍃">
-                Herbal Care Cream — ৳ 390
-              </option>
-
-              <option value="Vitamin & Wellness" data-price="500" data-icon="💚">
-                Vitamin & Wellness — ৳ 500
-              </option>
-
-            </select>
-
-          </div>
-
-
-          <!-- QUANTITY -->
-          <div class="form-group">
-
-            <label for="quantity">
-              Quantity <span class="required">*</span>
-            </label>
-
-            <input
-              type="number"
-              id="quantity"
-              min="1"
-              value="1"
-              required
-            >
-
-          </div>
-
-
-          <!-- CUSTOMER -->
-          <div class="two-col">
-
-            <div class="form-group">
-
-              <label for="name">
-                আপনার নাম <span class="required">*</span>
-              </label>
-
-              <input
-                type="text"
-                id="name"
-                placeholder="আপনার নাম লিখুন"
-                required
-              >
-
-            </div>
-
-
-            <div class="form-group">
-
-              <label for="phone">
-                মোবাইল নম্বর <span class="required">*</span>
-              </label>
-
-              <input
-                type="tel"
-                id="phone"
-                placeholder="01XXXXXXXXX"
-                maxlength="11"
-                required
-              >
-
-            </div>
-
-          </div>
-
-
-          <!-- ADDRESS -->
-          <div class="form-group">
-
-            <label for="address">
-              Delivery Address <span class="required">*</span>
-            </label>
-
-            <textarea
-              id="address"
-              placeholder="বাড়ি/রোড, এলাকা, থানা, জেলা লিখুন"
-              required
-            ></textarea>
-
-          </div>
-
-
-          <!-- NOTE -->
-          <div class="form-group">
-
-            <label for="note">
-              অতিরিক্ত নির্দেশনা
-            </label>
-
-            <textarea
-              id="note"
-              placeholder="প্রয়োজনে অতিরিক্ত কোনো তথ্য লিখুন..."
-              style="min-height:80px;"
-            ></textarea>
-
-          </div>
-
-
-          <!-- PRICE -->
-          <div class="price-box">
-
-            <div class="price-row">
-              <span>Unit Price</span>
-              <strong id="unitPrice">৳ 0</strong>
-            </div>
-
-            <div class="price-row">
-              <span>Quantity</span>
-              <strong id="showQuantity">1</strong>
-            </div>
-
-            <div class="price-row total-row">
-              <span>Total</span>
-              <strong id="totalPrice">৳ 0</strong>
-            </div>
-
-          </div>
-
-
-          <button type="submit" class="submit-btn">
-            💬 WhatsApp এ Order Confirm করুন
-          </button>
-
-          <div class="whatsapp-note">
-            অর্ডার Submit করলে WhatsApp-এ আপনার অর্ডারের তথ্য তৈরি হবে।
-          </div>
-
-          <div class="success-message" id="successMessage">
-            অর্ডারের তথ্য প্রস্তুত হয়েছে। WhatsApp খুলছে...
-          </div>
-
-        </form>
-
-      </div>
-
-
-      <!-- SUMMARY -->
-      <div class="card">
-
-        <div class="summary-icon" id="summaryIcon">
-          🛒
-        </div>
-
-        <div class="summary-product" id="summaryProduct">
-          Product নির্বাচন করুন
-        </div>
-
-        <div class="summary-small">
-          আপনার নির্বাচিত পণ্যের অর্ডার তথ্য এখানে দেখা যাবে।
-        </div>
-
-
-        <div class="price-box">
-
-          <div class="price-row">
-            <span>পণ্যের দাম</span>
-            <strong id="summaryPrice">৳ 0</strong>
-          </div>
-
-          <div class="price-row">
-            <span>পরিমাণ</span>
-            <strong id="summaryQuantity">1</strong>
-          </div>
-
-          <div class="price-row total-row">
-            <span>মোট মূল্য</span>
-            <strong id="summaryTotal">৳ 0</strong>
-          </div>
+            </nav>
 
         </div>
+    </header>
 
 
-        <div class="info-box">
+    <!-- HERO -->
+    <section class="hero">
 
-          <h4>📦 Delivery</h4>
-
-          <p>
-            Delivery charge ও delivery time অর্ডার নিশ্চিত করার সময়
-            জানিয়ে দেওয়া হবে।
-          </p>
-
-        </div>
-
-
-        <div class="info-box">
-
-          <h4>💬 Order Confirmation</h4>
-
-          <p>
-            Submit করার পর WhatsApp-এ অর্ডারের তথ্য পাঠানো হবে।
-            আমাদের প্রতিনিধি প্রয়োজনীয় তথ্য যাচাই করে যোগাযোগ করবেন।
-          </p>
-
-        </div>
-
-
-        <div class="info-box">
-
-          <h4>⚠️ গুরুত্বপূর্ণ</h4>
-
-          <p>
-            স্বাস্থ্য-সম্পর্কিত কোনো পণ্য ব্যবহারের আগে পণ্যের লেবেল,
-            নির্দেশনা এবং প্রয়োজনে চিকিৎসক বা ফার্মাসিস্টের পরামর্শ অনুসরণ করুন।
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </main>
-
-
-  <!-- CTA -->
-  <section class="cta">
-
-    <h2>পণ্য দেখতে চান?</h2>
-
-    <p>
-      আমাদের সবগুলো Products দেখে আপনার পছন্দের পণ্য নির্বাচন করুন।
-    </p>
-
-    <a href="Products.html">
-      🌿 Products দেখুন
-    </a>
-
-  </section>
-
-
-  <!-- FOOTER -->
-  <footer>
-
-    <div class="footer-inner">
-
-      <div>
-        <h3>নিরাময় ছোঁয়া</h3>
+        <h1>অর্ডার করুন 🛒</h1>
 
         <p>
-          স্বাস্থ্য ও যত্নের পণ্য, তথ্যবহুল ভিডিও এবং
-          সহজ অর্ডার সুবিধা — সবকিছু একসাথে।
+            আপনার পছন্দের পণ্য নির্বাচন করে তথ্য পূরণ করুন।
+            এরপর WhatsApp-এর মাধ্যমে অর্ডার পাঠিয়ে দিন।
         </p>
-      </div>
+
+    </section>
 
 
-      <div>
+    <!-- ORDER FORM -->
+    <main class="container">
 
-        <h3>Quick Links</h3>
+        <div class="order-card">
 
-        <div class="footer-links">
-          <a href="index.html">Home</a>
-          <a href="Videos.html">Videos</a>
-          <a href="Products.html">Products</a>
-          <a href="Order.html">Order</a>
-          <a href="Reviews.html">Reviews</a>
-          <a href="About.html">About</a>
+            <h2 class="section-title">
+                অর্ডারের তথ্য
+            </h2>
+
+
+            <!-- PRODUCT -->
+            <div class="form-group">
+
+                <label for="product">
+                    পণ্য নির্বাচন করুন *
+                </label>
+
+                <select id="product" onchange="updatePrice()">
+
+                    <option value="">
+                        — পণ্য নির্বাচন করুন —
+                    </option>
+
+                    <option value="Vitalking Syrup">
+                        Vitalking Syrup — ৳265
+                    </option>
+
+                    <option value="Safa Khurma">
+                        Safa Khurma — ৳650
+                    </option>
+
+                    <option value="Herbal Care Syrup">
+                        Herbal Care Syrup — ৳420
+                    </option>
+
+                    <option value="Vitamin C Tablet">
+                        Vitamin C Tablet — ৳280
+                    </option>
+
+                    <option value="Multivitamin Capsule">
+                        Multivitamin Capsule — ৳550
+                    </option>
+
+                    <option value="Herbal Tablet">
+                        Herbal Tablet — ৳300
+                    </option>
+
+                    <option value="Vitamin Drops">
+                        Vitamin Drops — ৳250
+                    </option>
+
+                    <option value="Skin Care Cream">
+                        Skin Care Cream — ৳320
+                    </option>
+
+                    <option value="Herbal Lotion">
+                        Herbal Lotion — ৳380
+                    </option>
+
+                    <option value="Health Suspension">
+                        Health Suspension — ৳290
+                    </option>
+
+                    <option value="Wellness Powder">
+                        Wellness Powder — ৳550
+                    </option>
+
+                    <option value="Herbal Spray">
+                        Herbal Spray — ৳420
+                    </option>
+
+                    <option value="Health Capsule">
+                        Health Capsule — ৳450
+                    </option>
+
+                    <option value="Nature Care Oil">
+                        Nature Care Oil — ৳350
+                    </option>
+
+                    <option value="Herbal Care Cream">
+                        Herbal Care Cream — ৳390
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- PRICE TABLE -->
+            <table class="price-table">
+
+                <thead>
+                    <tr>
+                        <th>বিবরণ</th>
+                        <th>পরিমাণ</th>
+                        <th>মূল্য</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>Unit Price</td>
+
+                        <td>
+                            <input
+                                type="number"
+                                id="quantity"
+                                min="1"
+                                value="1"
+                                onchange="updatePrice()"
+                                oninput="updatePrice()"
+                                style="max-width:110px;"
+                            >
+                        </td>
+
+                        <td id="unitPrice">
+                            ৳ 0
+                        </td>
+                    </tr>
+
+                    <tr class="total-row">
+
+                        <td colspan="2">
+                            মোট মূল্য
+                        </td>
+
+                        <td id="totalPrice">
+                            ৳ 0
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+
+            <!-- CUSTOMER NAME -->
+            <div class="form-group">
+
+                <label for="name">
+                    আপনার নাম *
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="আপনার পূর্ণ নাম লিখুন"
+                >
+
+            </div>
+
+
+            <!-- PHONE -->
+            <div class="form-group">
+
+                <label for="phone">
+                    মোবাইল নম্বর *
+                </label>
+
+                <input
+                    type="tel"
+                    id="phone"
+                    placeholder="01XXXXXXXXX"
+                    maxlength="11"
+                >
+
+            </div>
+
+
+            <!-- ADDRESS -->
+            <div class="form-group">
+
+                <label for="address">
+                    ডেলিভারি ঠিকানা *
+                </label>
+
+                <textarea
+                    id="address"
+                    placeholder="আপনার সম্পূর্ণ ডেলিভারি ঠিকানা লিখুন"
+                ></textarea>
+
+            </div>
+
+
+            <!-- NOTE -->
+            <div class="form-group">
+
+                <label for="note">
+                    অতিরিক্ত তথ্য
+                </label>
+
+                <textarea
+                    id="note"
+                    placeholder="কোনো বিশেষ নির্দেশনা থাকলে লিখুন (ঐচ্ছিক)"
+                ></textarea>
+
+            </div>
+
+
+            <!-- WHATSAPP -->
+            <button
+                class="whatsapp-btn"
+                onclick="sendWhatsApp()"
+            >
+                💬 WhatsApp-এ অর্ডার করুন
+            </button>
+
+            <p class="note">
+                বাটনে ক্লিক করলে আপনার অর্ডারের তথ্য WhatsApp-এ পাঠানোর জন্য
+                WhatsApp খুলবে।
+            </p>
+
         </div>
 
-      </div>
+    </main>
 
 
-      <div>
+    <!-- FOOTER -->
+    <footer>
 
-        <h3>Contact</h3>
+        <div class="footer-inner">
 
-        <div class="footer-links">
+            <div>
 
-          <p>📍 Haydrabad Bridge, Tongi, Gazipur</p>
+                <h3>নিরাময় ছোঁয়া</h3>
 
-          <a href="https://wa.me/8801841088731" target="_blank">
-            💬 WhatsApp: 01841088731
-          </a>
+                <p>
+                    স্বাস্থ্য ও যত্নের পণ্য, তথ্যবহুল ভিডিও
+                    এবং সহজ অর্ডার সেবা।
+                </p>
 
-          <a href="mailto:niramoychowa@gmail.com">
-            ✉️ niramoychowa@gmail.com
-          </a>
+            </div>
+
+
+            <div>
+
+                <h3>যোগাযোগ</h3>
+
+                <p>📍 Haydrabad Bridge, Tongi, Gazipur</p>
+
+                <p>
+                    💬
+                    <a href="https://wa.me/8801841088731"
+                       target="_blank">
+                        01841088731
+                    </a>
+                </p>
+
+                <p>
+                    ✉️
+                    <a href="mailto:niramoychowa@gmail.com">
+                        niramoychowa@gmail.com
+                    </a>
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>Quick Links</h3>
+
+                <div class="footer-links">
+
+                    <a href="index.html">Home</a>
+                    <a href="Videos.html">Videos</a>
+                    <a href="Products.html">Products</a>
+                    <a href="Order.html">Order</a>
+                    <a href="Reviews.html">Reviews</a>
+                    <a href="About.html">About</a>
+
+                </div>
+
+            </div>
 
         </div>
 
-      </div>
 
-    </div>
+        <div class="copyright">
+            © 2026 Niramoy Chhoya. All Rights Reserved.
+        </div>
 
-
-    <div class="copyright">
-      © 2026 Niramoy Chhoya. All Rights Reserved.
-    </div>
-
-  </footer>
+    </footer>
 
 
-  <script>
+    <script>
 
-    // MOBILE MENU
-    function toggleMenu(){
-      document.getElementById("navLinks").classList.toggle("show");
-    }
+        /* PRODUCT PRICES */
+
+        const products = {
+
+            "Vitalking Syrup": 265,
+
+            "Safa Khurma": 650,
+
+            "Herbal Care Syrup": 420,
+
+            "Vitamin C Tablet": 280,
+
+            "Multivitamin Capsule": 550,
+
+            "Herbal Tablet": 300,
+
+            "Vitamin Drops": 250,
+
+            "Skin Care Cream": 320,
+
+            "Herbal Lotion": 380,
+
+            "Health Suspension": 290,
+
+            "Wellness Powder": 550,
+
+            "Herbal Spray": 420,
+
+            "Health Capsule": 450,
+
+            "Nature Care Oil": 350,
+
+            "Herbal Care Cream": 390
+
+        };
 
 
-    // PRODUCT DATA
-    const productSelect = document.getElementById("product");
-    const quantityInput = document.getElementById("quantity");
+        /* UPDATE PRICE */
 
-    const unitPrice = document.getElementById("unitPrice");
-    const totalPrice = document.getElementById("totalPrice");
-    const showQuantity = document.getElementById("showQuantity");
+        function updatePrice(){
 
-    const summaryProduct = document.getElementById("summaryProduct");
-    const summaryIcon = document.getElementById("summaryIcon");
-    const summaryPrice = document.getElementById("summaryPrice");
-    const summaryQuantity = document.getElementById("summaryQuantity");
-    const summaryTotal = document.getElementById("summaryTotal");
+            const product =
+                document.getElementById("product").value;
+
+            let quantity =
+                parseInt(
+                    document.getElementById("quantity").value
+                );
 
 
-    // UPDATE PRICE
-    function updateOrder(){
+            if(!quantity || quantity < 1){
 
-      const selected =
-        productSelect.options[productSelect.selectedIndex];
+                quantity = 1;
 
-      const price =
-        Number(selected.dataset.price || 0);
+                document.getElementById("quantity").value = 1;
 
-      const icon =
-        selected.dataset.icon || "🛒";
+            }
 
-      let quantity =
-        Number(quantityInput.value);
 
-      if(quantity < 1){
-        quantity = 1;
-        quantityInput.value = 1;
-      }
+            const unitPrice =
+                products[product] || 0;
 
-      const total = price * quantity;
 
-      unitPrice.textContent =
-        "৳ " + price.toLocaleString("en-BD");
+            const totalPrice =
+                unitPrice * quantity;
 
-      totalPrice.textContent =
-        "৳ " + total.toLocale
-```
+
+            document.getElementById("unitPrice").innerText =
+                "৳ " + unitPrice;
+
+
+            document.getElementById("totalPrice").innerText =
+                "৳ " + totalPrice.toLocaleString("en-BD");
+
+        }
+
+
+        /* SEND TO WHATSAPP */
+
+        function sendWhatsApp(){
+
+            const product =
+                document.getElementById("product").value.trim();
+
+            const quantity =
+                parseInt(
+                    document.getElementById("quantity").value
+                );
+
+            const name =
+                document.getElementById("name").value.trim();
+
+            const phone =
+                document.getElementById("phone").value.trim();
+
+            const address =
+                document.getElementById("address").value.trim();
+
+            const note =
+                document.getElementById("note").value.trim();
+
+
+            /* VALIDATION */
+
+            if(!product){
+
+                alert("দয়া করে একটি পণ্য নির্বাচন করুন।");
+
+                document.getElementById("product").focus();
+
+                return;
+
+            }
+
+
+            if(!quantity || quantity < 1){
+
+                alert("দয়া করে সঠিক Quantity দিন।");
+
+                document.getElementById("quantity").focus();
+
+                return;
+
+            }
+
+
+            if(!name){
+
+                alert("দয়া করে আপনার নাম লিখুন।");
+
+                document.getElementById("name").focus();
+
+                return;
+
+            }
+
+
+            if(!phone){
+
+                alert("দয়া করে আপনার মোবাইল নম্বর লিখুন।");
+
+                document.getElementById("phone").focus();
+
+                return;
+
+            }
+
+
+            /* BANGLADESHI PHONE VALIDATION */
+
+            const cleanPhone =
+                phone.replace(/\s+/g,"");
+
+
+            if(!/^01[3-9]\d{8}$/.test(cleanPhone)){
+
+                alert(
+                    "দয়া করে সঠিক ১১ সংখ্যার বাংলাদেশি মোবাইল নম্বর দিন।"
+                );
+
+                document.getElementById("phone").focus();
+
+                return;
+
+            }
+
+
+            if(!address){
+
+                alert("দয়া করে আপনার ডেলিভারি ঠিকানা লিখুন।");
+
+                document.getElementById("address").focus();
+
+                return;
+
+            }
+
+
+            const unitPrice =
+                products[product];
+
+
+            const totalPrice =
+                unitPrice * quantity;
+
+
+            /* WHATSAPP MESSAGE */
+
+            let message =
+`🌿 *নিরাময় ছোঁয়া — নতুন অর্ডার*
+
+🛍️ *পণ্যের তথ্য*
+━━━━━━━━━━━━━━━━
+📦 পণ্য: ${product}
+🔢 Quantity: ${quantity}
+💰 Unit Price: ৳${unitPrice}
+💵 Total Price: ৳${totalPrice}
+
+👤 *গ্রাহকের তথ্য*
+━━━━━━━━━━━━━━━━
+নাম: ${name}
+মোবাইল: ${cleanPhone}
+ঠিকানা: ${address}`;
+
+
+            if(note){
+
+                message +=
+`
+📝 অতিরিক্ত তথ্য: ${note}`;
+
+            }
+
+
+            message +=
+`
+
+━━━━━━━━━━━━━━━━
+✅ আমি এই পণ্যটি অর্ডার করতে চাই।`;
+
+
+            const whatsappNumber =
+                "8801841088731";
+
+
+            const whatsappURL =
+                "https://wa.me/" +
+                whatsappNumber +
+                "?text=" +
+                encodeURIComponent(message);
+
+
+            window.open(
+                whatsappURL,
+                "_blank"
+            );
+
+        }
+
+
+        /* MOBILE MENU */
+
+        function toggleMenu(){
+
+            document
+                .getElementById("navMenu")
+                .classList.toggle("show");
+
+        }
+
+
+        /* AUTO SELECT PRODUCT FROM URL */
+
+        window.addEventListener(
+            "DOMContentLoaded",
+            function(){
+
+                const params =
+                    new URLSearchParams(
+                        window.location.search
+                    );
+
+                const selectedProduct =
+                    params.get("product");
+
+
+                if(selectedProduct){
+
+                    const select =
+                        document.getElementById("product");
+
+
+                    const exists =
+                        [...select.options]
+                        .some(
+                            option =>
+                            option.value === selectedProduct
+                        );
+
+
+                    if(exists){
+
+                        select.value =
+                            selectedProduct;
+
+                        updatePrice();
+
+                    }
+
+                }
+
+            }
+        );
+
+    </script>
+
+</body>
+</html>
