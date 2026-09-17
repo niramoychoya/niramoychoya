@@ -1,0 +1,1005 @@
+```html
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Reviews | নিরাময় ছোঁয়া</title>
+  <meta name="description" content="নিরাময় ছোঁয়া — গ্রাহকদের মতামত ও Reviews।">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+
+    :root{
+      --green:#11834a;
+      --green-dark:#0b6238;
+      --dark:#103b2b;
+      --light:#eef9f2;
+      --text:#17241e;
+      --muted:#69766f;
+      --border:#e2ece6;
+      --white:#fff;
+      --shadow:0 15px 40px rgba(16,59,43,.10);
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:"Hind Siliguri",sans-serif;
+      background:#fff;
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+
+    /* TOP BAR */
+
+    .topbar{
+      background:var(--dark);
+      color:#fff;
+      text-align:center;
+      padding:8px 15px;
+      font-size:14px;
+    }
+
+
+    /* HEADER */
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(255,255,255,.96);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--border);
+    }
+
+    .nav{
+      max-width:1200px;
+      margin:auto;
+      padding:13px 20px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .logo{
+      width:45px;
+      height:45px;
+      border-radius:50%;
+      background:var(--green);
+      color:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:23px;
+      box-shadow:0 7px 18px rgba(17,131,74,.25);
+    }
+
+    .brand h2{
+      font-family:"Montserrat",sans-serif;
+      font-size:18px;
+      color:var(--dark);
+      line-height:1.2;
+    }
+
+    .brand span{
+      display:block;
+      font-family:"Montserrat",sans-serif;
+      font-size:9px;
+      letter-spacing:2px;
+      color:var(--muted);
+      margin-top:3px;
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:7px;
+    }
+
+    .nav-links a{
+      padding:9px 13px;
+      border-radius:10px;
+      font-size:15px;
+      font-weight:600;
+      transition:.2s;
+    }
+
+    .nav-links a:hover{
+      background:var(--light);
+      color:var(--green);
+    }
+
+    .nav-links .order-link{
+      background:var(--green);
+      color:#fff;
+      border-radius:25px;
+      padding:9px 17px;
+    }
+
+    .nav-links .order-link:hover{
+      background:var(--green-dark);
+      color:#fff;
+    }
+
+    .menu-btn{
+      display:none;
+      border:0;
+      background:var(--light);
+      color:var(--green);
+      width:42px;
+      height:42px;
+      border-radius:10px;
+      font-size:23px;
+      cursor:pointer;
+    }
+
+
+    /* HERO */
+
+    .hero{
+      background:
+        radial-gradient(circle at 10% 20%,rgba(17,131,74,.10),transparent 30%),
+        radial-gradient(circle at 90% 80%,rgba(17,131,74,.08),transparent 30%),
+        var(--light);
+      padding:70px 20px 60px;
+      text-align:center;
+    }
+
+    .hero-badge{
+      display:inline-block;
+      background:#fff;
+      color:var(--green);
+      border:1px solid #d7eadf;
+      padding:7px 14px;
+      border-radius:30px;
+      font-size:14px;
+      font-weight:600;
+      margin-bottom:15px;
+    }
+
+    .hero h1{
+      font-family:"Montserrat",sans-serif;
+      color:var(--dark);
+      font-size:42px;
+      line-height:1.2;
+      margin-bottom:12px;
+    }
+
+    .hero p{
+      max-width:650px;
+      margin:auto;
+      color:var(--muted);
+      font-size:17px;
+    }
+
+
+    /* CONTAINER */
+
+    .container{
+      max-width:1100px;
+      margin:auto;
+      padding:60px 20px;
+    }
+
+
+    /* RATING SUMMARY */
+
+    .rating-summary{
+      display:grid;
+      grid-template-columns:.8fr 1.2fr;
+      gap:25px;
+      margin-bottom:40px;
+    }
+
+    .summary-card{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:22px;
+      padding:30px;
+      box-shadow:var(--shadow);
+    }
+
+    .rating-number{
+      font-family:"Montserrat",sans-serif;
+      font-size:52px;
+      font-weight:800;
+      color:var(--dark);
+      line-height:1;
+    }
+
+    .stars{
+      color:#f5a623;
+      font-size:25px;
+      letter-spacing:2px;
+      margin:8px 0;
+    }
+
+    .rating-text{
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .rating-bars{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+
+    .rating-line{
+      display:grid;
+      grid-template-columns:45px 1fr 40px;
+      align-items:center;
+      gap:10px;
+      font-size:14px;
+    }
+
+    .bar{
+      height:9px;
+      background:#edf2ef;
+      border-radius:20px;
+      overflow:hidden;
+    }
+
+    .bar span{
+      display:block;
+      height:100%;
+      background:var(--green);
+      border-radius:20px;
+    }
+
+
+    /* REVIEW GRID */
+
+    .section-heading{
+      text-align:center;
+      margin-bottom:28px;
+    }
+
+    .section-heading h2{
+      color:var(--dark);
+      font-size:30px;
+      margin-bottom:5px;
+    }
+
+    .section-heading p{
+      color:var(--muted);
+    }
+
+    .reviews-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+    }
+
+    .review-card{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:22px;
+      box-shadow:0 8px 25px rgba(16,59,43,.06);
+    }
+
+    .review-top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      margin-bottom:12px;
+    }
+
+    .review-user{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .avatar{
+      width:43px;
+      height:43px;
+      border-radius:50%;
+      background:var(--light);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:var(--green);
+      font-weight:700;
+      font-size:17px;
+    }
+
+    .review-user h4{
+      color:var(--dark);
+      font-size:16px;
+    }
+
+    .review-user small{
+      color:var(--muted);
+      font-size:12px;
+    }
+
+    .review-stars{
+      color:#f5a623;
+      font-size:14px;
+      letter-spacing:1px;
+      white-space:nowrap;
+    }
+
+    .review-text{
+      color:#526159;
+      font-size:14px;
+    }
+
+    .product-tag{
+      display:inline-block;
+      margin-top:13px;
+      padding:5px 9px;
+      border-radius:8px;
+      background:var(--light);
+      color:var(--green-dark);
+      font-size:12px;
+      font-weight:600;
+    }
+
+
+    /* REVIEW FORM */
+
+    .form-section{
+      margin-top:55px;
+    }
+
+    .form-card{
+      max-width:750px;
+      margin:auto;
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:22px;
+      padding:30px;
+      box-shadow:var(--shadow);
+    }
+
+    .form-group{
+      margin-bottom:18px;
+    }
+
+    label{
+      display:block;
+      color:var(--dark);
+      font-weight:600;
+      margin-bottom:7px;
+    }
+
+    input,
+    select,
+    textarea{
+      width:100%;
+      border:1px solid var(--border);
+      border-radius:12px;
+      padding:12px 14px;
+      font-family:inherit;
+      font-size:15px;
+      outline:none;
+      color:var(--text);
+      background:#fff;
+      transition:.2s;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus{
+      border-color:var(--green);
+      box-shadow:0 0 0 3px rgba(17,131,74,.08);
+    }
+
+    textarea{
+      min-height:110px;
+      resize:vertical;
+    }
+
+    .two-col{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:15px;
+    }
+
+
+    /* STAR SELECTOR */
+
+    .star-selector{
+      display:flex;
+      flex-direction:row-reverse;
+      justify-content:flex-end;
+      gap:4px;
+      margin-top:4px;
+    }
+
+    .star-selector input{
+      display:none;
+    }
+
+    .star-selector label{
+      font-size:32px;
+      color:#d9dfdc;
+      cursor:pointer;
+      margin:0;
+      transition:.15s;
+    }
+
+    .star-selector input:checked ~ label,
+    .star-selector label:hover,
+    .star-selector label:hover ~ label{
+      color:#f5a623;
+    }
+
+
+    .submit-btn{
+      width:100%;
+      border:0;
+      background:var(--green);
+      color:#fff;
+      padding:14px 20px;
+      border-radius:13px;
+      font-family:inherit;
+      font-size:17px;
+      font-weight:700;
+      cursor:pointer;
+      transition:.2s;
+    }
+
+    .submit-btn:hover{
+      background:var(--green-dark);
+      transform:translateY(-1px);
+    }
+
+    .success{
+      display:none;
+      margin-top:15px;
+      background:#eaf8ef;
+      color:var(--green-dark);
+      border:1px solid #c9e8d5;
+      padding:12px;
+      border-radius:12px;
+      text-align:center;
+      font-size:14px;
+    }
+
+
+    /* CTA */
+
+    .cta{
+      background:var(--dark);
+      color:#fff;
+      text-align:center;
+      padding:55px 20px;
+    }
+
+    .cta h2{
+      font-size:30px;
+      margin-bottom:8px;
+    }
+
+    .cta p{
+      color:#cddbd4;
+      margin-bottom:20px;
+    }
+
+    .cta a{
+      display:inline-block;
+      background:#fff;
+      color:var(--green-dark);
+      padding:11px 20px;
+      border-radius:25px;
+      font-weight:700;
+    }
+
+
+    /* FOOTER */
+
+    footer{
+      background:#09291e;
+      color:#cbd8d2;
+      padding:40px 20px 20px;
+    }
+
+    .footer-inner{
+      max-width:1100px;
+      margin:auto;
+      display:grid;
+      grid-template-columns:1.3fr 1fr 1fr;
+      gap:35px;
+    }
+
+    footer h3{
+      color:#fff;
+      margin-bottom:12px;
+    }
+
+    footer p,
+    footer a{
+      font-size:14px;
+      color:#b8c9c0;
+    }
+
+    footer a:hover{
+      color:#fff;
+    }
+
+    .footer-links{
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+    }
+
+    .copyright{
+      max-width:1100px;
+      margin:30px auto 0;
+      padding-top:18px;
+      border-top:1px solid rgba(255,255,255,.1);
+      text-align:center;
+      font-size:13px;
+      color:#91a79b;
+    }
+
+
+    /* MOBILE */
+
+    @media(max-width:850px){
+
+      .nav-links{
+        display:none;
+        position:absolute;
+        left:15px;
+        right:15px;
+        top:70px;
+        background:#fff;
+        border:1px solid var(--border);
+        border-radius:15px;
+        padding:10px;
+        box-shadow:var(--shadow);
+        flex-direction:column;
+        align-items:stretch;
+      }
+
+      .nav-links.show{
+        display:flex;
+      }
+
+      .nav-links a{
+        width:100%;
+      }
+
+      .menu-btn{
+        display:block;
+      }
+
+      .rating-summary{
+        grid-template-columns:1fr;
+      }
+
+      .reviews-grid{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .footer-inner{
+        grid-template-columns:1fr;
+        gap:25px;
+      }
+
+    }
+
+
+    @media(max-width:550px){
+
+      .topbar{
+        font-size:12px;
+      }
+
+      .nav{
+        padding:10px 15px;
+      }
+
+      .brand h2{
+        font-size:16px;
+      }
+
+      .brand span{
+        font-size:8px;
+      }
+
+      .hero{
+        padding:50px 15px;
+      }
+
+      .hero h1{
+        font-size:29px;
+      }
+
+      .hero p{
+        font-size:15px;
+      }
+
+      .container{
+        padding:40px 15px;
+      }
+
+      .summary-card{
+        padding:22px;
+      }
+
+      .reviews-grid{
+        grid-template-columns:1fr;
+      }
+
+      .form-card{
+        padding:22px 17px;
+      }
+
+      .two-col{
+        grid-template-columns:1fr;
+        gap:0;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+
+  <!-- TOP BAR -->
+
+  <div class="topbar">
+    🌿 মানসম্মত পণ্য • 💚 যত্নশীল সেবা • 📦 সারাদেশে হোম ডেলিভারি
+  </div>
+
+
+  <!-- HEADER -->
+
+  <header>
+
+    <div class="nav">
+
+      <a href="index.html" class="brand">
+
+        <div class="logo">
+          🌿
+        </div>
+
+        <div>
+          <h2>নিরাময় ছোঁয়া</h2>
+          <span>NIRAMOY CHHOYA</span>
+        </div>
+
+      </a>
+
+
+      <button class="menu-btn" onclick="toggleMenu()">
+        ☰
+      </button>
+
+
+      <nav class="nav-links" id="navLinks">
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="Videos.html">
+          Videos
+        </a>
+
+        <a href="Products.html">
+          Products
+        </a>
+
+        <a href="Order.html" class="order-link">
+          🛒 Order
+        </a>
+
+        <a href="Reviews.html">
+          Reviews
+        </a>
+
+        <a href="About.html">
+          About
+        </a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="hero-badge">
+      ⭐ Customer Reviews
+    </div>
+
+    <h1>
+      আমাদের গ্রাহকদের মতামত
+    </h1>
+
+    <p>
+      যারা আমাদের পণ্য ব্যবহার করেছেন,
+      তাদের অভিজ্ঞতা ও মতামত এখানে দেখতে পারবেন।
+    </p>
+
+  </section>
+
+
+  <!-- MAIN -->
+
+  <main class="container">
+
+
+    <!-- RATING SUMMARY -->
+
+    <section class="rating-summary">
+
+
+      <div class="summary-card">
+
+        <div class="rating-number">
+          4.8
+        </div>
+
+        <div class="stars">
+          ★★★★★
+        </div>
+
+        <div class="rating-text">
+          ৫২টি Customer Reviews
+        </div>
+
+      </div>
+
+
+      <div class="summary-card">
+
+        <div class="rating-bars">
+
+          <div class="rating-line">
+            <span>5 ★</span>
+            <div class="bar">
+              <span style="width:82%"></span>
+            </div>
+            <span>82%</span>
+          </div>
+
+          <div class="rating-line">
+            <span>4 ★</span>
+            <div class="bar">
+              <span style="width:13%"></span>
+            </div>
+            <span>13%</span>
+          </div>
+
+          <div class="rating-line">
+            <span>3 ★</span>
+            <div class="bar">
+              <span style="width:3%"></span>
+            </div>
+            <span>3%</span>
+          </div>
+
+          <div class="rating-line">
+            <span>2 ★</span>
+            <div class="bar">
+              <span style="width:1%"></span>
+            </div>
+            <span>1%</span>
+          </div>
+
+          <div class="rating-line">
+            <span>1 ★</span>
+            <div class="bar">
+              <span style="width:1%"></span>
+            </div>
+            <span>1%</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- REVIEWS -->
+
+    <section>
+
+      <div class="section-heading">
+
+        <h2>
+          Customer Reviews
+        </h2>
+
+        <p>
+          আমাদের কিছু গ্রাহকের মতামত
+        </p>
+
+      </div>
+
+
+      <div class="reviews-grid" id="reviewsGrid">
+
+
+        <article class="review-card">
+
+          <div class="review-top">
+
+            <div class="review-user">
+
+              <div class="avatar">
+                R
+              </div>
+
+              <div>
+                <h4>
+                  Rahim
+                </h4>
+
+                <small>
+                  Verified Customer
+                </small>
+              </div>
+
+            </div>
+
+            <div class="review-stars">
+              ★★★★★
+            </div>
+
+          </div>
+
+          <p class="review-text">
+            Product packaging ভালো ছিল এবং delivery-ও সময়মতো পেয়েছি।
+            Overall experience ভালো লেগেছে।
+          </p>
+
+          <span class="product-tag">
+            Vitalking Syrup
+          </span>
+
+        </article>
+
+
+        <article class="review-card">
+
+          <div class="review-top">
+
+            <div class="review-user">
+
+              <div class="avatar">
+                S
+              </div>
+
+              <div>
+                <h4>
+                  Sumaiya
+                </h4>
+
+                <small>
+                  Verified Customer
+                </small>
+              </div>
+
+            </div>
+
+            <div class="review-stars">
+              ★★★★★
+            </div>
+
+          </div>
+
+          <p class="review-text">
+            Order process খুব সহজ ছিল। Product সুন্দরভাবে প্যাক করা ছিল।
+          </p>
+
+          <span class="product-tag">
+            Herbal Care Syrup
+          </span>
+
+        </article>
+
+
+        <article class="review-card">
+
+          <div class="review-top">
+
+            <div class="review-user">
+
+              <div class="avatar">
+                A
+              </div>
+
+              <div>
+                <h4>
+                  Arif
+                </h4>
+
+                <small>
+                  Verified Customer
+                </small>
+              </div>
+
+            </div>
+
+            <div class="review-stars">
+              ★★★★☆
+            </div>
+
+          </div>
+
+          <p class="review-text">
+            Website থেকে product খুঁজে order করা অনেক সহজ হয়েছে।
+          </p>
+
+          <span class="product-tag">
+            Vitamin C Tablet
+          </span>
+
+        </article>
+
+
+        <article class="review-card">
+
+          <div class="review-top">
+
+            <div class="review-user">
+
+              <div class="avatar">
+                N
+              </div>
+
+              <div>
+                <h4>
+                  Nusrat
+                </h4>
+
+                <small>
+                  Verified Customer
+                </small>
+              </div>
+
+            </div>
+
+            <div class="review-stars">
+              ★★★★★
+            </div>
+
+          </div>
+
+          <p class="review-text">
+```
