@@ -4,13 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="নিরাময় ছোঁয়া — স্বাস্থ্য ও যত্নের পণ্য, ভিডিও এবং সহজ অর্ডার।">
-
 <title>নিরাময় ছোঁয়া | Niramoy Chhoya</title>
 
-<style>
+<meta name="description" content="নিরাময় ছোঁয়া — স্বাস্থ্য ও যত্নের পণ্য, স্বাস্থ্যবিষয়ক ভিডিও এবং সহজ অর্ডার।">
 
-@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap');
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
 
 :root{
     --green:#11834a;
@@ -24,9 +27,9 @@
 }
 
 *{
-    box-sizing:border-box;
     margin:0;
     padding:0;
+    box-sizing:border-box;
 }
 
 html{
@@ -35,9 +38,9 @@ html{
 
 body{
     font-family:"Hind Siliguri",sans-serif;
-    color:var(--text);
     background:#fff;
-    line-height:1.65;
+    color:var(--text);
+    line-height:1.6;
 }
 
 a{
@@ -46,20 +49,18 @@ a{
 }
 
 button,
-input,
-textarea,
-select{
-    font:inherit;
+input{
+    font-family:inherit;
 }
 
 /* ================= TOP BAR ================= */
 
-.top{
+.topbar{
     background:var(--dark);
-    color:#e9f7ee;
+    color:#fff;
     text-align:center;
-    padding:7px;
-    font-size:13px;
+    padding:8px 15px;
+    font-size:14px;
 }
 
 /* ================= HEADER ================= */
@@ -67,18 +68,15 @@ select{
 header{
     position:sticky;
     top:0;
-    z-index:100;
-    background:rgba(255,255,255,.96);
-    backdrop-filter:blur(12px);
+    z-index:1000;
+    background:#fff;
     border-bottom:1px solid var(--border);
 }
 
-.nav{
+.navbar{
     max-width:1200px;
-    min-height:75px;
     margin:auto;
-    padding:0 20px;
-
+    padding:13px 20px;
     display:flex;
     align-items:center;
     justify-content:space-between;
@@ -88,63 +86,60 @@ header{
     display:flex;
     align-items:center;
     gap:10px;
+    font-size:21px;
+    font-weight:800;
+    color:var(--dark);
 }
 
 .logo{
-    width:50px;
-    height:50px;
+    width:43px;
+    height:43px;
     border-radius:50%;
-
+    background:var(--green);
     display:grid;
     place-items:center;
-
-    background:linear-gradient(
-        145deg,
-        var(--green),
-        var(--green-dark)
-    );
-
     color:white;
-    font-size:24px;
+    font-size:23px;
 }
 
-.bt{
-    font-size:21px;
-    font-weight:700;
-    color:var(--dark);
-    line-height:1.1;
-}
-
-.bs{
-    font-family:Montserrat,sans-serif;
-    font-size:8px;
-    letter-spacing:2px;
-    color:var(--green);
-}
-
-.links{
+.navLinks{
     display:flex;
     align-items:center;
-    gap:22px;
-    font-weight:600;
+    gap:7px;
 }
 
-.links a:hover{
+.navLinks a{
+    padding:9px 13px;
+    border-radius:8px;
+    font-weight:600;
+    transition:.2s;
+}
+
+.navLinks a:hover{
+    background:var(--light);
     color:var(--green);
 }
 
-.orderNav{
+.navLinks .orderBtn{
     background:var(--green);
-    color:white !important;
-    padding:9px 17px;
-    border-radius:50px;
+    color:#fff;
+    padding:10px 16px;
 }
 
-.menu{
+.navLinks .orderBtn:hover{
+    background:var(--green-dark);
+    color:#fff;
+}
+
+.menuBtn{
     display:none;
     border:0;
-    background:none;
-    font-size:28px;
+    background:var(--light);
+    color:var(--dark);
+    width:42px;
+    height:42px;
+    border-radius:9px;
+    font-size:22px;
     cursor:pointer;
 }
 
@@ -152,232 +147,144 @@ header{
 
 .hero{
     background:
-    radial-gradient(circle at 90% 10%,#e5ae3f30,transparent 25%),
-    radial-gradient(circle at 5% 90%,#11834a22,transparent 28%),
-    linear-gradient(135deg,#f7fcf8,#e8f6ed);
+    radial-gradient(circle at top right,#dff5e7,transparent 40%),
+    linear-gradient(135deg,#f7fcf8,#eef9f2);
+    padding:70px 20px;
 }
 
-.heroIn{
+.heroInner{
     max-width:1200px;
-    min-height:500px;
     margin:auto;
-    padding:70px 20px;
-
     display:grid;
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:1.1fr .9fr;
     gap:50px;
     align-items:center;
 }
 
-.badge{
-    display:inline-block;
-    background:white;
-    border:1px solid var(--border);
-    border-radius:50px;
-    padding:7px 14px;
-    color:var(--green);
-    font-weight:700;
-    margin-bottom:17px;
-}
-
-h1{
-    font-size:clamp(43px,6vw,70px);
-    line-height:1.08;
+.heroText h1{
+    font-size:48px;
+    line-height:1.2;
     color:var(--dark);
     margin-bottom:18px;
+    font-weight:800;
 }
 
-h1 span{
+.heroText h1 span{
     color:var(--green);
 }
 
-.hero p{
-    max-width:600px;
-    color:#607069;
+.heroText p{
+    color:var(--muted);
     font-size:18px;
+    max-width:620px;
     margin-bottom:25px;
 }
 
-.buttons{
+.heroButtons{
     display:flex;
+    gap:12px;
     flex-wrap:wrap;
-    gap:10px;
 }
 
 .btn{
-    border:1px solid transparent;
-    border-radius:50px;
-    padding:12px 20px;
-    font-weight:700;
     display:inline-flex;
     align-items:center;
-    gap:7px;
-    cursor:pointer;
+    justify-content:center;
+    padding:12px 20px;
+    border-radius:9px;
+    font-weight:700;
+    border:1px solid var(--green);
+    transition:.2s;
 }
 
-.primary{
+.btnPrimary{
     background:var(--green);
-    color:white;
+    color:#fff;
 }
 
-.outline{
-    background:white;
-    border-color:var(--border);
-    color:var(--dark);
+.btnPrimary:hover{
+    background:var(--green-dark);
+}
+
+.btnLight{
+    color:var(--green);
+    background:#fff;
 }
 
 .heroCard{
-    background:white;
-    border-radius:30px;
-    padding:20px;
+    min-height:300px;
+    border-radius:25px;
+    background:#fff;
     box-shadow:var(--shadow);
-}
-
-.heroVisual{
-    height:330px;
-    border-radius:22px;
-    background:linear-gradient(150deg,#dff3e6,#fff9e9);
-
     display:grid;
     place-items:center;
-}
-
-.bottle{
-    width:140px;
-    height:210px;
-    border-radius:22px 22px 35px 35px;
-
-    background:linear-gradient(
-        90deg,
-        #c89327,
-        #f2d36d,
-        #c38e24
-    );
-
-    box-shadow:15px 20px 35px rgba(90,65,26,.22);
-
-    padding-top:48px;
-    position:relative;
-}
-
-.bottle:before{
-    content:"";
-    position:absolute;
-    top:-32px;
-    left:35px;
-
-    width:70px;
-    height:42px;
-
-    background:white;
-    border-radius:8px 8px 3px 3px;
-}
-
-.bottleLabel{
-    background:white;
-    border:2px solid var(--green);
-    color:var(--green);
-
     text-align:center;
-    font-weight:700;
-
-    margin:15px 9px;
-    padding:12px 3px;
-    border-radius:9px;
+    padding:35px;
 }
 
-.heroCaption{
-    padding:15px 4px 2px;
+.heroIcon{
+    font-size:100px;
 }
 
-.heroCaption h3{
+.heroCard h3{
     color:var(--dark);
-    font-size:23px;
+    font-size:25px;
 }
 
-.heroCaption p{
-    font-size:14px;
-    margin:0;
-}
-
-/* ================= GENERAL ================= */
-
-section{
-    padding:75px 20px;
-}
-
-.container{
-    max-width:1200px;
-    margin:auto;
-}
-
-.head{
-    max-width:720px;
-    text-align:center;
-    margin:0 auto 35px;
-}
-
-.tag{
-    color:var(--green);
-    font-weight:700;
-}
-
-.head h2{
-    color:var(--dark);
-    font-size:38px;
-    line-height:1.2;
-    margin:5px 0 10px;
-}
-
-.head p{
+.heroCard p{
     color:var(--muted);
 }
 
-/* ================= VIDEOS ================= */
+/* ================= SECTION ================= */
 
-.videos{
-    background:#f8fcf9;
+.section{
+    max-width:1200px;
+    margin:auto;
+    padding:65px 20px;
 }
+
+.sectionHead{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.sectionHead h2{
+    font-size:34px;
+    color:var(--dark);
+    margin-bottom:7px;
+}
+
+.sectionHead p{
+    color:var(--muted);
+}
+
+/* ================= VIDEO PLAYLIST ================= */
 
 .videoScroll{
     display:flex;
-    gap:20px;
-
+    gap:18px;
     overflow-x:auto;
-    overflow-y:hidden;
-
-    padding:10px 5px 20px;
-
-    scroll-behavior:smooth;
-}
-
-.videoScroll::-webkit-scrollbar{
-    height:8px;
-}
-
-.videoScroll::-webkit-scrollbar-thumb{
-    background:#a9cdb8;
-    border-radius:20px;
+    padding:5px 2px 18px;
+    scroll-snap-type:x mandatory;
+    scrollbar-width:thin;
 }
 
 .videoCard{
-    flex:0 0 340px;
-
-    background:white;
+    min-width:290px;
+    width:290px;
+    background:#fff;
     border:1px solid var(--border);
-    border-radius:22px;
+    border-radius:15px;
     overflow:hidden;
-
-    box-shadow:0 5px 20px rgba(16,59,43,.05);
+    box-shadow:0 8px 25px rgba(16,59,43,.06);
+    scroll-snap-align:start;
+    flex-shrink:0;
 }
 
 .videoBox{
-    height:210px;
-    background:#102d22;
-
-    display:grid;
-    place-items:center;
-
+    height:165px;
+    background:#102f24;
+    position:relative;
     overflow:hidden;
 }
 
@@ -385,51 +292,44 @@ section{
     width:100%;
     height:100%;
     object-fit:cover;
+    display:block;
 }
 
 .videoPlaceholder{
-    color:white;
-    text-align:center;
-}
-
-.play{
-    width:58px;
-    height:58px;
-
-    margin:auto auto 8px;
-
-    background:white;
-    color:var(--green);
-
-    border-radius:50%;
-
+    width:100%;
+    height:100%;
     display:grid;
     place-items:center;
-
-    font-size:22px;
+    background:linear-gradient(135deg,#dff5e7,#f7fbf8);
+    font-size:55px;
 }
 
-.videoBody{
-    padding:18px;
+.videoInfo{
+    padding:14px;
 }
 
-.videoBody h3{
+.videoInfo h3{
+    font-size:18px;
     color:var(--dark);
-    font-size:20px;
+    margin-bottom:4px;
 }
 
-.videoBody p{
+.videoInfo p{
     color:var(--muted);
-    font-size:14px;
+    font-size:13px;
 }
 
-/* ================= PRODUCTS ================= */
-
-.products{
-    background:white;
+.videoBottom{
+    margin-top:10px;
 }
 
-/* SEARCH */
+.viewAll{
+    display:flex;
+    justify-content:center;
+    margin-top:22px;
+}
+
+/* ================= SEARCH ================= */
 
 .searchBox{
     max-width:650px;
@@ -439,17 +339,13 @@ section{
 
 .searchBox input{
     width:100%;
-
-    padding:15px 48px 15px 18px;
-
+    padding:14px 18px 14px 48px;
     border:1px solid var(--border);
-    border-radius:50px;
-
+    border-radius:12px;
     outline:none;
-
     font-size:16px;
-
-    box-shadow:0 5px 20px rgba(16,59,43,.05);
+    background:#fff;
+    box-shadow:0 5px 20px rgba(0,0,0,.04);
 }
 
 .searchBox input:focus{
@@ -458,51 +354,26 @@ section{
 
 .searchIcon{
     position:absolute;
-    right:18px;
+    left:17px;
     top:50%;
     transform:translateY(-50%);
+    font-size:20px;
 }
 
-/* PRODUCT VERTICAL SCROLL */
-
-.productScroll{
-    max-height:780px;
-
-    overflow-y:auto;
-    overflow-x:hidden;
-
-    padding:8px;
-
-    border:1px solid var(--border);
-    border-radius:25px;
-
-    background:#f8fcf9;
-}
-
-.productScroll::-webkit-scrollbar{
-    width:8px;
-}
-
-.productScroll::-webkit-scrollbar-thumb{
-    background:#a9cdb8;
-    border-radius:20px;
-}
+/* ================= PRODUCTS ================= */
 
 .productGrid{
     display:grid;
-    grid-template-columns:repeat(3,minmax(0,1fr));
+    grid-template-columns:repeat(4,1fr);
     gap:20px;
 }
 
-/* PRODUCT CARD */
-
 .productCard{
-    background:white;
+    background:#fff;
     border:1px solid var(--border);
-    border-radius:22px;
+    border-radius:16px;
     overflow:hidden;
-
-    transition:.2s;
+    transition:.25s;
 }
 
 .productCard:hover{
@@ -512,23 +383,17 @@ section{
 
 .productPic{
     height:210px;
-
-    background:linear-gradient(
-        135deg,
-        #e5f6eb,
-        #fff8e9
-    );
-
+    background:linear-gradient(135deg,#e5f6eb,#fff8e9);
     display:grid;
     place-items:center;
-
     overflow:hidden;
 }
 
 .productPic img{
     width:100%;
     height:100%;
-    object-fit:cover;
+    object-fit:contain;
+    padding:10px;
 }
 
 .productEmoji{
@@ -539,458 +404,372 @@ section{
     padding:18px;
 }
 
-.pill{
-    display:inline-block;
-
-    background:var(--light);
-    color:var(--green);
-
-    padding:3px 10px;
-
-    border-radius:50px;
-
-    font-size:11px;
-    font-weight:700;
-}
-
 .productBody h3{
     color:var(--dark);
-    font-size:21px;
-    margin-top:5px;
+    font-size:20px;
+    margin-bottom:6px;
 }
 
 .productDesc{
     color:var(--muted);
     font-size:14px;
-
     min-height:45px;
-
-    margin:3px 0 10px;
 }
 
 .rating{
-    color:#e3a32b;
+    margin-top:9px;
+    color:#e59b16;
     font-size:14px;
-    margin-bottom:10px;
 }
 
 .rating span{
-    color:#777;
-    font-size:12px;
+    color:var(--muted);
+    margin-left:4px;
 }
 
-.productFoot{
+/* ================= PRICE ================= */
+
+.priceBox{
     display:flex;
-    justify-content:space-between;
     align-items:center;
-    gap:10px;
+    gap:8px;
+    flex-wrap:wrap;
+    margin-top:10px;
 }
 
-.price{
+.originalPrice{
+    color:#8b9690;
+    font-size:15px;
+    text-decoration:line-through;
+}
+
+.discountPrice{
     color:var(--green);
+    font-size:23px;
     font-weight:800;
 }
 
-.detailsBtn{
-    border:0;
-    background:var(--green);
-    color:white;
-
-    padding:8px 14px;
-
-    border-radius:50px;
-
-    font-size:13px;
+.discountBadge{
+    background:#e8f7ee;
+    color:var(--green);
+    padding:4px 8px;
+    border-radius:6px;
+    font-size:12px;
     font-weight:700;
-
-    cursor:pointer;
 }
 
-/* PAGINATION */
-
-.pagination{
+.productActions{
     display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-wrap:wrap;
-    gap:7px;
-
-    margin-top:25px;
+    gap:8px;
+    margin-top:14px;
 }
 
-.pageBtn{
-    min-width:38px;
-    height:38px;
-
-    border:1px solid var(--border);
-    background:white;
-
-    border-radius:50%;
-
-    cursor:pointer;
+.productActions button,
+.productActions a{
+    flex:1;
+    text-align:center;
+    padding:9px 8px;
+    border-radius:8px;
     font-weight:700;
+    cursor:pointer;
+    font-size:14px;
 }
 
-.pageBtn.active{
+.detailsBtn{
+    background:#fff;
+    color:var(--green);
+    border:1px solid var(--green);
+}
+
+.orderSmallBtn{
     background:var(--green);
-    color:white;
-    border-color:var(--green);
+    color:#fff;
+    border:1px solid var(--green);
 }
 
-.noProduct{
-    text-align:center;
-    padding:50px 20px;
-    color:var(--muted);
+.orderSmallBtn:hover{
+    background:var(--green-dark);
 }
 
-/* ================= ORDER ================= */
+/* ================= FEATURES ================= */
 
-.orderSec{
-    background:#f8fcf9;
-}
-
-.orderBox{
-    max-width:750px;
-    margin:auto;
-
-    background:white;
-
-    border:1px solid var(--border);
-    border-radius:28px;
-
-    padding:35px;
-
-    text-align:center;
-
-    box-shadow:var(--shadow);
-}
-
-.orderBox h2{
-    color:var(--dark);
-    font-size:34px;
-    margin-bottom:8px;
-}
-
-.orderBox p{
-    color:var(--muted);
-    margin-bottom:20px;
-}
-
-/* ================= CONTACT ================= */
-
-.contactSec{
-    background:white;
-}
-
-.contactGrid{
+.featureGrid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
     gap:20px;
 }
 
-.contactCard{
+.featureCard{
+    padding:28px 22px;
     border:1px solid var(--border);
-    border-radius:22px;
-
-    padding:25px;
-
+    border-radius:16px;
     text-align:center;
-
-    background:#f8fcf9;
+    background:#fff;
 }
 
-.contactIcon{
-    width:55px;
-    height:55px;
-
-    margin:0 auto 12px;
-
-    border-radius:17px;
-
-    background:var(--light);
-
-    display:grid;
-    place-items:center;
-
-    font-size:25px;
+.featureIcon{
+    font-size:40px;
+    margin-bottom:10px;
 }
 
-.contactCard h3{
+.featureCard h3{
     color:var(--dark);
     margin-bottom:5px;
 }
 
-.contactCard p{
+.featureCard p{
     color:var(--muted);
-    font-size:14px;
+    font-size:15px;
 }
 
-.contactCard a{
+/* ================= CTA ================= */
+
+.cta{
+    background:var(--dark);
+    color:#fff;
+    border-radius:22px;
+    padding:45px 25px;
+    text-align:center;
+}
+
+.cta h2{
+    font-size:32px;
+    margin-bottom:8px;
+}
+
+.cta p{
+    color:#d4e5dc;
+    margin-bottom:20px;
+}
+
+.cta .btn{
+    border-color:#fff;
+    background:#fff;
     color:var(--green);
-    font-weight:700;
 }
 
 /* ================= FOOTER ================= */
 
 footer{
     background:#0b2d20;
-    color:#b9cdc3;
-
-    padding:35px 20px 20px;
+    color:#fff;
+    margin-top:20px;
 }
 
 .footerInner{
     max-width:1200px;
     margin:auto;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:20px;
+    padding:45px 20px 25px;
+    display:grid;
+    grid-template-columns:1.2fr 1fr 1fr;
+    gap:35px;
 }
 
-.footerBrand h3{
-    color:white;
-    font-size:22px;
+.footerBrand{
+    font-size:23px;
+    font-weight:800;
+    margin-bottom:10px;
 }
 
-.footerBrand p{
-    font-size:13px;
-}
-
-.footerLinks{
-    display:flex;
-    gap:18px;
-    flex-wrap:wrap;
-}
-
-.footerLinks a{
+.footerText{
+    color:#c5d8ce;
     font-size:14px;
 }
 
-.footerLinks a:hover{
-    color:white;
+.footerCol h4{
+    margin-bottom:12px;
 }
 
-.copy{
-    max-width:1200px;
-    margin:25px auto 0;
-    padding-top:17px;
+.footerCol a{
+    display:block;
+    color:#c5d8ce;
+    margin:5px 0;
+}
 
-    border-top:1px solid #ffffff15;
+.footerCol a:hover{
+    color:#fff;
+}
 
+.footerBottom{
+    border-top:1px solid rgba(255,255,255,.12);
     text-align:center;
-    font-size:12px;
+    padding:15px;
+    color:#b8ccc2;
+    font-size:13px;
 }
 
 /* ================= MODAL ================= */
 
 .modal{
-    display:none;
-
     position:fixed;
     inset:0;
-
-    background:rgba(8,35,24,.72);
-
-    z-index:300;
-
-    place-items:center;
-
-    padding:18px;
+    background:rgba(0,0,0,.55);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    z-index:2000;
 }
 
 .modal.show{
-    display:grid;
+    display:flex;
 }
 
 .modalBox{
-    position:relative;
-
     width:min(650px,100%);
     max-height:90vh;
-
     overflow:auto;
-
-    background:white;
-
-    border-radius:25px;
-
+    background:#fff;
+    border-radius:18px;
     padding:25px;
+    position:relative;
 }
 
-.close{
+.closeBtn{
     position:absolute;
-
-    right:14px;
+    right:15px;
     top:12px;
-
-    width:38px;
-    height:38px;
-
+    width:36px;
+    height:36px;
     border:0;
-
     border-radius:50%;
-
-    background:#eef5f0;
-
-    font-size:22px;
-
+    background:#f0f5f2;
     cursor:pointer;
+    font-size:20px;
 }
 
-.detailImg{
+.modalImage{
     width:100%;
-    max-height:320px;
-
-    object-fit:cover;
-
-    border-radius:17px;
-
-    margin:8px 0 15px;
+    height:250px;
+    object-fit:contain;
+    background:#f3faf5;
+    border-radius:12px;
+    margin-bottom:18px;
 }
 
-.detailTitle{
+.modalImage.hidden{
+    display:none;
+}
+
+.modalBox h2{
     color:var(--dark);
-    font-size:28px;
+    margin-bottom:5px;
 }
 
-.detailPrice{
-    color:var(--green);
-    font-weight:800;
-    font-size:18px;
-    margin:8px 0;
-}
-
-.detailText{
-    color:#59675f;
-    font-size:14px;
-
+.modalDetails{
     white-space:pre-line;
-
-    margin:12px 0 20px;
+    color:var(--muted);
+    margin-top:15px;
 }
 
-.hidden{
-    display:none!important;
+.noResult{
+    grid-column:1/-1;
+    text-align:center;
+    padding:40px 15px;
+    color:var(--muted);
 }
 
-/* ================= MOBILE ================= */
+/* ================= RESPONSIVE ================= */
 
-@media(max-width:900px){
+@media(max-width:1000px){
 
-    .links{
-        display:none;
+    .productGrid{
+        grid-template-columns:repeat(3,1fr);
     }
 
-    .menu{
-        display:block;
-    }
-
-    .links.open{
-        display:flex;
-
-        position:absolute;
-
-        top:75px;
-        left:0;
-        right:0;
-
-        background:white;
-
-        flex-direction:column;
-        align-items:stretch;
-
-        padding:15px 20px;
-
-        border-bottom:1px solid var(--border);
-    }
-
-    .heroIn{
+    .heroInner{
         grid-template-columns:1fr;
+    }
+
+    .heroText{
         text-align:center;
     }
 
-    .hero p{
+    .heroText p{
         margin-left:auto;
         margin-right:auto;
     }
 
-    .buttons{
+    .heroButtons{
         justify-content:center;
+    }
+
+}
+
+@media(max-width:750px){
+
+    .menuBtn{
+        display:block;
+    }
+
+    .navLinks{
+        display:none;
+        position:absolute;
+        left:15px;
+        right:15px;
+        top:68px;
+        background:#fff;
+        padding:12px;
+        border:1px solid var(--border);
+        border-radius:12px;
+        box-shadow:var(--shadow);
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .navLinks.show{
+        display:flex;
+    }
+
+    .navLinks a{
+        text-align:center;
     }
 
     .productGrid{
         grid-template-columns:repeat(2,1fr);
     }
 
-    .contactGrid{
-        grid-template-columns:1fr 1fr;
+    .featureGrid{
+        grid-template-columns:1fr;
     }
 
     .footerInner{
-        flex-direction:column;
-        text-align:center;
+        grid-template-columns:1fr;
     }
+
+    .heroText h1{
+        font-size:37px;
+    }
+
 }
 
-@media(max-width:580px){
-
-    section{
-        padding:60px 16px;
-    }
-
-    .bt{
-        font-size:18px;
-    }
-
-    .heroIn{
-        padding:50px 16px;
-    }
-
-    h1{
-        font-size:43px;
-    }
-
-    .heroVisual{
-        height:280px;
-    }
-
-    .head h2{
-        font-size:31px;
-    }
-
-    .videoCard{
-        flex:0 0 285px;
-    }
-
-    .videoBox{
-        height:175px;
-    }
+@media(max-width:480px){
 
     .productGrid{
         grid-template-columns:1fr;
     }
 
-    .productScroll{
-        max-height:720px;
+    .hero{
+        padding:50px 15px;
     }
 
-    .contactGrid{
-        grid-template-columns:1fr;
+    .section{
+        padding:50px 15px;
     }
 
-    .orderBox{
-        padding:25px 18px;
+    .sectionHead h2{
+        font-size:28px;
     }
 
-    .orderBox h2{
-        font-size:29px;
+    .productPic{
+        height:230px;
     }
 
-    .footerLinks{
-        justify-content:center;
+    .videoCard{
+        min-width:275px;
+        width:275px;
     }
+
 }
 
 </style>
@@ -999,1107 +778,1042 @@ footer{
 
 <body>
 
-<!-- TOP BAR -->
+<!-- ================= TOP BAR ================= -->
 
-<div class="top">
-🌿 মানসম্মত পণ্য • 💚 যত্নশীল সেবা • 📦 সারাদেশে হোম ডেলিভারি
+<div class="topbar">
+    🌿 মানসম্মত পণ্য • 💚 যত্নশীল সেবা • 📦 সারাদেশে হোম ডেলিভারি
 </div>
 
 
-<!-- HEADER -->
+<!-- ================= HEADER ================= -->
 
 <header>
 
-<nav class="nav">
+    <div class="navbar">
 
-<a class="brand" href="index.html">
+        <a href="index.html" class="brand">
 
-<div class="logo">🌿</div>
+            <div class="logo">
+                🌿
+            </div>
 
-<div>
-<div class="bt">নিরাময় ছোঁয়া</div>
-<div class="bs">NIRAMOY CHHOYA</div>
-</div>
+            <span>
+                নিরাময় ছোঁয়া
+            </span>
 
-</a>
-
-
-<button class="menu" onclick="toggleMenu()">
-☰
-</button>
+        </a>
 
 
-<div class="links" id="links">
+        <button class="menuBtn" onclick="toggleMenu()">
+            ☰
+        </button>
 
-<a href="index.html">
-Home
-</a>
 
-<a href="Videos.html">
-Videos
-</a>
+        <nav class="navLinks" id="navLinks">
 
-<a href="Products.html">
-Products
-</a>
+            <a href="index.html">
+                Home
+            </a>
 
-<a href="Order.html" class="orderNav">
-🛒 Order
-</a>
+            <a href="Videos.html">
+                Videos
+            </a>
 
-<a href="Reviews.html">
-Reviews
-</a>
+            <a href="Products.html">
+                Products
+            </a>
 
-<a href="About.html">
-About
-</a>
+            <a href="Order.html" class="orderBtn">
+                🛒 Order
+            </a>
 
-</div>
+            <a href="Reviews.html">
+                Reviews
+            </a>
 
-</nav>
+            <a href="About.html">
+                About
+            </a>
+
+        </nav>
+
+    </div>
 
 </header>
-
-
-
-<main id="home">
 
 
 <!-- ================= HERO ================= -->
 
 <section class="hero">
 
-<div class="heroIn">
+    <div class="heroInner">
 
-<div>
+        <div class="heroText">
 
-<div class="badge">
-🌱 আপনার সুস্থতা, আমাদের অগ্রাধিকার
-</div>
+            <h1>
+                স্বাস্থ্য ও যত্নের
+                <span>বিশ্বস্ত ঠিকানা</span>
+            </h1>
 
-<h1>
-স্বাস্থ্য ও যত্নে<br>
-<span>নিরাময় ছোঁয়া</span>
-</h1>
-
-<p>
-মানসম্মত স্বাস্থ্য ও যত্নের পণ্য,
-প্রয়োজনীয় তথ্য, স্বাস্থ্য বিষয়ক ভিডিও
-এবং সহজ অর্ডার—সবকিছু এক জায়গায়।
-</p>
+            <p>
+                নিরাময় ছোঁয়ায় পাবেন স্বাস্থ্য ও যত্নের নির্বাচিত পণ্য,
+                দরকারি স্বাস্থ্যবিষয়ক ভিডিও এবং সহজ অনলাইন অর্ডারের সুবিধা।
+            </p>
 
 
-<div class="buttons">
+            <div class="heroButtons">
 
-<a class="btn primary" href="#products">
-🛍️ Products
-</a>
+                <a href="Products.html" class="btn btnPrimary">
+                    🛍️ সব পণ্য দেখুন
+                </a>
 
-<a class="btn outline" href="Order.html">
-📦 Order করুন
-</a>
+                <a href="Order.html" class="btn btnLight">
+                    🛒 এখনই অর্ডার
+                </a>
 
-<a class="btn outline" href="#videos">
-▶️ Videos
-</a>
+            </div>
 
-</div>
-
-</div>
+        </div>
 
 
-<div class="heroCard">
+        <div class="heroCard">
 
-<div class="heroVisual">
+            <div>
 
-<div class="bottle">
+                <div class="heroIcon">
+                    🌿
+                </div>
 
-<div class="bottleLabel">
-নিরাময়<br>
-ছোঁয়া
-</div>
+                <h3>
+                    নিরাময় ছোঁয়া
+                </h3>
 
-</div>
+                <p>
+                    যত্ন, বিশ্বাস ও মানসম্মত পণ্যের সাথে
+                    আপনার পাশে।
+                </p>
 
-</div>
+            </div>
 
-<div class="heroCaption">
+        </div>
 
-<h3>
-বিশ্বস্ত স্বাস্থ্যসেবা পণ্য
-</h3>
-
-<p>
-পণ্যের বিস্তারিত তথ্য দেখে সহজেই অর্ডার করুন।
-</p>
-
-</div>
-
-</div>
-
-</div>
+    </div>
 
 </section>
 
 
+<!-- ================= VIDEO PLAYLIST ================= -->
 
-<!-- ================= VIDEOS ================= -->
+<section class="section">
 
-<section class="videos" id="videos">
+    <div class="sectionHead">
 
-<div class="container">
+        <h2>
+            🎥 Video Playlist
+        </h2>
 
-<div class="head">
+        <p>
+            স্বাস্থ্য ও যত্ন সম্পর্কে দরকারি ভিডিও দেখুন
+        </p>
 
-<div class="tag">
-ভিডিও কর্নার
-</div>
+    </div>
 
-<h2>
-স্বাস্থ্য ও মেডিসিন বিষয়ক ভিডিও
-</h2>
 
-<p>
-ভিডিওগুলো ডানে-বামে scroll করে দেখতে পারবেন।
-</p>
+    <div class="videoScroll">
 
-</div>
 
+        <!-- VIDEO 1 -->
 
-<div class="videoScroll" id="videoGrid">
+        <article class="videoCard">
 
+            <div class="videoBox">
 
-<!-- VIDEO 1 -->
+                <video controls preload="metadata">
 
-<article class="videoCard">
+                    <source src="videos/health.mp4" type="video/mp4">
 
-<div class="videoBox">
+                    আপনার ব্রাউজার ভিডিও সাপোর্ট করে না।
 
-<div class="videoPlaceholder">
+                </video>
 
-<div class="play">
-▶
-</div>
+            </div>
 
-<b>
-স্বাস্থ্য সচেতনতা
-</b>
+            <div class="videoInfo">
 
-</div>
+                <h3>
+                    স্বাস্থ্য সচেতনতা
+                </h3>
 
-</div>
+                <p>
+                    সুস্থ থাকার জন্য প্রয়োজনীয় কিছু তথ্য।
+                </p>
 
-<div class="videoBody">
+            </div>
 
-<h3>
-স্বাস্থ্য সচেতনতা
-</h3>
+        </article>
 
-<p>
-স্বাস্থ্য সম্পর্কে প্রয়োজনীয় সচেতনতামূলক ভিডিও।
-</p>
 
-</div>
+        <!-- VIDEO 2 -->
 
-</article>
+        <article class="videoCard">
 
+            <div class="videoBox">
 
-<!-- VIDEO 2 -->
+                <video controls preload="metadata">
 
-<article class="videoCard">
+                    <source src="videos/vitamin.mp4" type="video/mp4">
 
-<div class="videoBox">
+                    আপনার ব্রাউজার ভিডিও সাপোর্ট করে না।
 
-<div class="videoPlaceholder">
+                </video>
 
-<div class="play">
-▶
-</div>
+            </div>
 
-<b>
-পণ্য পরিচিতি
-</b>
+            <div class="videoInfo">
 
-</div>
+                <h3>
+                    Vitamin সম্পর্কে জানুন
+                </h3>
 
-</div>
+                <p>
+                    দৈনন্দিন পুষ্টি সম্পর্কে গুরুত্বপূর্ণ তথ্য।
+                </p>
 
-<div class="videoBody">
+            </div>
 
-<h3>
-পণ্য পরিচিতি
-</h3>
+        </article>
 
-<p>
-নিরাময় ছোঁয়ার পণ্য সম্পর্কে বিস্তারিত জানুন।
-</p>
 
-</div>
+        <!-- VIDEO 3 -->
 
-</article>
+        <article class="videoCard">
 
+            <div class="videoBox">
 
-<!-- VIDEO 3 -->
+                <video controls preload="metadata">
 
-<article class="videoCard">
+                    <source src="videos/nutrition.mp4" type="video/mp4">
 
-<div class="videoBox">
+                    আপনার ব্রাউজার ভিডিও সাপোর্ট করে না।
 
-<div class="videoPlaceholder">
+                </video>
 
-<div class="play">
-▶
-</div>
+            </div>
 
-<b>
-Health Tips
-</b>
+            <div class="videoInfo">
 
-</div>
+                <h3>
+                    পুষ্টি ও স্বাস্থ্য
+                </h3>
 
-</div>
+                <p>
+                    ভালো থাকার জন্য পুষ্টির গুরুত্ব।
+                </p>
 
-<div class="videoBody">
+            </div>
 
-<h3>
-Health Tips
-</h3>
+        </article>
 
-<p>
-স্বাস্থ্য ও দৈনন্দিন যত্নের কিছু গুরুত্বপূর্ণ টিপস।
-</p>
 
-</div>
+        <!-- VIDEO 4 -->
 
-</article>
+        <article class="videoCard">
 
+            <div class="videoBox">
 
-<!-- VIDEO 4 -->
+                <video controls preload="metadata">
 
-<article class="videoCard">
+                    <source src="videos/healthy-food.mp4" type="video/mp4">
 
-<div class="videoBox">
+                    আপনার ব্রাউজার ভিডিও সাপোর্ট করে না।
 
-<div class="videoPlaceholder">
+                </video>
 
-<div class="play">
-▶
-</div>
+            </div>
 
-<b>
-Medicine Tips
-</b>
+            <div class="videoInfo">
 
-</div>
+                <h3>
+                    স্বাস্থ্যকর খাবার
+                </h3>
 
-</div>
+                <p>
+                    স্বাস্থ্যকর খাবার বেছে নেওয়ার কিছু টিপস।
+                </p>
 
-<div class="videoBody">
+            </div>
 
-<h3>
-Medicine Tips
-</h3>
+        </article>
 
-<p>
-মেডিসিন ব্যবহারের আগে সাধারণ সচেতনতা।
-</p>
 
-</div>
+        <!-- VIDEO 5 -->
 
-</article>
+        <article class="videoCard">
 
+            <div class="videoBox">
 
-<!-- VIDEO 5 -->
+                <video controls preload="metadata">
 
-<article class="videoCard">
+                    <source src="videos/wellness.mp4" type="video/mp4">
 
-<div class="videoBox">
+                    আপনার ব্রাউজার ভিডিও সাপোর্ট করে না।
 
-<div class="videoPlaceholder">
+                </video>
 
-<div class="play">
-▶
-</div>
+            </div>
 
-<b>
-Wellness Tips
-</b>
+            <div class="videoInfo">
 
-</div>
+                <h3>
+                    Wellness Tips
+                </h3>
 
-</div>
+                <p>
+                    প্রতিদিনের স্বাস্থ্যকর অভ্যাস সম্পর্কে জানুন।
+                </p>
 
-<div class="videoBody">
+            </div>
 
-<h3>
-Wellness Tips
-</h3>
+        </article>
 
-<p>
-স্বাস্থ্য ও সুস্থতার জন্য প্রয়োজনীয় তথ্য।
-</p>
 
-</div>
+        <!-- VIDEO 6 -->
 
-</article>
+        <article class="videoCard">
 
+            <div class="videoBox">
 
-</div>
+                <video controls preload="metadata">
 
-</div>
+                    <source src="videos/health-tips.mp4" type="video/mp4">
+
+                    আপনার ব্রাউজার ভিডিও সাপোর্ট করে না।
+
+                </video>
+
+            </div>
+
+            <div class="videoInfo">
+
+                <h3>
+                    Health Tips
+                </h3>
+
+                <p>
+                    দৈনন্দিন জীবনে কাজে লাগবে এমন স্বাস্থ্য টিপস।
+                </p>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+
+    <div class="viewAll">
+
+        <a href="Videos.html" class="btn btnPrimary">
+            🎬 সব ভিডিও দেখুন
+        </a>
+
+    </div>
 
 </section>
-
 
 
 <!-- ================= PRODUCTS ================= -->
 
-<section class="products" id="products">
+<section class="section" id="products">
 
-<div class="container">
+    <div class="sectionHead">
 
-<div class="head">
+        <h2>
+            🛍️ জনপ্রিয় পণ্য
+        </h2>
 
-<div class="tag">
-আমাদের সব Products
-</div>
+        <p>
+            আমাদের নির্বাচিত কিছু স্বাস্থ্য ও যত্নের পণ্য
+        </p>
 
-<h2>
-আমাদের সব Products
-</h2>
-
-<p>
-Product Search করুন এবং বিস্তারিত দেখতে "বিস্তারিত" বাটনে চাপ দিন।
-</p>
-
-</div>
+    </div>
 
 
-<!-- SEARCH -->
+    <!-- SEARCH -->
 
-<div class="searchBox">
+    <div class="searchBox">
 
-<input
-type="search"
-id="productSearch"
-placeholder="🔍 Product search করুন..."
-oninput="searchProducts()"
->
+        <span class="searchIcon">
+            🔎
+        </span>
 
-<div class="searchIcon">
-🔎
-</div>
+        <input
+            type="text"
+            id="productSearch"
+            placeholder="Product search করুন..."
+            oninput="searchProducts()"
+        >
 
-</div>
-
-
-<!-- PRODUCT VERTICAL SCROLL -->
-
-<div class="productScroll">
-
-<div class="productGrid" id="productGrid">
-</div>
-
-</div>
+    </div>
 
 
-<!-- PAGINATION -->
-
-<div class="pagination" id="pagination">
-</div>
-
-</div>
+    <div
+        class="productGrid"
+        id="productGrid"
+    ></div>
 
 </section>
 
 
+<!-- ================= FEATURES ================= -->
 
-<!-- ================= ORDER ================= -->
+<section class="section">
 
-<section class="orderSec" id="order">
+    <div class="sectionHead">
 
-<div class="container">
+        <h2>
+            কেন নিরাময় ছোঁয়া?
+        </h2>
 
-<div class="orderBox">
+        <p>
+            সহজ অর্ডার ও যত্নশীল সেবার জন্য
+        </p>
 
-<div class="tag">
-অর্ডার করুন
-</div>
-
-<h2>
-আপনার পছন্দের Product Order করুন
-</h2>
-
-<p>
-পছন্দের পণ্য নির্বাচন করে সহজেই Order করতে পারবেন।
-</p>
-
-<a class="btn primary" href="Order.html">
-🛒 Order Now
-</a>
-
-</div>
-
-</div>
-
-</section>
+    </div>
 
 
+    <div class="featureGrid">
 
-<!-- ================= CONTACT ================= -->
+        <div class="featureCard">
 
-<section class="contactSec" id="contact">
+            <div class="featureIcon">
+                🌿
+            </div>
 
-<div class="container">
+            <h3>
+                মানসম্মত পণ্য
+            </h3>
 
-<div class="head">
+            <p>
+                যত্নসহকারে নির্বাচিত স্বাস্থ্য ও
+                যত্নের পণ্য।
+            </p>
 
-<div class="tag">
-যোগাযোগ
-</div>
-
-<h2>
-আমাদের সাথে যোগাযোগ করুন
-</h2>
-
-<p>
-পণ্য, অর্ডার অথবা ডেলিভারি সম্পর্কে জানতে যোগাযোগ করুন।
-</p>
-
-</div>
+        </div>
 
 
-<div class="contactGrid">
+        <div class="featureCard">
+
+            <div class="featureIcon">
+                📦
+            </div>
+
+            <h3>
+                হোম ডেলিভারি
+            </h3>
+
+            <p>
+                দেশের বিভিন্ন স্থানে সহজে
+                পণ্য পৌঁছে দেওয়ার সুবিধা।
+            </p>
+
+        </div>
 
 
-<!-- ADDRESS -->
+        <div class="featureCard">
 
-<div class="contactCard">
+            <div class="featureIcon">
+                💚
+            </div>
 
-<div class="contactIcon">
-📍
-</div>
+            <h3>
+                যত্নশীল সেবা
+            </h3>
 
-<h3>
-Address
-</h3>
+            <p>
+                অর্ডার থেকে ডেলিভারি পর্যন্ত
+                যত্নশীল সেবা।
+            </p>
 
-<p>
-Haydrabad Bridge,<br>
-Tongi, Gazipur
-</p>
+        </div>
 
-</div>
-
-
-<!-- WHATSAPP -->
-
-<div class="contactCard">
-
-<div class="contactIcon">
-💬
-</div>
-
-<h3>
-WhatsApp
-</h3>
-
-<p>
-
-<a
-href="https://wa.me/8801841088731"
-target="_blank"
->
-01841088731
-</a>
-
-</p>
-
-</div>
-
-
-<!-- EMAIL -->
-
-<div class="contactCard">
-
-<div class="contactIcon">
-📧
-</div>
-
-<h3>
-Gmail
-</h3>
-
-<p>
-
-<a href="mailto:niramoychowa@gmail.com">
-niramoychowa@gmail.com
-</a>
-
-</p>
-
-</div>
-
-
-</div>
-
-</div>
+    </div>
 
 </section>
 
 
-</main>
+<!-- ================= CTA ================= -->
 
+<section class="section">
+
+    <div class="cta">
+
+        <h2>
+            আপনার পছন্দের পণ্য অর্ডার করুন
+        </h2>
+
+        <p>
+            সহজেই অর্ডার করুন এবং আমাদের সাথে যোগাযোগ করুন।
+        </p>
+
+        <a
+            href="Order.html"
+            class="btn"
+        >
+            🛒 Order Now
+        </a>
+
+    </div>
+
+</section>
 
 
 <!-- ================= FOOTER ================= -->
 
 <footer>
 
-<div class="footerInner">
+    <div class="footerInner">
 
 
-<div class="footerBrand">
+        <div>
 
-<h3>
-🌿 নিরাময় ছোঁয়া
-</h3>
+            <div class="footerBrand">
+                🌿 নিরাময় ছোঁয়া
+            </div>
 
-<p>
-মানসম্মত পণ্য, প্রয়োজনীয় তথ্য ও সহজ অর্ডার।
-</p>
+            <p class="footerText">
+                স্বাস্থ্য ও যত্নের পণ্য, ভিডিও এবং
+                সহজ অর্ডারের একটি বিশ্বস্ত ঠিকানা।
+            </p>
 
-</div>
-
-
-<div class="footerLinks">
-
-<a href="index.html">
-Home
-</a>
-
-<a href="Videos.html">
-Videos
-</a>
-
-<a href="Products.html">
-Products
-</a>
-
-<a href="Order.html">
-Order
-</a>
-
-<a href="Reviews.html">
-Reviews
-</a>
-
-<a href="About.html">
-About
-</a>
-
-</div>
-
-</div>
+        </div>
 
 
-<div class="copy">
+        <div class="footerCol">
 
-© 2026 Niramoy Chhoya. All Rights Reserved.
+            <h4>
+                Quick Links
+            </h4>
 
-</div>
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="Videos.html">
+                Videos
+            </a>
+
+            <a href="Products.html">
+                Products
+            </a>
+
+            <a href="Order.html">
+                Order
+            </a>
+
+            <a href="Reviews.html">
+                Reviews
+            </a>
+
+            <a href="About.html">
+                About
+            </a>
+
+        </div>
+
+
+        <div class="footerCol">
+
+            <h4>
+                Contact
+            </h4>
+
+            <a href="#">
+                📍 Haydrabad Bridge, Tongi, Gazipur
+            </a>
+
+            <a
+                href="https://wa.me/8801841088731"
+                target="_blank"
+            >
+                💬 WhatsApp: 01841088731
+            </a>
+
+            <a href="mailto:niramoychowa@gmail.com">
+                ✉️ niramoychowa@gmail.com
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="footerBottom">
+        © 2026 Niramoy Chhoya. All Rights Reserved.
+    </div>
 
 </footer>
-
 
 
 <!-- ================= PRODUCT MODAL ================= -->
 
 <div
-class="modal"
-id="modal"
-onclick="closeOutside(event)"
+    class="modal"
+    id="productModal"
+    onclick="closeOutside(event)"
 >
 
-<div class="modalBox">
+    <div class="modalBox">
 
-<button
-class="close"
-onclick="hideModal()"
->
-×
-</button>
-
-
-<img
-id="detailImg"
-class="detailImg hidden"
->
+        <button
+            class="closeBtn"
+            onclick="closeModal()"
+        >
+            ×
+        </button>
 
 
-<div class="pill">
-Product Details
-</div>
+        <img
+            id="detailImg"
+            class="modalImage hidden"
+            alt=""
+        >
 
 
-<h2
-id="detailTitle"
-class="detailTitle"
->
-</h2>
+        <div
+            id="detailEmoji"
+            class="productEmoji"
+            style="text-align:center;"
+        ></div>
 
 
-<div
-id="detailRating"
-class="rating"
->
-</div>
+        <h2 id="detailName"></h2>
 
 
-<div
-id="detailPrice"
-class="detailPrice"
->
-</div>
+        <div id="detailPrice"></div>
 
 
-<p
-id="detailDesc"
-style="color:var(--muted);font-size:14px"
->
-</p>
+        <div
+            id="detailRating"
+            class="rating"
+        ></div>
 
 
-<div
-id="detailText"
-class="detailText"
->
-</div>
+        <div
+            id="detailText"
+            class="modalDetails"
+        ></div>
 
 
-<a
-id="modalOrderBtn"
-href="Order.html"
-class="btn primary"
->
-🛒 এই পণ্যটি Order করুন
-</a>
+        <br>
 
+
+        <a
+            id="detailOrder"
+            href="Order.html"
+            class="btn btnPrimary"
+            style="width:100%;"
+        >
+            🛒 এই পণ্যটি অর্ডার করুন
+        </a>
+
+    </div>
 
 </div>
-
-</div>
-
 
 
 <script>
 
-/* ==================================================
-   15 PRODUCTS
-================================================== */
+/* ================= PRODUCTS ================= */
 
 const products = [
 
-{
-id:1,
-name:"Vitalking Syrup",
-desc:"স্বাস্থ্য ও পুষ্টির জন্য ব্যবহৃত একটি সিরাপ।",
-price:"৳ 350",
-rating:4.8,
-reviews:24,
-emoji:"🍯",
-details:"Vitalking Syrup সম্পর্কে বিস্তারিত তথ্য এখানে থাকবে।\n\nব্যবহার: পণ্যের লেবেল ও নির্দেশনা অনুযায়ী ব্যবহার করুন।\n\nসতর্কতা: প্রয়োজন হলে চিকিৎসক বা ফার্মাসিস্টের পরামর্শ নিন।"
-},
+    {
+        id:1,
+        name:"Vitalking Syrup",
+        desc:"স্বাস্থ্য ও পুষ্টির জন্য ব্যবহৃত একটি সিরাপ।",
+        price:265,
+        originalPrice:300,
+        rating:4.8,
+        reviews:24,
+        emoji:"🍯",
+        image:"images/vitalking-syrup.jpg",
+        details:"Vitalking Syrup সম্পর্কে বিস্তারিত তথ্য এখানে থাকবে।\n\nব্যবহার: পণ্যের লেবেল ও নির্দেশনা অনুযায়ী ব্যবহার করুন।\n\nসতর্কতা: প্রয়োজন হলে চিকিৎসক বা ফার্মাসিস্টের পরামর্শ নিন।"
+    },
 
-{
-id:2,
-name:"Herbal Care Syrup",
-desc:"হারবাল উপাদানভিত্তিক স্বাস্থ্যসেবা সিরাপ।",
-price:"৳ 420",
-rating:4.7,
-reviews:18,
-emoji:"🌿",
-details:"Herbal Care Syrup সম্পর্কে বিস্তারিত তথ্য এখানে থাকবে।\n\nব্যবহার: লেবেলের নির্দেশনা অনুসরণ করুন।"
-},
 
-{
-id:3,
-name:"Vitamin C Tablet",
-desc:"দৈনন্দিন ভিটামিন ও ওয়েলনেসের জন্য ট্যাবলেট।",
-price:"৳ 280",
-rating:4.8,
-reviews:32,
-emoji:"💊",
-details:"Vitamin C Tablet-এর বিস্তারিত তথ্য এখানে থাকবে।\n\nব্যবহারের আগে পণ্যের লেবেল ও প্রয়োজনীয় নির্দেশনা অনুসরণ করুন।"
-},
+    {
+        id:2,
+        name:"Safa Khurma",
+        desc:"মানসম্মত খেজুরের একটি পণ্য।",
+        price:650,
+        originalPrice:900,
+        rating:4.9,
+        reviews:20,
+        emoji:"🌴",
+        image:"images/safa-khurma.jpg",
+        details:"Safa Khurma সম্পর্কে বিস্তারিত তথ্য এখানে থাকবে।\n\nব্যবহার: পণ্যের প্যাকেট ও নির্দেশনা অনুযায়ী ব্যবহার করুন।\n\nসংরক্ষণ: ঠান্ডা ও শুষ্ক স্থানে রাখুন।"
+    },
 
-{
-id:4,
-name:"Multivitamin Capsule",
-desc:"দৈনন্দিন পুষ্টি ও ওয়েলনেসের জন্য ক্যাপসুল।",
-price:"৳ 550",
-rating:4.9,
-reviews:27,
-emoji:"💊",
-details:"Multivitamin Capsule সম্পর্কে বিস্তারিত তথ্য এখানে থাকবে।"
-},
 
-{
-id:5,
-name:"Herbal Tablet",
-desc:"প্রাকৃতিক উপাদানভিত্তিক হারবাল ট্যাবলেট।",
-price:"৳ 300",
-rating:4.6,
-reviews:15,
-emoji:"🌿",
-details:"Herbal Tablet-এর বিস্তারিত তথ্য এখানে থাকবে।\n\nব্যবহারের আগে পণ্যের নির্দেশনা অনুসরণ করুন।"
-},
+    {
+        id:3,
+        name:"Herbal Care Syrup",
+        desc:"হারবাল কেয়ারের জন্য একটি সিরাপ।",
+        price:420,
+        rating:4.7,
+        reviews:18,
+        emoji:"🌿",
+        details:"Herbal Care Syrup সম্পর্কে বিস্তারিত তথ্য এখানে থাকবে।"
+    },
 
-{
-id:6,
-name:"Vitamin Drops",
-desc:"সহজে ব্যবহারযোগ্য ভিটামিন ড্রপস।",
-price:"৳ 250",
-rating:4.7,
-reviews:19,
-emoji:"💧",
-details:"Vitamin Drops সম্পর্কে বিস্তারিত তথ্য এখানে থাকবে।"
-},
 
-{
-id:7,
-name:"Skin Care Cream",
-desc:"দৈনন্দিন ত্বকের যত্নের জন্য ক্রিম।",
-price:"৳ 320",
-rating:4.8,
-reviews:21,
-emoji:"🧴",
-details:"Skin Care Cream ত্বকের যত্নের জন্য ব্যবহার করা হয়।\n\nব্যবহারের আগে পণ্যের লেবেল অনুসরণ করুন।"
-},
+    {
+        id:4,
+        name:"Vitamin C Tablet",
+        desc:"দৈনন্দিন পুষ্টির জন্য Vitamin C Tablet।",
+        price:280,
+        rating:4.8,
+        reviews:32,
+        emoji:"💊",
+        details:"Vitamin C Tablet সম্পর্কে বিস্তারিত তথ্য এখানে থাকবে।"
+    },
 
-{
-id:8,
-name:"Herbal Lotion",
-desc:"দৈনন্দিন ব্যবহারের জন্য হারবাল লোশন।",
-price:"৳ 380",
-rating:4.6,
-reviews:14,
-emoji:"🌱",
-details:"Herbal Lotion সম্পর্কে বিস্তারিত তথ্য এখানে থাকবে।"
-},
 
-{
-id:9,
-name:"Health Suspension",
-desc:"স্বাস্থ্যসেবার জন্য ব্যবহৃত suspension product।",
-price:"৳ 290",
-rating:4.5,
-reviews:11,
-emoji:"🧪",
-details:"Health Suspension-এর বিস্তারিত তথ্য এখানে থাকবে।\n\nব্যবহারের আগে লেবেলের নির্দেশনা অনুসরণ করুন।"
-},
+    {
+        id:5,
+        name:"Multivitamin Capsule",
+        desc:"দৈনন্দিন পুষ্টির জন্য একটি মাল্টিভিটামিন ক্যাপসুল।",
+        price:550,
+        rating:4.9,
+        reviews:27,
+        emoji:"💊",
+        details:"Multivitamin Capsule সম্পর্কে বিস্তারিত তথ্য এখানে থাকবে।"
+    },
 
-{
-id:10,
-name:"Wellness Powder",
-desc:"দৈনন্দিন ওয়েলনেসের জন্য পাউডার।",
-price:"৳ 550",
-rating:4.8,
-reviews:23,
-emoji:"🥛",
-details:"Wellness Powder সম্পর্কে বিস্তারিত তথ্য এখানে থাকবে।"
-},
 
-{
-id:11,
-name:"Herbal Spray",
-desc:"সহজে ব্যবহারযোগ্য হারবাল স্প্রে।",
-price:"৳ 420",
-rating:4.7,
-reviews:16,
-emoji:"🌿",
-details:"Herbal Spray-এর বিস্তারিত তথ্য এখানে থাকবে।"
-},
+    {
+        id:6,
+        name:"Herbal Tablet",
+        desc:"হারবাল কেয়ারের জন্য ট্যাবলেট।",
+        price:300,
+        rating:4.6,
+        reviews:15,
+        emoji:"🌿",
+        details:"Herbal Tablet সম্পর্কে বিস্তারিত তথ্য এখানে থাকবে।"
+    },
 
-{
-id:12,
-name:"Health Capsule",
-desc:"স্বাস্থ্য ও ওয়েলনেসের জন্য ক্যাপসুল।",
-price:"৳ 450",
-rating:4.6,
-reviews:13,
-emoji:"💊",
-details:"Health Capsule সম্পর্কে প্রয়োজনীয় তথ্য এখানে থাকবে।"
-},
 
-{
-id:13,
-name:"Nature Care Oil",
-desc:"দৈনন্দিন যত্নের জন্য নির্বাচিত কেয়ার অয়েল।",
-price:"৳ 350",
-rating:4.7,
-reviews:17,
-emoji:"🫒",
-details:"Nature Care Oil সম্পর্কে বিস্তারিত তথ্য এখানে থাকবে।"
-},
+    {
+        id:7,
+        name:"Vitamin Drops",
+        desc:"সহজ ব্যবহারের জন্য Vitamin Drops।",
+        price:250,
+        rating:4.7,
+        reviews:19,
+        emoji:"💧",
+        details:"Vitamin Drops সম্পর্কে বিস্তারিত তথ্য এখানে থাকবে।"
+    },
 
-{
-id:14,
-name:"Herbal Care Cream",
-desc:"হারবাল উপাদানভিত্তিক কেয়ার ক্রিম।",
-price:"৳ 390",
-rating:4.8,
-reviews:20,
-emoji:"🍃",
-details:"Herbal Care Cream-এর বিস্তারিত তথ্য এখানে থাকবে।"
-},
 
-{
-id:15,
-name:"Vitamin & Wellness",
-desc:"স্বাস্থ্য ও পুষ্টি সম্পর্কিত ওয়েলনেস পণ্য।",
-price:"৳ 500",
-rating:4.9,
-reviews:31,
-emoji:"💚",
-details:"Vitamin & Wellness সম্পর্কে সম্পূর্ণ বিবরণ এখানে থাকবে।\n\nব্যবহারের আগে পণ্যের লেবেল ও প্রয়োজনীয় নির্দেশনা অনুসরণ করুন।"
-}
+    {
+        id:8,
+        name:"Skin Care Cream",
+        desc:"ত্বকের যত্নের জন্য একটি কেয়ার ক্রিম।",
+        price:320,
+        rating:4.8,
+        reviews:21,
+        emoji:"🧴",
+        details:"Skin Care Cream সম্পর্কে বিস্তারিত তথ্য এখানে থাকবে।"
+    },
+
+
+    {
+        id:9,
+        name:"Herbal Lotion",
+        desc:"দৈনন্দিন স্কিন কেয়ারের জন্য হারবাল লোশন।",
+        price:380,
+        rating:4.6,
+        reviews:14,
+        emoji:"🌱",
+        details:"Herbal Lotion সম্পর্কে বিস্তারিত তথ্য এখানে থাকবে।"
+    },
+
+
+    {
+        id:10,
+        name:"Health Suspension",
+        desc:"স্বাস্থ্য ও পুষ্টির জন্য একটি সাসপেনশন।",
+        price:290,
+        rating:4.5,
+        reviews:11,
+        emoji:"🧪",
+        details:"Health Suspension সম্পর্কে বিস্তারিত তথ্য এখানে থাকবে।"
+    },
+
+
+    {
+        id:11,
+        name:"Wellness Powder",
+        desc:"দৈনন্দিন পুষ্টির জন্য Wellness Powder।",
+        price:550,
+        rating:4.8,
+        reviews:23,
+        emoji:"🥛",
+        details:"Wellness Powder সম্পর্কে বিস্তারিত তথ্য এখানে থাকবে।"
+    },
+
+
+    {
+        id:12,
+        name:"Herbal Spray",
+        desc:"হারবাল কেয়ারের জন্য স্প্রে।",
+        price:420,
+        rating:4.7,
+        reviews:16,
+        emoji:"🌿",
+        details:"Herbal Spray সম্পর্কে বিস্তারিত তথ্য এখানে থাকবে।"
+    },
+
+
+    {
+        id:13,
+        name:"Health Capsule",
+        desc:"দৈনন্দিন স্বাস্থ্য ও পুষ্টির জন্য ক্যাপসুল।",
+        price:450,
+        rating:4.6,
+        reviews:13,
+        emoji:"💊",
+        details:"Health Capsule সম্পর্কে বিস্তারিত তথ্য এখানে থাকবে।"
+    },
+
+
+    {
+        id:14,
+        name:"Nature Care Oil",
+        desc:"প্রাকৃতিক যত্নের জন্য একটি কেয়ার অয়েল।",
+        price:350,
+        rating:4.7,
+        reviews:17,
+        emoji:"🫒",
+        details:"Nature Care Oil সম্পর্কে বিস্তারিত তথ্য এখানে থাকবে।"
+    },
+
+
+    {
+        id:15,
+        name:"Herbal Care Cream",
+        desc:"দৈনন্দিন যত্নের জন্য Herbal Care Cream।",
+        price:390,
+        rating:4.8,
+        reviews:20,
+        emoji:"🍃",
+        details:"Herbal Care Cream সম্পর্কে বিস্তারিত তথ্য এখানে থাকবে।"
+    }
 
 ];
 
 
-/* ==================================================
-   SETTINGS
-================================================== */
+/* ================= ESCAPE ================= */
 
-const productsPerPage = 10;
+function escapeHTML(text){
 
-let currentPage = 1;
-
-let filteredProducts = [...products];
-
-
-/* ==================================================
-   STAR RATING
-================================================== */
-
-function getStars(rating){
-
-    const rounded = Math.round(rating);
-
-    return "★".repeat(rounded) +
-           "☆".repeat(5-rounded);
-}
-
-
-/* ==================================================
-   ESCAPE HTML
-================================================== */
-
-function escapeHTML(value){
-
-    return String(value ?? "")
-    .replace(/[&<>"']/g,function(c){
-
-        return {
-            "&":"&amp;",
-            "<":"&lt;",
-            ">":"&gt;",
-            '"':"&quot;",
-            "'":"&#039;"
-        }[c];
-
-    });
+    return String(text)
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
 
 }
 
 
-/* ==================================================
-   RENDER PRODUCTS
-================================================== */
+/* ================= DISCOUNT ================= */
 
-function renderProducts(){
+function getDiscount(product){
+
+    if(!product.originalPrice){
+        return "";
+    }
+
+    const discount =
+        ((product.originalPrice - product.price) /
+        product.originalPrice) * 100;
+
+    return Math.round(discount) + "% OFF";
+
+}
+
+
+/* ================= PRICE ================= */
+
+function priceHTML(product){
+
+    if(product.originalPrice){
+
+        return `
+
+            <div class="priceBox">
+
+                <span class="originalPrice">
+                    ৳ ${product.originalPrice}
+                </span>
+
+                <span class="discountPrice">
+                    ৳ ${product.price}
+                </span>
+
+                <span class="discountBadge">
+                    ${getDiscount(product)}
+                </span>
+
+            </div>
+
+        `;
+
+    }
+
+
+    return `
+
+        <div class="priceBox">
+
+            <span class="discountPrice">
+                ৳ ${product.price}
+            </span>
+
+        </div>
+
+    `;
+
+}
+
+
+/* ================= RENDER ================= */
+
+function renderProducts(list){
 
     const grid =
         document.getElementById("productGrid");
 
 
-    const start =
-        (currentPage - 1) * productsPerPage;
-
-
-    const end =
-        start + productsPerPage;
-
-
-    const pageProducts =
-        filteredProducts.slice(start,end);
-
-
-    if(pageProducts.length === 0){
+    if(!list.length){
 
         grid.innerHTML = `
-        <div class="noProduct">
-            😔 কোনো Product পাওয়া যায়নি।
-        </div>
+
+            <div class="noResult">
+                😔 কোনো পণ্য পাওয়া যায়নি।
+            </div>
+
         `;
 
-        renderPagination();
-
         return;
+
     }
 
 
-    grid.innerHTML =
-    pageProducts.map(function(p){
+    grid.innerHTML = list.map(function(p){
 
         return `
 
-        <article class="productCard">
+            <article class="productCard">
 
-            <div class="productPic">
+                <div class="productPic">
 
-                <div class="productEmoji">
-                    ${p.emoji || "💊"}
-                </div>
+                    ${
+                        p.image
 
-            </div>
+                        ? `
 
+                            <img
+                                src="${p.image}"
+                                alt="${escapeHTML(p.name)}"
+                                onerror="this.style.display='none';this.nextElementSibling.style.display='block';"
+                            >
 
-            <div class="productBody">
+                            <div
+                                class="productEmoji"
+                                style="display:none;"
+                            >
+                                ${p.emoji || "💊"}
+                            </div>
 
-                <span class="pill">
-                    Health Product
-                </span>
+                        `
 
+                        : `
 
-                <h3>
-                    ${escapeHTML(p.name)}
-                </h3>
+                            <div class="productEmoji">
+                                ${p.emoji || "💊"}
+                            </div>
 
-
-                <p class="productDesc">
-                    ${escapeHTML(p.desc)}
-                </p>
-
-
-                <div class="rating">
-
-                    ${getStars(p.rating)}
-
-                    <span>
-                        ${p.rating} (${p.reviews})
-                    </span>
+                        `
+                    }
 
                 </div>
 
 
-                <div class="productFoot">
+                <div class="productBody">
 
-                    <span class="price">
-                        ${escapeHTML(p.price)}
-                    </span>
+                    <h3>
+                        ${escapeHTML(p.name)}
+                    </h3>
 
 
-                    <button
-                    class="detailsBtn"
-                    onclick="showProduct(${p.id})"
-                    >
-                        বিস্তারিত
-                    </button>
+                    <p class="productDesc">
+                        ${escapeHTML(p.desc)}
+                    </p>
+
+
+                    <div class="rating">
+
+                        ⭐ ${p.rating}
+
+                        <span>
+                            (${p.reviews} reviews)
+                        </span>
+
+                    </div>
+
+
+                    ${priceHTML(p)}
+
+
+                    <div class="productActions">
+
+                        <button
+                            class="detailsBtn"
+                            onclick="showProduct(${p.id})"
+                        >
+                            Details
+                        </button>
+
+
+                        <a
+                            class="orderSmallBtn"
+                            href="Order.html?product=${encodeURIComponent(p.name)}"
+                        >
+                            Order
+                        </a>
+
+                    </div>
 
                 </div>
 
-            </div>
-
-        </article>
+            </article>
 
         `;
 
     }).join("");
 
-
-    renderPagination();
 }
 
 
-/* ==================================================
-   PAGINATION
-================================================== */
-
-function renderPagination(){
-
-    const pagination =
-        document.getElementById("pagination");
-
-
-    const totalPages =
-        Math.ceil(
-            filteredProducts.length /
-            productsPerPage
-        );
-
-
-    if(totalPages <= 1){
-
-        pagination.innerHTML = "";
-
-        return;
-    }
-
-
-    let html = "";
-
-
-    for(let i=1;i<=totalPages;i++){
-
-        html += `
-
-        <button
-        class="pageBtn ${
-            i === currentPage ? "active" : ""
-        }"
-        onclick="goToPage(${i})"
-        >
-            ${i}
-        </button>
-
-        `;
-
-    }
-
-
-    pagination.innerHTML = html;
-}
-
-
-/* ==================================================
-   CHANGE PAGE
-================================================== */
-
-function goToPage(page){
-
-    currentPage = page;
-
-    renderProducts();
-
-
-    document
-    .getElementById("products")
-    .scrollIntoView({
-        behavior:"smooth"
-    });
-}
-
-
-/* ==================================================
-   SEARCH PRODUCTS
-================================================== */
+/* ================= SEARCH ================= */
 
 function searchProducts(){
 
-    const value =
+    const query =
         document
         .getElementById("productSearch")
         .value
@@ -2107,26 +1821,32 @@ function searchProducts(){
         .trim();
 
 
-    filteredProducts =
-        products.filter(function(p){
+    const filtered =
+        products.filter(function(product){
 
             return (
-                p.name.toLowerCase().includes(value) ||
-                p.desc.toLowerCase().includes(value)
+
+                product.name
+                .toLowerCase()
+                .includes(query)
+
+                ||
+
+                product.desc
+                .toLowerCase()
+                .includes(query)
+
             );
 
         });
 
 
-    currentPage = 1;
+    renderProducts(filtered);
 
-    renderProducts();
 }
 
 
-/* ==================================================
-   SHOW PRODUCT DETAILS
-================================================== */
+/* ================= SHOW PRODUCT ================= */
 
 function showProduct(id){
 
@@ -2136,117 +1856,113 @@ function showProduct(id){
         });
 
 
-    if(!product) return;
+    if(!product){
+        return;
+    }
 
 
-    document
-    .getElementById("detailTitle")
-    .textContent = product.name;
+    document.getElementById("detailName").textContent =
+        product.name;
 
 
-    document
-    .getElementById("detailDesc")
-    .textContent = product.desc;
+    document.getElementById("detailPrice").innerHTML =
+        priceHTML(product);
 
 
-    document
-    .getElementById("detailPrice")
-    .textContent = product.price;
+    document.getElementById("detailRating").innerHTML =
+        `⭐ ${product.rating}
+        <span>(${product.reviews} reviews)</span>`;
 
 
-    document
-    .getElementById("detailRating")
-    .innerHTML =
-        getStars(product.rating) +
-        ` <span>
-        ${product.rating} (${product.reviews} reviews)
-        </span>`;
-
-
-    document
-    .getElementById("detailText")
-    .textContent =
-        product.details ||
-        "বিস্তারিত তথ্য শীঘ্রই যোগ করা হবে।";
+    document.getElementById("detailText").textContent =
+        product.details || "";
 
 
     const image =
         document.getElementById("detailImg");
 
 
+    const emoji =
+        document.getElementById("detailEmoji");
+
+
     if(product.image){
 
         image.src = product.image;
-
+        image.alt = product.name;
         image.classList.remove("hidden");
+
+        emoji.style.display = "none";
 
     }else{
 
         image.classList.add("hidden");
 
+        emoji.textContent =
+            product.emoji || "💊";
+
+        emoji.style.display = "block";
+
     }
 
 
-    /*
-       Order page-এ product name পাঠানো হচ্ছে
-    */
-
-    document
-    .getElementById("modalOrderBtn")
-    .href =
+    document.getElementById("detailOrder").href =
         "Order.html?product=" +
         encodeURIComponent(product.name);
 
 
     document
-    .getElementById("modal")
-    .classList.add("show");
+        .getElementById("productModal")
+        .classList.add("show");
+
 }
 
 
-/* ==================================================
-   HIDE MODAL
-================================================== */
+/* ================= CLOSE MODAL ================= */
 
-function hideModal(){
+function closeModal(){
 
     document
-    .getElementById("modal")
-    .classList.remove("show");
+        .getElementById("productModal")
+        .classList.remove("show");
+
 }
 
-
-/* ==================================================
-   CLOSE MODAL OUTSIDE
-================================================== */
 
 function closeOutside(event){
 
-    if(event.target.id === "modal"){
-
-        hideModal();
-
+    if(event.target.id === "productModal"){
+        closeModal();
     }
+
 }
 
 
-/* ==================================================
-   MOBILE MENU
-================================================== */
+/* ================= MOBILE MENU ================= */
 
 function toggleMenu(){
 
     document
-    .getElementById("links")
-    .classList.toggle("open");
+        .getElementById("navLinks")
+        .classList.toggle("show");
+
 }
 
 
-/* ==================================================
-   INITIAL LOAD
-================================================== */
+/* ================= ESCAPE KEY ================= */
 
-renderProducts();
+document.addEventListener("keydown",function(event){
+
+    if(event.key === "Escape"){
+        closeModal();
+    }
+
+});
+
+
+/* ================= LOAD PRODUCTS ================= */
+
+renderProducts(products);
 
 </script>
 
