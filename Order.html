@@ -4,16 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>অর্ডার করুন | নিরাময় ছোঁয়া</title>
+    <title>Order | নিরাময় ছোঁয়া</title>
 
-    <meta name="description"
-          content="নিরাময় ছোঁয়া থেকে সহজে আপনার পছন্দের পণ্য অর্ডার করুন।">
+    <meta name="description" content="নিরাময় ছোঁয়া থেকে সহজে স্বাস্থ্য ও যত্নের পণ্য অর্ডার করুন।">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Montserrat:wght@500;600;700&display=swap"
-          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
 
     <style>
         :root{
@@ -36,7 +34,7 @@
 
         body{
             font-family:"Hind Siliguri",sans-serif;
-            background:#f7fbf8;
+            background:#f8fbf9;
             color:var(--text);
             line-height:1.6;
         }
@@ -46,11 +44,18 @@
             color:inherit;
         }
 
+        button,
+        input,
+        select,
+        textarea{
+            font-family:inherit;
+        }
+
         .topbar{
             background:var(--dark);
             color:white;
             text-align:center;
-            padding:8px 15px;
+            padding:7px 12px;
             font-size:14px;
         }
 
@@ -59,352 +64,486 @@
             position:sticky;
             top:0;
             z-index:1000;
-            box-shadow:0 3px 15px rgba(0,0,0,.06);
+            box-shadow:0 3px 15px rgba(0,0,0,.05);
         }
 
-        .navbar{
-            max-width:1180px;
+        .nav{
+            max-width:1150px;
             margin:auto;
-            min-height:72px;
+            padding:13px 20px;
             display:flex;
             align-items:center;
             justify-content:space-between;
-            padding:0 20px;
-        }
-
-        .brand{
-            display:flex;
-            align-items:center;
-            gap:10px;
+            gap:20px;
         }
 
         .logo{
-            width:45px;
-            height:45px;
+            display:flex;
+            align-items:center;
+            gap:10px;
+            font-weight:700;
+            font-size:21px;
+            color:var(--dark);
+        }
+
+        .logoIcon{
+            width:42px;
+            height:42px;
             border-radius:50%;
             background:var(--green);
             color:white;
             display:flex;
             align-items:center;
             justify-content:center;
-            font-size:23px;
+            font-size:22px;
         }
 
-        .brand-text h2{
-            color:var(--dark);
-            font-size:21px;
-            line-height:1.1;
-        }
-
-        .brand-text span{
-            font-family:Montserrat,sans-serif;
-            color:var(--muted);
-            font-size:10px;
-            letter-spacing:.5px;
-        }
-
-        nav{
+        .navLinks{
             display:flex;
             align-items:center;
-            gap:7px;
+            gap:6px;
         }
 
-        nav a{
-            padding:9px 12px;
-            border-radius:9px;
-            font-size:15px;
-            font-weight:500;
+        .navLinks a{
+            padding:8px 12px;
+            border-radius:8px;
+            font-weight:600;
+            color:#405149;
             transition:.2s;
         }
 
-        nav a:hover{
+        .navLinks a:hover,
+        .navLinks a.active{
             background:var(--light);
             color:var(--green);
         }
 
-        nav a.active{
-            color:var(--green);
-            font-weight:700;
-        }
-
-        nav a.order-link{
-            background:var(--green);
-            color:white;
-            padding:10px 16px;
-        }
-
-        nav a.order-link:hover{
-            background:var(--green-dark);
-        }
-
-        .menu-btn{
-            display:none;
-            border:0;
-            background:none;
-            font-size:27px;
-            cursor:pointer;
-        }
-
-        .hero{
+        .pageHero{
             background:linear-gradient(135deg,#eef9f2,#ffffff);
-            padding:55px 20px 45px;
+            padding:55px 20px;
             text-align:center;
+            border-bottom:1px solid var(--border);
         }
 
-        .hero h1{
+        .pageHero h1{
             font-size:38px;
             color:var(--dark);
             margin-bottom:8px;
         }
 
-        .hero p{
+        .pageHero p{
             color:var(--muted);
-            max-width:600px;
+            max-width:650px;
             margin:auto;
             font-size:16px;
         }
 
-        .container{
-            max-width:850px;
-            margin:40px auto;
+        .orderSection{
+            max-width:1100px;
+            margin:45px auto 80px;
             padding:0 20px;
         }
 
-        .order-card{
+        .orderGrid{
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:25px;
+            align-items:start;
+        }
+
+        .card{
             background:white;
             border:1px solid var(--border);
-            border-radius:20px;
-            padding:30px;
+            border-radius:18px;
+            padding:25px;
             box-shadow:var(--shadow);
         }
 
-        .section-title{
+        .cardTitle{
+            font-size:23px;
             color:var(--dark);
-            font-size:24px;
-            margin-bottom:22px;
+            margin-bottom:20px;
             font-weight:700;
         }
 
-        .form-group{
-            margin-bottom:19px;
+        .formGroup{
+            margin-bottom:17px;
         }
 
-        label{
+        .formGroup label{
             display:block;
             margin-bottom:7px;
-            font-size:15px;
             font-weight:600;
-            color:var(--dark);
+            color:#30453b;
         }
 
-        input,
-        select,
-        textarea{
+        .formGroup input,
+        .formGroup select,
+        .formGroup textarea{
             width:100%;
             border:1px solid var(--border);
             border-radius:10px;
-            padding:12px 14px;
-            font-family:"Hind Siliguri",sans-serif;
-            font-size:16px;
+            padding:12px 13px;
             outline:none;
-            background:white;
+            font-size:15px;
+            background:#fff;
             color:var(--text);
             transition:.2s;
         }
 
-        input:focus,
-        select:focus,
-        textarea:focus{
+        .formGroup input:focus,
+        .formGroup select:focus,
+        .formGroup textarea:focus{
             border-color:var(--green);
             box-shadow:0 0 0 3px rgba(17,131,74,.08);
         }
 
-        textarea{
+        .formGroup textarea{
             resize:vertical;
-            min-height:95px;
+            min-height:100px;
         }
 
-        .price-table{
-            width:100%;
-            border-collapse:collapse;
-            margin:10px 0 25px;
-            overflow:hidden;
+        .productBox{
+            border:1px solid var(--border);
+            border-radius:14px;
+            padding:15px;
+            margin-bottom:20px;
+            background:#fbfdfc;
+        }
+
+        .productTop{
+            display:flex;
+            gap:14px;
+            align-items:center;
+        }
+
+        .productImage{
+            width:75px;
+            height:75px;
             border-radius:12px;
             border:1px solid var(--border);
+            object-fit:cover;
+            background:#eef5f0;
         }
 
-        .price-table th,
-        .price-table td{
-            padding:13px 12px;
-            border-bottom:1px solid var(--border);
-            text-align:left;
-        }
-
-        .price-table th{
-            background:var(--light);
+        .productName{
+            font-weight:700;
+            font-size:17px;
             color:var(--dark);
+        }
+
+        .productPrice{
+            color:var(--green);
             font-weight:700;
+            margin-top:2px;
         }
 
-        .price-table tr:last-child td{
-            border-bottom:0;
+        .quantityRow{
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            margin-top:16px;
+            gap:15px;
         }
 
-        .total-row td{
-            font-weight:700;
-            font-size:18px;
-            color:var(--green-dark);
-            background:#f5fbf7;
+        .quantityLabel{
+            font-weight:600;
         }
 
-        .whatsapp-btn{
-            width:100%;
+        .quantityControl{
+            display:flex;
+            align-items:center;
+            border:1px solid var(--border);
+            border-radius:9px;
+            overflow:hidden;
+            background:white;
+        }
+
+        .quantityControl button{
+            width:38px;
+            height:40px;
             border:0;
-            background:#25D366;
-            color:white;
-            padding:14px 20px;
-            border-radius:12px;
-            font-family:"Hind Siliguri",sans-serif;
-            font-size:18px;
+            background:var(--light);
+            color:var(--green-dark);
+            font-size:21px;
+            cursor:pointer;
+            font-weight:700;
+        }
+
+        .quantityControl button:hover{
+            background:#dcefe3;
+        }
+
+        .quantityControl input{
+            width:55px;
+            height:40px;
+            border:0;
+            border-left:1px solid var(--border);
+            border-right:1px solid var(--border);
+            text-align:center;
+            outline:none;
+            font-size:16px;
+            font-weight:700;
+            color:var(--dark);
+        }
+
+        /* Remove browser number arrows */
+        .quantityControl input::-webkit-outer-spin-button,
+        .quantityControl input::-webkit-inner-spin-button{
+            -webkit-appearance:none;
+            margin:0;
+        }
+
+        .quantityControl input[type=number]{
+            -moz-appearance:textfield;
+            appearance:textfield;
+        }
+
+        .summary{
+            margin-top:20px;
+            border-top:1px solid var(--border);
+            padding-top:18px;
+        }
+
+        .summaryRow{
+            display:flex;
+            justify-content:space-between;
+            gap:15px;
+            margin-bottom:10px;
+            color:#53625b;
+        }
+
+        .summaryRow.total{
+            margin-top:12px;
+            padding-top:13px;
+            border-top:1px dashed var(--border);
+            font-size:21px;
+            font-weight:700;
+            color:var(--dark);
+        }
+
+        .orderButtons{
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:12px;
+            margin-top:22px;
+        }
+
+        .orderBtn{
+            border:0;
+            border-radius:11px;
+            padding:13px 15px;
+            font-size:16px;
             font-weight:700;
             cursor:pointer;
             transition:.2s;
-            margin-top:5px;
         }
 
-        .whatsapp-btn:hover{
-            background:#1ebe5d;
-            transform:translateY(-1px);
+        .whatsappBtn{
+            background:#25D366;
+            color:white;
         }
 
-        .note{
-            text-align:center;
-            color:var(--muted);
+        .whatsappBtn:hover{
+            background:#1db954;
+        }
+
+        .emailBtn{
+            background:var(--green);
+            color:white;
+        }
+
+        .emailBtn:hover{
+            background:var(--green-dark);
+        }
+
+        .orderBtn:disabled{
+            opacity:.65;
+            cursor:not-allowed;
+        }
+
+        .smallNote{
+            margin-top:15px;
+            padding:12px;
+            border-radius:10px;
+            background:var(--light);
+            color:#496056;
             font-size:13px;
-            margin-top:12px;
+        }
+
+        .successMessage{
+            display:none;
+            margin-top:18px;
+            padding:14px;
+            border-radius:10px;
+            background:#e9f8ef;
+            color:#116b3e;
+            border:1px solid #ccebd8;
+            font-weight:600;
+        }
+
+        .errorMessage{
+            display:none;
+            margin-top:18px;
+            padding:14px;
+            border-radius:10px;
+            background:#fff1f1;
+            color:#b42318;
+            border:1px solid #f1cccc;
+            font-weight:600;
         }
 
         footer{
             background:var(--dark);
             color:white;
-            margin-top:60px;
-            padding:45px 20px 20px;
+            padding:40px 20px 25px;
         }
 
-        .footer-inner{
-            max-width:1180px;
+        .footerInner{
+            max-width:1150px;
             margin:auto;
             display:grid;
             grid-template-columns:1.3fr 1fr 1fr;
-            gap:35px;
+            gap:30px;
         }
 
-        footer h3{
-            margin-bottom:12px;
+        .footerTitle{
             font-size:20px;
+            font-weight:700;
+            margin-bottom:12px;
         }
 
-        footer p,
-        footer a{
-            color:#cbd9d1;
+        .footerText{
+            color:#c8d8d0;
             font-size:14px;
         }
 
-        footer a:hover{
+        .footerLinks{
+            display:flex;
+            flex-direction:column;
+            gap:7px;
+            color:#c8d8d0;
+            font-size:14px;
+        }
+
+        .footerLinks a:hover{
             color:white;
         }
 
-        .footer-links{
-            display:flex;
-            flex-direction:column;
-            gap:5px;
+        .copyright{
+            max-width:1150px;
+            margin:30px auto 0;
+            padding-top:18px;
+            border-top:1px solid rgba(255,255,255,.12);
+            text-align:center;
+            color:#b8c9c1;
+            font-size:13px;
         }
 
-        .copyright{
-            border-top:1px solid rgba(255,255,255,.12);
-            margin-top:30px;
-            padding-top:18px;
-            text-align:center;
-            color:#aebdb5;
-            font-size:13px;
+        .mobileNav{
+            display:none;
         }
 
         @media(max-width:800px){
 
-            .menu-btn{
-                display:block;
+            .nav{
+                padding:10px 15px;
             }
 
-            nav{
+            .navLinks{
                 display:none;
-                position:absolute;
-                top:72px;
-                left:0;
-                right:0;
-                background:white;
-                padding:12px 20px 18px;
-                box-shadow:0 8px 20px rgba(0,0,0,.08);
-                flex-direction:column;
-                align-items:stretch;
             }
 
-            nav.show{
-                display:flex;
+            .pageHero{
+                padding:40px 18px;
             }
 
-            nav a{
-                width:100%;
-            }
-
-            .hero h1{
+            .pageHero h1{
                 font-size:30px;
             }
 
-            .order-card{
-                padding:20px;
-            }
-
-            .price-table{
-                font-size:14px;
-            }
-
-            .price-table th,
-            .price-table td{
-                padding:10px 7px;
-            }
-
-            .footer-inner{
+            .orderGrid{
                 grid-template-columns:1fr;
-                gap:25px;
+            }
+
+            .orderSection{
+                margin-top:30px;
+                margin-bottom:95px;
+                padding:0 14px;
+            }
+
+            .card{
+                padding:19px;
+                border-radius:15px;
+            }
+
+            .orderButtons{
+                grid-template-columns:1fr;
+            }
+
+            .footerInner{
+                grid-template-columns:1fr;
+                gap:22px;
+            }
+
+            .mobileNav{
+                display:flex;
+                position:fixed;
+                bottom:0;
+                left:0;
+                right:0;
+                z-index:2000;
+                background:white;
+                border-top:1px solid var(--border);
+                box-shadow:0 -5px 20px rgba(0,0,0,.08);
+                justify-content:space-around;
+                padding:7px 4px;
+            }
+
+            .mobileNav a{
+                display:flex;
+                flex-direction:column;
+                align-items:center;
+                justify-content:center;
+                gap:1px;
+                font-size:11px;
+                color:#68766f;
+                min-width:55px;
+            }
+
+            .mobileNav a span{
+                font-size:20px;
+                line-height:23px;
+            }
+
+            .mobileNav a.active{
+                color:var(--green);
+                font-weight:700;
             }
         }
 
-        @media(max-width:500px){
+        @media(max-width:420px){
 
-            .brand-text h2{
-                font-size:18px;
+            .productTop{
+                align-items:flex-start;
             }
 
-            .logo{
-                width:40px;
-                height:40px;
+            .productImage{
+                width:65px;
+                height:65px;
             }
 
-            .hero{
-                padding:40px 15px;
+            .productName{
+                font-size:15px;
             }
 
-            .container{
-                padding:0 12px;
+            .quantityRow{
+                align-items:flex-start;
+                flex-direction:column;
             }
 
-            .price-table{
-                font-size:13px;
-            }
-
-            .price-table th,
-            .price-table td{
-                padding:9px 5px;
+            .quantityControl{
+                align-self:flex-end;
             }
         }
     </style>
@@ -417,284 +556,371 @@
         🌿 মানসম্মত পণ্য • 💚 যত্নশীল সেবা • 📦 সারাদেশে হোম ডেলিভারি
     </div>
 
-    <!-- NAVBAR -->
+    <!-- HEADER -->
     <header>
-        <div class="navbar">
+        <nav class="nav">
 
-            <a href="index.html" class="brand">
-                <div class="logo">🌿</div>
-
-                <div class="brand-text">
-                    <h2>নিরাময় ছোঁয়া</h2>
-                    <span>NIRAMOY CHHOYA</span>
-                </div>
+            <a href="index.html" class="logo">
+                <div class="logoIcon">🌿</div>
+                <div>নিরাময় ছোঁয়া</div>
             </a>
 
-            <button class="menu-btn" onclick="toggleMenu()">☰</button>
-
-            <nav id="navMenu">
-
+            <div class="navLinks">
                 <a href="index.html">Home</a>
-
                 <a href="Videos.html">Videos</a>
-
                 <a href="Products.html">Products</a>
-
-                <a href="Order.html" class="order-link active">
-                    🛒 Order
-                </a>
-
+                <a href="Order.html" class="active">Order</a>
                 <a href="Reviews.html">Reviews</a>
-
                 <a href="About.html">About</a>
+            </div>
 
-            </nav>
-
-        </div>
+        </nav>
     </header>
 
-
-    <!-- HERO -->
-    <section class="hero">
-
-        <h1>অর্ডার করুন 🛒</h1>
-
+    <!-- PAGE HERO -->
+    <section class="pageHero">
+        <h1>অর্ডার করুন</h1>
         <p>
             আপনার পছন্দের পণ্য নির্বাচন করে তথ্য পূরণ করুন।
-            এরপর WhatsApp-এর মাধ্যমে অর্ডার পাঠিয়ে দিন।
+            WhatsApp অথবা Email-এর মাধ্যমে অর্ডার পাঠাতে পারবেন।
         </p>
-
     </section>
 
 
-    <!-- ORDER FORM -->
-    <main class="container">
+    <!-- ORDER AREA -->
+    <section class="orderSection">
 
-        <div class="order-card">
+        <div class="orderGrid">
 
-            <h2 class="section-title">
-                অর্ডারের তথ্য
-            </h2>
+            <!-- LEFT: PRODUCT -->
+            <div class="card">
+
+                <div class="cardTitle">
+                    🛍️ Product নির্বাচন করুন
+                </div>
+
+                <div class="formGroup">
+                    <label for="productSelect">Product</label>
+
+                    <select id="productSelect">
+                        <option value="vitalking">Vitalking Syrup — ৳265</option>
+                        <option value="safa">Safa Khurma — ৳650</option>
+                        <option value="winpex">Winpex A to Z Multivitamin & Multimineral — ৳450</option>
+                    </select>
+                </div>
+
+                <div class="productBox">
+
+                    <div class="productTop">
+
+                        <img
+                            id="productImage"
+                            class="productImage"
+                            src="images/vitalking-syrup.jpg"
+                            alt="Product"
+                            onerror="this.style.display='none';"
+                        >
+
+                        <div>
+                            <div id="productName" class="productName">
+                                Vitalking Syrup
+                            </div>
+
+                            <div class="productPrice">
+                                ৳<span id="productPrice">265</span>
+                            </div>
+                        </div>
+
+                    </div>
 
 
-            <!-- PRODUCT -->
-            <div class="form-group">
+                    <div class="quantityRow">
 
-                <label for="product">
-                    পণ্য নির্বাচন করুন *
-                </label>
+                        <div class="quantityLabel">
+                            Quantity
+                        </div>
 
-                <select id="product" onchange="updatePrice()">
+                        <div class="quantityControl">
 
-                    <option value="">
-                        — পণ্য নির্বাচন করুন —
-                    </option>
+                            <button type="button" onclick="changeQuantity(-1)">
+                                −
+                            </button>
 
-                    <option value="Vitalking Syrup">
-                        Vitalking Syrup — ৳265
-                    </option>
-
-                    <option value="Safa Khurma">
-                        Safa Khurma — ৳650
-                    </option>
-
-                    <option value="Herbal Care Syrup">
-                     Winpex A to Z Multivitamin & Multimineral - 30 Tablets — ৳380
-                    </option>
-
-                   
-                </select>
-
-            </div>
-
-
-            <!-- PRICE TABLE -->
-            <table class="price-table">
-
-                <thead>
-                    <tr>
-                        <th>বিবরণ</th>
-                        <th>পরিমাণ</th>
-                        <th>মূল্য</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-
-                    <tr>
-                        <td>Unit Price</td>
-
-                        <td>
                             <input
                                 type="number"
                                 id="quantity"
-                                min="1"
                                 value="1"
-                                onchange="updatePrice()"
-                                oninput="updatePrice()"
-                                style="max-width:110px;"
+                                min="1"
+                                max="99"
+                                inputmode="numeric"
+                                oninput="quantityChanged()"
                             >
-                        </td>
 
-                        <td id="unitPrice">
-                            ৳ 0
-                        </td>
-                    </tr>
+                            <button type="button" onclick="changeQuantity(1)">
+                                +
+                            </button>
 
-                    <tr class="total-row">
+                        </div>
 
-                        <td colspan="2">
-                            মোট মূল্য
-                        </td>
+                    </div>
 
-                        <td id="totalPrice">
-                            ৳ 0
-                        </td>
-
-                    </tr>
-
-                </tbody>
-
-            </table>
+                </div>
 
 
-            <!-- CUSTOMER NAME -->
-            <div class="form-group">
+                <!-- SUMMARY -->
+                <div class="summary">
 
-                <label for="name">
-                    আপনার নাম *
-                </label>
+                    <div class="summaryRow">
+                        <span>Product Price</span>
+                        <strong>৳<span id="summaryPrice">265</span></strong>
+                    </div>
 
-                <input
-                    type="text"
-                    id="name"
-                    placeholder="আপনার পূর্ণ নাম লিখুন"
-                >
+                    <div class="summaryRow">
+                        <span>Quantity</span>
+                        <strong id="summaryQuantity">1</strong>
+                    </div>
+
+                    <div class="summaryRow total">
+                        <span>Total</span>
+                        <strong>৳<span id="totalPrice">265</span></strong>
+                    </div>
+
+                </div>
 
             </div>
 
 
-            <!-- PHONE -->
-            <div class="form-group">
+            <!-- RIGHT: CUSTOMER INFO -->
+            <div class="card">
 
-                <label for="phone">
-                    মোবাইল নম্বর *
-                </label>
+                <div class="cardTitle">
+                    👤 Customer Information
+                </div>
 
-                <input
-                    type="tel"
-                    id="phone"
-                    placeholder="01XXXXXXXXX"
-                    maxlength="11"
-                >
+                <form id="orderForm">
+
+                    <div class="formGroup">
+                        <label for="customerName">
+                            নাম / Name *
+                        </label>
+
+                        <input
+                            type="text"
+                            id="customerName"
+                            name="Customer Name"
+                            placeholder="আপনার নাম লিখুন"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="formGroup">
+                        <label for="phone">
+                            মোবাইল নম্বর / Phone *
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="Phone Number"
+                            placeholder="01XXXXXXXXX"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="formGroup">
+                        <label for="address">
+                            Delivery Address *
+                        </label>
+
+                        <textarea
+                            id="address"
+                            name="Delivery Address"
+                            placeholder="বাড়ি, রোড, এলাকা, থানা, জেলা লিখুন"
+                            required
+                        ></textarea>
+                    </div>
+
+
+                    <div class="formGroup">
+                        <label for="payment">
+                            Payment Method *
+                        </label>
+
+                        <select
+                            id="payment"
+                            name="Payment Method"
+                            required
+                        >
+                            <option value="Cash on Delivery">
+                                Cash on Delivery
+                            </option>
+
+                            <option value="Advance Payment">
+                                Advance Payment
+                            </option>
+                        </select>
+                    </div>
+
+
+                    <div class="formGroup">
+                        <label for="note">
+                            Note (Optional)
+                        </label>
+
+                        <textarea
+                            id="note"
+                            name="Customer Note"
+                            placeholder="কোনো বিশেষ নির্দেশনা থাকলে লিখুন"
+                        ></textarea>
+                    </div>
+
+
+                    <!-- Hidden values for Web3Forms -->
+
+                    <input
+                        type="hidden"
+                        name="access_key"
+                        value="56e13b76-340f-455e-841f-97537f96b967"
+                    >
+
+                    <input
+                        type="hidden"
+                        name="subject"
+                        value="New Order - Niramoy Chhoya"
+                    >
+
+                    <input
+                        type="hidden"
+                        name="Product"
+                        id="emailProduct"
+                    >
+
+                    <input
+                        type="hidden"
+                        name="Quantity"
+                        id="emailQuantity"
+                    >
+
+                    <input
+                        type="hidden"
+                        name="Product Price"
+                        id="emailPrice"
+                    >
+
+                    <input
+                        type="hidden"
+                        name="Total Price"
+                        id="emailTotal"
+                    >
+
+
+                    <div class="orderButtons">
+
+                        <!-- WHATSAPP -->
+                        <button
+                            type="button"
+                            class="orderBtn whatsappBtn"
+                            onclick="sendWhatsApp()"
+                        >
+                            📱 WhatsApp Order
+                        </button>
+
+
+                        <!-- EMAIL -->
+                        <button
+                            type="submit"
+                            id="emailButton"
+                            class="orderBtn emailBtn"
+                        >
+                            📧 Gmail Order
+                        </button>
+
+                    </div>
+
+
+                    <div class="smallNote">
+                        📦 WhatsApp দিলে আপনার order details WhatsApp-এ পাঠানো হবে।
+                        Gmail Order দিলে Web3Forms-এর মাধ্যমে order details email-এ চলে যাবে।
+                    </div>
+
+
+                    <div
+                        id="successMessage"
+                        class="successMessage"
+                    >
+                        ✅ আপনার order successfully পাঠানো হয়েছে।
+                    </div>
+
+
+                    <div
+                        id="errorMessage"
+                        class="errorMessage"
+                    >
+                        ❌ Order পাঠাতে সমস্যা হয়েছে। আবার চেষ্টা করুন।
+                    </div>
+
+                </form>
 
             </div>
-
-
-            <!-- ADDRESS -->
-            <div class="form-group">
-
-                <label for="address">
-                    ডেলিভারি ঠিকানা *
-                </label>
-
-                <textarea
-                    id="address"
-                    placeholder="আপনার সম্পূর্ণ ডেলিভারি ঠিকানা লিখুন"
-                ></textarea>
-
-            </div>
-
-
-            <!-- NOTE -->
-            <div class="form-group">
-
-                <label for="note">
-                    অতিরিক্ত তথ্য
-                </label>
-
-                <textarea
-                    id="note"
-                    placeholder="কোনো বিশেষ নির্দেশনা থাকলে লিখুন (ঐচ্ছিক)"
-                ></textarea>
-
-            </div>
-
-
-            <!-- WHATSAPP -->
-            <button
-                class="whatsapp-btn"
-                onclick="sendWhatsApp()"
-            >
-                💬 WhatsApp-এ অর্ডার করুন
-            </button>
-
-            <p class="note">
-                বাটনে ক্লিক করলে আপনার অর্ডারের তথ্য WhatsApp-এ পাঠানোর জন্য
-                WhatsApp খুলবে।
-            </p>
 
         </div>
 
-    </main>
+    </section>
 
 
     <!-- FOOTER -->
     <footer>
 
-        <div class="footer-inner">
+        <div class="footerInner">
 
             <div>
+                <div class="footerTitle">
+                    🌿 নিরাময় ছোঁয়া
+                </div>
 
-                <h3>নিরাময় ছোঁয়া</h3>
-
-                <p>
-                    স্বাস্থ্য ও যত্নের পণ্য, তথ্যবহুল ভিডিও
-                    এবং সহজ অর্ডার সেবা।
-                </p>
-
+                <div class="footerText">
+                    স্বাস্থ্য ও যত্নের নির্বাচিত পণ্য,
+                    স্বাস্থ্যবিষয়ক ভিডিও এবং সহজ অর্ডার সুবিধা।
+                </div>
             </div>
 
 
             <div>
+                <div class="footerTitle">
+                    Quick Links
+                </div>
 
-                <h3>যোগাযোগ</h3>
-
-                <p>📍 Haydrabad Bridge, Tongi, Gazipur</p>
-
-                <p>
-                    💬
-                    <a href="https://wa.me/8801841088731"
-                       target="_blank">
-                        01841088731
-                    </a>
-                </p>
-
-                <p>
-                    ✉️
-                    <a href="mailto:niramoychowa@gmail.com">
-                        niramoychowa@gmail.com
-                    </a>
-                </p>
-
-            </div>
-
-
-            <div>
-
-                <h3>Quick Links</h3>
-
-                <div class="footer-links">
-
+                <div class="footerLinks">
                     <a href="index.html">Home</a>
-                    <a href="Videos.html">Videos</a>
                     <a href="Products.html">Products</a>
+                    <a href="Videos.html">Videos</a>
                     <a href="Order.html">Order</a>
                     <a href="Reviews.html">Reviews</a>
                     <a href="About.html">About</a>
+                </div>
+            </div>
 
+
+            <div>
+                <div class="footerTitle">
+                    Contact
                 </div>
 
+                <div class="footerLinks">
+
+                    <span>📍 Haydrabad Bridge, Tongi, Gazipur</span>
+
+                    <a href="https://wa.me/8801841088731">
+                        📱 01841088731
+                    </a>
+
+                    <a href="mailto:niramoychowa@gmail.com">
+                        📧 niramoychowa@gmail.com
+                    </a>
+
+                </div>
             </div>
 
         </div>
@@ -707,76 +933,247 @@
     </footer>
 
 
+    <!-- MOBILE NAV -->
+    <div class="mobileNav">
+
+        <a href="index.html">
+            <span>⌂</span>
+            Home
+        </a>
+
+        <a href="Products.html">
+            <span>🛍️</span>
+            Products
+        </a>
+
+        <a href="Order.html" class="active">
+            <span>🛒</span>
+            Order
+        </a>
+
+        <a href="Videos.html">
+            <span>▶</span>
+            Videos
+        </a>
+
+        <a href="About.html">
+            <span>👤</span>
+            Account
+        </a>
+
+    </div>
+
+
     <script>
 
-        /* PRODUCT PRICES */
+        /* =========================
+           PRODUCT DATA
+        ========================= */
 
         const products = {
 
-            "Vitalking Syrup": 265,
+            vitalking: {
+                name: "Vitalking Syrup",
+                price: 265,
+                image: "images/vitalking-syrup.jpg"
+            },
 
-            "Safa Khurma": 650,
+            safa: {
+                name: "Safa Khurma",
+                price: 650,
+                image: "images/safa-khurma.jpg"
+            },
 
-            "Winpex A to Z Multivitamin & Multimineral - 30 Tablets": 450,
+            winpex: {
+                name: "Winpex A to Z Multivitamin & Multimineral - 30 Tablets",
+                price: 450,
+                image: "images/Winpex-A-to-Z-Multivitamin-&-Multimineral.jpg"
+            }
 
-            
         };
 
 
-        /* UPDATE PRICE */
+        /* =========================
+           SELECT ELEMENTS
+        ========================= */
 
-        function updatePrice(){
+        const productSelect =
+            document.getElementById("productSelect");
+
+        const productName =
+            document.getElementById("productName");
+
+        const productPrice =
+            document.getElementById("productPrice");
+
+        const productImage =
+            document.getElementById("productImage");
+
+        const quantityInput =
+            document.getElementById("quantity");
+
+        const summaryPrice =
+            document.getElementById("summaryPrice");
+
+        const summaryQuantity =
+            document.getElementById("summaryQuantity");
+
+        const totalPrice =
+            document.getElementById("totalPrice");
+
+
+        /* =========================
+           UPDATE PRODUCT
+        ========================= */
+
+        productSelect.addEventListener("change", function(){
 
             const product =
-                document.getElementById("product").value;
+                products[this.value];
 
-            let quantity =
-                parseInt(
-                    document.getElementById("quantity").value
-                );
+            productName.textContent =
+                product.name;
+
+            productPrice.textContent =
+                product.price;
+
+            summaryPrice.textContent =
+                product.price;
+
+            productImage.src =
+                product.image;
+
+            productImage.style.display =
+                "block";
+
+            updateTotal();
+
+        });
 
 
-            if(!quantity || quantity < 1){
+        /* =========================
+           QUANTITY BUTTON
+        ========================= */
 
-                quantity = 1;
+        function changeQuantity(amount){
 
-                document.getElementById("quantity").value = 1;
+            let current =
+                parseInt(quantityInput.value);
 
+            if(isNaN(current)){
+                current = 1;
             }
 
+            current += amount;
 
-            const unitPrice =
-                products[product] || 0;
+            if(current < 1){
+                current = 1;
+            }
 
+            if(current > 99){
+                current = 99;
+            }
 
-            const totalPrice =
-                unitPrice * quantity;
+            quantityInput.value =
+                current;
 
-
-            document.getElementById("unitPrice").innerText =
-                "৳ " + unitPrice;
-
-
-            document.getElementById("totalPrice").innerText =
-                "৳ " + totalPrice.toLocaleString("en-BD");
-
+            updateTotal();
         }
 
 
-        /* SEND TO WHATSAPP */
+        /* =========================
+           DIRECT TYPING
+        ========================= */
 
-        function sendWhatsApp(){
+        function quantityChanged(){
+
+            let value =
+                quantityInput.value;
+
+            /*
+             * Empty রাখার অনুমতি দেওয়া হচ্ছে।
+             * এতে user 1 delete করে 2-9 লিখতে পারবে।
+             */
+
+            if(value === ""){
+                summaryQuantity.textContent = "0";
+                totalPrice.textContent = "0";
+                return;
+            }
+
+            value =
+                value.replace(/[^0-9]/g,"");
+
+            if(value === ""){
+                quantityInput.value = "";
+                summaryQuantity.textContent = "0";
+                totalPrice.textContent = "0";
+                return;
+            }
+
+            let number =
+                parseInt(value);
+
+            if(number > 99){
+                number = 99;
+            }
+
+            quantityInput.value =
+                number;
+
+            updateTotal();
+        }
+
+
+        /* =========================
+           UPDATE TOTAL
+        ========================= */
+
+        function updateTotal(){
+
+            let quantity =
+                parseInt(quantityInput.value);
+
+            if(isNaN(quantity) || quantity < 1){
+                summaryQuantity.textContent = "0";
+                totalPrice.textContent = "0";
+                return;
+            }
 
             const product =
-                document.getElementById("product").value.trim();
+                products[productSelect.value];
 
-            const quantity =
-                parseInt(
-                    document.getElementById("quantity").value
-                );
+            const total =
+                product.price * quantity;
+
+            summaryQuantity.textContent =
+                quantity;
+
+            totalPrice.textContent =
+                total;
+        }
+
+
+        /* =========================
+           GET ORDER DATA
+        ========================= */
+
+        function getOrderData(){
+
+            const selectedProduct =
+                products[productSelect.value];
+
+            let quantity =
+                parseInt(quantityInput.value);
+
+            if(isNaN(quantity) || quantity < 1){
+                alert("অনুগ্রহ করে Quantity দিন।");
+                quantityInput.focus();
+                return null;
+            }
 
             const name =
-                document.getElementById("name").value.trim();
+                document.getElementById("customerName").value.trim();
 
             const phone =
                 document.getElementById("phone").value.trim();
@@ -784,203 +1181,236 @@
             const address =
                 document.getElementById("address").value.trim();
 
+            const payment =
+                document.getElementById("payment").value;
+
             const note =
                 document.getElementById("note").value.trim();
 
-
-            /* VALIDATION */
-
-            if(!product){
-
-                alert("দয়া করে একটি পণ্য নির্বাচন করুন।");
-
-                document.getElementById("product").focus();
-
-                return;
-
-            }
-
-
-            if(!quantity || quantity < 1){
-
-                alert("দয়া করে সঠিক Quantity দিন।");
-
-                document.getElementById("quantity").focus();
-
-                return;
-
-            }
-
-
             if(!name){
-
-                alert("দয়া করে আপনার নাম লিখুন।");
-
-                document.getElementById("name").focus();
-
-                return;
-
+                alert("আপনার নাম লিখুন।");
+                document.getElementById("customerName").focus();
+                return null;
             }
-
 
             if(!phone){
-
-                alert("দয়া করে আপনার মোবাইল নম্বর লিখুন।");
-
+                alert("আপনার মোবাইল নম্বর লিখুন।");
                 document.getElementById("phone").focus();
-
-                return;
-
+                return null;
             }
-
-
-            /* BANGLADESHI PHONE VALIDATION */
-
-            const cleanPhone =
-                phone.replace(/\s+/g,"");
-
-
-            if(!/^01[3-9]\d{8}$/.test(cleanPhone)){
-
-                alert(
-                    "দয়া করে সঠিক ১১ সংখ্যার বাংলাদেশি মোবাইল নম্বর দিন।"
-                );
-
-                document.getElementById("phone").focus();
-
-                return;
-
-            }
-
 
             if(!address){
-
-                alert("দয়া করে আপনার ডেলিভারি ঠিকানা লিখুন।");
-
+                alert("Delivery Address লিখুন।");
                 document.getElementById("address").focus();
+                return null;
+            }
 
+            const total =
+                selectedProduct.price * quantity;
+
+            return {
+                product: selectedProduct.name,
+                quantity: quantity,
+                price: selectedProduct.price,
+                total: total,
+                name: name,
+                phone: phone,
+                address: address,
+                payment: payment,
+                note: note
+            };
+        }
+
+
+        /* =========================
+           WHATSAPP ORDER
+        ========================= */
+
+        function sendWhatsApp(){
+
+            const order =
+                getOrderData();
+
+            if(!order){
                 return;
-
             }
 
+            const message =
+`🌿 *নিরাময় ছোঁয়া - New Order*
 
-            const unitPrice =
-                products[product];
+🛍️ *Product:* ${order.product}
+🔢 *Quantity:* ${order.quantity}
+💰 *Unit Price:* ৳${order.price}
+💵 *Total:* ৳${order.total}
 
+👤 *Customer Name:* ${order.name}
+📱 *Phone:* ${order.phone}
+📍 *Delivery Address:* ${order.address}
+💳 *Payment:* ${order.payment}
 
-            const totalPrice =
-                unitPrice * quantity;
+📝 *Note:* ${order.note || "N/A"}
 
-
-            /* WHATSAPP MESSAGE */
-
-            let message =
-`🌿 *নিরাময় ছোঁয়া — নতুন অর্ডার*
-
-🛍️ *পণ্যের তথ্য*
-━━━━━━━━━━━━━━━━
-📦 পণ্য: ${product}
-🔢 Quantity: ${quantity}
-💰 Unit Price: ৳${unitPrice}
-💵 Total Price: ৳${totalPrice}
-
-👤 *গ্রাহকের তথ্য*
-━━━━━━━━━━━━━━━━
-নাম: ${name}
-মোবাইল: ${cleanPhone}
-ঠিকানা: ${address}`;
-
-
-            if(note){
-
-                message +=
-`
-📝 অতিরিক্ত তথ্য: ${note}`;
-
-            }
-
-
-            message +=
-`
-
-━━━━━━━━━━━━━━━━
-✅ আমি এই পণ্যটি অর্ডার করতে চাই।`;
-
-
-            const whatsappNumber =
-                "8801841088731";
-
+ধন্যবাদ।`;
 
             const whatsappURL =
-                "https://wa.me/" +
-                whatsappNumber +
-                "?text=" +
+                "https://wa.me/8801841088731?text=" +
                 encodeURIComponent(message);
-
 
             window.open(
                 whatsappURL,
                 "_blank"
             );
-
         }
 
 
-        /* MOBILE MENU */
+        /* =========================
+           WEB3FORMS EMAIL ORDER
+        ========================= */
 
-        function toggleMenu(){
+        const orderForm =
+            document.getElementById("orderForm");
 
-            document
-                .getElementById("navMenu")
-                .classList.toggle("show");
+        orderForm.addEventListener(
+            "submit",
+            async function(event){
 
-        }
+                event.preventDefault();
 
+                const order =
+                    getOrderData();
 
-        /* AUTO SELECT PRODUCT FROM URL */
-
-        window.addEventListener(
-            "DOMContentLoaded",
-            function(){
-
-                const params =
-                    new URLSearchParams(
-                        window.location.search
-                    );
-
-                const selectedProduct =
-                    params.get("product");
+                if(!order){
+                    return;
+                }
 
 
-                if(selectedProduct){
+                /* Update hidden fields */
 
-                    const select =
-                        document.getElementById("product");
+                document.getElementById("emailProduct").value =
+                    order.product;
+
+                document.getElementById("emailQuantity").value =
+                    order.quantity;
+
+                document.getElementById("emailPrice").value =
+                    "৳" + order.price;
+
+                document.getElementById("emailTotal").value =
+                    "৳" + order.total;
 
 
-                    const exists =
-                        [...select.options]
-                        .some(
-                            option =>
-                            option.value === selectedProduct
+                const button =
+                    document.getElementById("emailButton");
+
+                const success =
+                    document.getElementById("successMessage");
+
+                const error =
+                    document.getElementById("errorMessage");
+
+
+                success.style.display =
+                    "none";
+
+                error.style.display =
+                    "none";
+
+                button.disabled =
+                    true;
+
+                button.textContent =
+                    "📧 Sending...";
+
+
+                try{
+
+                    const formData =
+                        new FormData(orderForm);
+
+
+                    const response =
+                        await fetch(
+                            "https://api.web3forms.com/submit",
+                            {
+                                method:"POST",
+                                body:formData
+                            }
                         );
 
 
-                    if(exists){
+                    const result =
+                        await response.json();
 
-                        select.value =
-                            selectedProduct;
 
-                        updatePrice();
+                    if(result.success){
+
+                        success.style.display =
+                            "block";
+
+                        orderForm.reset();
+
+                        productSelect.value =
+                            "vitalking";
+
+                        productSelect.dispatchEvent(
+                            new Event("change")
+                        );
+
+                        quantityInput.value =
+                            1;
+
+                        updateTotal();
+
+                        window.scrollTo({
+                            top:document.body.scrollHeight,
+                            behavior:"smooth"
+                        });
+
+                    }else{
+
+                        error.style.display =
+                            "block";
+
+                        error.textContent =
+                            "❌ " +
+                            (result.message ||
+                            "Order পাঠাতে সমস্যা হয়েছে।");
 
                     }
 
+                }catch(error){
+
+                    console.error(error);
+
+                    errorMessage =
+                        document.getElementById(
+                            "errorMessage"
+                        );
+
+                    errorMessage.style.display =
+                        "block";
+
+                    errorMessage.textContent =
+                        "❌ Internet connection বা server সমস্যার কারণে order পাঠানো যায়নি।";
+
+                }finally{
+
+                    button.disabled =
+                        false;
+
+                    button.textContent =
+                        "📧 Gmail Order";
                 }
 
             }
         );
 
+
+        /* Initial calculation */
+        updateTotal();
+
     </script>
 
 </body>
-</html>
+</html>537f96b967"
+    
