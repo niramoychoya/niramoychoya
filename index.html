@@ -1,0 +1,2076 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>নিরাময় ছোঁয়া | Niramoy Chhoya</title>
+
+<meta name="description" content="নিরাময় ছোঁয়া — স্বাস্থ্য ও যত্নের পণ্য, ভিডিও এবং সহজ অর্ডার।">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --green:#11834a;
+    --green-dark:#0b6238;
+    --dark:#103b2b;
+    --light:#eef9f2;
+    --text:#17241e;
+    --muted:#69766f;
+    --border:#e2ece6;
+    --white:#fff;
+    --shadow:0 15px 40px rgba(16,59,43,.10);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Hind Siliguri",sans-serif;
+    background:#fff;
+    color:var(--text);
+    line-height:1.6;
+}
+
+button,
+input{
+    font-family:inherit;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+/* TOP BAR */
+
+.topbar{
+    background:var(--dark);
+    color:#fff;
+    text-align:center;
+    padding:8px 15px;
+    font-size:14px;
+}
+
+/* HEADER */
+
+.header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:#fff;
+    border-bottom:1px solid var(--border);
+}
+
+.navbar{
+    max-width:1200px;
+    margin:auto;
+    min-height:76px;
+    padding:0 20px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:11px;
+}
+
+.logo{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:var(--green);
+    color:#fff;
+    font-size:24px;
+}
+
+.brandText h1{
+    font-size:21px;
+    color:var(--dark);
+    line-height:1.2;
+}
+
+.brandText span{
+    display:block;
+    color:var(--muted);
+    font-family:"Montserrat",sans-serif;
+    font-size:10px;
+    letter-spacing:.5px;
+}
+
+/* NAVIGATION */
+
+.navLinks{
+    display:flex;
+    align-items:center;
+    gap:5px;
+}
+
+.navLinks a{
+    padding:9px 13px;
+    border-radius:9px;
+    font-size:15px;
+    font-weight:600;
+    transition:.2s;
+}
+
+.navLinks a:hover{
+    background:var(--light);
+    color:var(--green);
+}
+
+.navLinks .orderBtn{
+    background:var(--green);
+    color:#fff;
+    padding:10px 16px;
+}
+
+.navLinks .orderBtn:hover{
+    background:var(--green-dark);
+    color:#fff;
+}
+
+.menuBtn{
+    display:none;
+    border:0;
+    background:var(--light);
+    color:var(--green);
+    width:42px;
+    height:42px;
+    border-radius:10px;
+    font-size:23px;
+    cursor:pointer;
+}
+
+/* CATEGORY */
+
+.categoryWrap{
+    border-bottom:1px solid var(--border);
+    background:#fff;
+}
+
+.categoryBar{
+    max-width:1200px;
+    margin:auto;
+    padding:12px 20px;
+
+    display:flex;
+    gap:9px;
+    overflow-x:auto;
+    scrollbar-width:none;
+}
+
+.categoryBar::-webkit-scrollbar{
+    display:none;
+}
+
+.categoryBtn{
+    flex:0 0 auto;
+
+    border:1px solid var(--border);
+    background:#fff;
+    color:var(--text);
+
+    padding:8px 16px;
+    border-radius:30px;
+
+    font-size:14px;
+    cursor:pointer;
+    white-space:nowrap;
+}
+
+.categoryBtn.active,
+.categoryBtn:hover{
+    background:var(--green);
+    color:#fff;
+    border-color:var(--green);
+}
+
+/* MAIN */
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:35px 20px 80px;
+}
+
+.sectionHead{
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+    gap:20px;
+    margin-bottom:20px;
+}
+
+.sectionTitle h2{
+    font-size:29px;
+    color:var(--dark);
+}
+
+.sectionTitle p{
+    color:var(--muted);
+    font-size:15px;
+}
+
+/* SEARCH */
+
+.searchBox{
+    position:relative;
+    width:290px;
+}
+
+.searchBox input{
+    width:100%;
+    height:45px;
+
+    border:1px solid var(--border);
+    border-radius:12px;
+
+    padding:0 16px 0 42px;
+    outline:none;
+
+    font-size:14px;
+    background:#fff;
+}
+
+.searchBox input:focus{
+    border-color:var(--green);
+}
+
+.searchIcon{
+    position:absolute;
+    left:15px;
+    top:8px;
+    font-size:20px;
+    color:var(--muted);
+}
+
+/* PRODUCTS */
+
+.productsGrid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.productCard{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:18px;
+    overflow:hidden;
+    transition:.25s;
+    box-shadow:0 7px 25px rgba(16,59,43,.05);
+}
+
+.productCard:hover{
+    transform:translateY(-4px);
+    box-shadow:var(--shadow);
+}
+
+.productPic{
+    height:220px;
+    background:#f6fbf8;
+    position:relative;
+    overflow:hidden;
+}
+
+.productPic img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    padding:10px;
+    display:block;
+}
+
+.productInfo{
+    padding:16px;
+}
+
+.productCategory{
+    color:var(--green);
+    font-size:12px;
+    font-weight:600;
+    margin-bottom:4px;
+}
+
+.productName{
+    font-size:18px;
+    font-weight:700;
+    color:var(--dark);
+    line-height:1.4;
+    min-height:51px;
+}
+
+.productDesc{
+    color:var(--muted);
+    font-size:13px;
+    margin-top:6px;
+
+    display:-webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
+}
+
+/* RATING */
+
+.rating{
+    margin-top:9px;
+    font-size:13px;
+    color:#d79b00;
+}
+
+.rating span{
+    color:var(--muted);
+}
+
+/* PRICE */
+
+.priceBox{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-top:11px;
+}
+
+.originalPrice{
+    color:#8b9690;
+    font-size:14px;
+    text-decoration:line-through;
+}
+
+.salePrice{
+    color:var(--green-dark);
+    font-size:21px;
+    font-weight:800;
+}
+
+.discountBadge{
+    background:#eaf8ef;
+    color:var(--green-dark);
+    font-size:11px;
+    font-weight:700;
+    padding:3px 7px;
+    border-radius:5px;
+}
+
+/* PRODUCT ACTIONS */
+
+.productActions{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+    margin-top:14px;
+}
+
+.productActions button,
+.productActions a{
+    min-height:40px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:9px;
+    font-size:14px;
+    font-weight:600;
+
+    cursor:pointer;
+    transition:.2s;
+}
+
+.detailsBtn{
+    border:1px solid var(--green);
+    color:var(--green);
+    background:#fff;
+}
+
+.detailsBtn:hover{
+    background:var(--light);
+}
+
+.orderProductBtn{
+    background:var(--green);
+    color:#fff;
+    border:1px solid var(--green);
+}
+
+.orderProductBtn:hover{
+    background:var(--green-dark);
+}
+
+/* NO RESULT */
+
+.noResult{
+    grid-column:1/-1;
+    text-align:center;
+    padding:50px 20px;
+    color:var(--muted);
+}
+
+/* VIDEO SECTION */
+
+.videoSection{
+    margin-top:55px;
+    padding-top:35px;
+    border-top:1px solid var(--border);
+}
+
+.videoHeader{
+    margin-bottom:18px;
+}
+
+.videoHeader h2{
+    font-size:27px;
+    color:var(--dark);
+}
+
+.videoHeader p{
+    color:var(--muted);
+    font-size:14px;
+}
+
+.videoList{
+    display:flex;
+    gap:18px;
+    overflow-x:auto;
+    padding:5px 2px 15px;
+    scrollbar-width:thin;
+}
+
+.videoCard{
+    flex:0 0 310px;
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 7px 25px rgba(16,59,43,.05);
+}
+
+.videoCard video{
+    display:block;
+    width:100%;
+    height:185px;
+    object-fit:cover;
+    background:#000;
+}
+
+.videoInfo{
+    padding:12px 14px;
+}
+
+.videoInfo h3{
+    font-size:17px;
+    color:var(--dark);
+}
+
+.videoInfo p{
+    color:var(--muted);
+    font-size:13px;
+}
+
+/* FEATURES */
+
+.features{
+    margin-top:55px;
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.feature{
+    background:var(--light);
+    border-radius:16px;
+    padding:22px 16px;
+    text-align:center;
+}
+
+.featureIcon{
+    font-size:28px;
+    margin-bottom:5px;
+}
+
+.feature h3{
+    font-size:17px;
+    color:var(--dark);
+}
+
+.feature p{
+    color:var(--muted);
+    font-size:13px;
+}
+
+/* CTA */
+
+.cta{
+    margin-top:50px;
+    background:var(--dark);
+    color:#fff;
+    border-radius:20px;
+    padding:35px 25px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.cta h2{
+    font-size:27px;
+}
+
+.cta p{
+    color:#c9d8d0;
+    margin-top:5px;
+}
+
+.ctaBtn{
+    background:#fff;
+    color:var(--green-dark);
+    padding:12px 22px;
+    border-radius:10px;
+    font-weight:700;
+    white-space:nowrap;
+}
+
+/* MODAL */
+
+.modal{
+    display:none;
+
+    position:fixed;
+    inset:0;
+    z-index:2000;
+
+    background:rgba(0,0,0,.55);
+
+    align-items:center;
+    justify-content:center;
+
+    padding:20px;
+}
+
+.modal.show{
+    display:flex;
+}
+
+.modalBox{
+    width:min(600px,100%);
+    max-height:90vh;
+    overflow-y:auto;
+
+    background:#fff;
+    border-radius:20px;
+    padding:25px;
+
+    position:relative;
+}
+
+.closeModal{
+    position:absolute;
+    right:15px;
+    top:12px;
+
+    width:36px;
+    height:36px;
+
+    border:0;
+    border-radius:50%;
+
+    background:#f0f5f2;
+    color:var(--dark);
+
+    font-size:22px;
+    cursor:pointer;
+}
+
+.modalImage{
+    height:230px;
+    background:#f6fbf8;
+    border-radius:14px;
+    overflow:hidden;
+    margin-bottom:18px;
+}
+
+.modalImage img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+}
+
+.modalBox h2{
+    color:var(--dark);
+    font-size:25px;
+}
+
+.modalDesc{
+    color:var(--muted);
+    margin-top:8px;
+}
+
+.modalPrice{
+    margin-top:14px;
+}
+
+.modalOrder{
+    display:inline-flex;
+    margin-top:18px;
+
+    background:var(--green);
+    color:#fff;
+
+    padding:11px 20px;
+    border-radius:9px;
+
+    font-weight:700;
+}
+
+.modalOrder:hover{
+    background:var(--green-dark);
+}
+
+/* FOOTER */
+
+.footer{
+    background:#0d3024;
+    color:#fff;
+    padding:45px 20px 90px;
+}
+
+.footerInner{
+    max-width:1200px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:1.5fr 1fr 1fr;
+    gap:35px;
+}
+
+.footer h3{
+    font-size:20px;
+    margin-bottom:12px;
+}
+
+.footer p,
+.footer a{
+    color:#c5d4cd;
+    font-size:14px;
+}
+
+.footer a{
+    display:block;
+    margin-bottom:7px;
+}
+
+.footer a:hover{
+    color:#fff;
+}
+
+.footerBottom{
+    max-width:1200px;
+    margin:30px auto 0;
+    padding-top:20px;
+
+    border-top:1px solid rgba(255,255,255,.12);
+
+    text-align:center;
+    color:#aebfb6;
+    font-size:13px;
+}
+
+/* MOBILE BOTTOM BAR */
+
+.bottomBar{
+    display:none;
+}
+
+/* TABLET */
+
+@media(max-width:1050px){
+
+    .productsGrid{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .features{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .navLinks a{
+        padding:8px 9px;
+    }
+}
+
+/* MOBILE */
+
+@media(max-width:760px){
+
+    body{
+        padding-bottom:65px;
+    }
+
+    .topbar{
+        font-size:12px;
+        padding:7px 8px;
+    }
+
+    .navbar{
+        min-height:65px;
+        padding:0 14px;
+    }
+
+    .logo{
+        width:40px;
+        height:40px;
+        font-size:21px;
+    }
+
+    .brandText h1{
+        font-size:18px;
+    }
+
+    .brandText span{
+        font-size:8px;
+    }
+
+    .menuBtn{
+        display:block;
+    }
+
+    .navLinks{
+        display:none;
+
+        position:absolute;
+        top:65px;
+        left:0;
+        right:0;
+
+        background:#fff;
+        border-bottom:1px solid var(--border);
+
+        padding:10px 14px;
+
+        flex-direction:column;
+        align-items:stretch;
+
+        box-shadow:0 10px 25px rgba(0,0,0,.08);
+    }
+
+    .navLinks.show{
+        display:flex;
+    }
+
+    .navLinks a{
+        padding:12px;
+    }
+
+    .navLinks .orderBtn{
+        text-align:center;
+    }
+
+    .categoryBar{
+        padding:10px 14px;
+    }
+
+    .container{
+        padding:25px 12px 50px;
+    }
+
+    .sectionHead{
+        display:block;
+    }
+
+    .sectionTitle h2{
+        font-size:24px;
+    }
+
+    .searchBox{
+        width:100%;
+        margin-top:14px;
+    }
+
+    /* 2 COLUMN MOBILE */
+
+    .productsGrid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:10px;
+    }
+
+    .productPic{
+        height:155px;
+    }
+
+    .productPic img{
+        padding:7px;
+    }
+
+    .productInfo{
+        padding:11px;
+    }
+
+    .productCategory{
+        font-size:10px;
+    }
+
+    .productName{
+        font-size:15px;
+        min-height:auto;
+        line-height:1.35;
+    }
+
+    .productDesc{
+        font-size:11px;
+        margin-top:4px;
+    }
+
+    .rating{
+        font-size:11px;
+        margin-top:6px;
+    }
+
+    .priceBox{
+        gap:5px;
+        margin-top:7px;
+    }
+
+    .originalPrice{
+        font-size:11px;
+    }
+
+    .salePrice{
+        font-size:17px;
+    }
+
+    .discountBadge{
+        font-size:9px;
+        padding:2px 5px;
+    }
+
+    .productActions{
+        grid-template-columns:1fr;
+        gap:6px;
+        margin-top:10px;
+    }
+
+    .productActions button,
+    .productActions a{
+        min-height:34px;
+        font-size:12px;
+    }
+
+    /* VIDEOS */
+
+    .videoSection{
+        margin-top:40px;
+        padding-top:28px;
+    }
+
+    .videoHeader h2{
+        font-size:23px;
+    }
+
+    .videoCard{
+        flex:0 0 285px;
+    }
+
+    .videoCard video{
+        height:170px;
+    }
+
+    /* FEATURES */
+
+    .features{
+        grid-template-columns:repeat(2,1fr);
+        gap:10px;
+    }
+
+    .feature{
+        padding:17px 10px;
+    }
+
+    .featureIcon{
+        font-size:24px;
+    }
+
+    .feature h3{
+        font-size:14px;
+    }
+
+    .feature p{
+        font-size:11px;
+    }
+
+    /* CTA */
+
+    .cta{
+        margin-top:35px;
+        padding:25px 18px;
+
+        display:block;
+        text-align:center;
+    }
+
+    .cta h2{
+        font-size:22px;
+    }
+
+    .cta p{
+        font-size:13px;
+    }
+
+    .ctaBtn{
+        display:inline-block;
+        margin-top:15px;
+    }
+
+    /* FOOTER */
+
+    .footer{
+        padding:35px 18px 85px;
+    }
+
+    .footerInner{
+        grid-template-columns:1fr;
+        gap:25px;
+    }
+
+    /* BOTTOM NAV */
+
+    .bottomBar{
+        display:flex;
+
+        position:fixed;
+        left:0;
+        right:0;
+        bottom:0;
+
+        height:64px;
+
+        z-index:1500;
+
+        background:#fff;
+        border-top:1px solid var(--border);
+
+        box-shadow:0 -5px 20px rgba(0,0,0,.08);
+    }
+
+    .bottomItem{
+        flex:1;
+
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        flex-direction:column;
+
+        position:relative;
+
+        color:#78857e;
+        font-family:"Montserrat",sans-serif;
+        font-size:8px;
+        font-weight:600;
+    }
+
+    .bottomItem.active{
+        color:var(--green);
+    }
+
+    .bottomIcon{
+        font-size:21px;
+        line-height:22px;
+        margin-bottom:2px;
+    }
+
+    .cartNumber{
+        position:absolute;
+
+        top:4px;
+        right:calc(50% - 18px);
+
+        width:16px;
+        height:16px;
+
+        border-radius:50%;
+
+        display:flex;
+        align-items:center;
+        justify-content:center;
+
+        background:#e53935;
+        color:#fff;
+
+        font-size:9px;
+    }
+
+    .modal{
+        padding:12px;
+    }
+
+    .modalBox{
+        padding:18px;
+    }
+
+    .modalImage{
+        height:190px;
+    }
+}
+
+@media(max-width:380px){
+
+    .productsGrid{
+        gap:8px;
+    }
+
+    .productPic{
+        height:135px;
+    }
+
+    .productInfo{
+        padding:9px;
+    }
+
+    .productName{
+        font-size:14px;
+    }
+
+    .salePrice{
+        font-size:16px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+
+<div class="topbar">
+    🌿 Quality Products • 💚 Trusted Service • 📦 Home Delivery
+</div>
+
+
+<!-- HEADER -->
+
+<header class="header">
+
+    <div class="navbar">
+
+        <a href="index.html" class="brand">
+
+            <div class="logo">🌿</div>
+
+            <div class="brandText">
+                <h1>নিরাময় ছোঁয়া</h1>
+                <span>NIRAMOY CHHOYA</span>
+            </div>
+
+        </a>
+
+        <button class="menuBtn" onclick="toggleMenu()">
+            ☰
+        </button>
+
+        <nav class="navLinks" id="navLinks">
+
+            <a href="index.html">Home</a>
+
+            <a href="Videos.html">Videos</a>
+
+            <a href="Products.html">Products</a>
+
+            <a href="Order.html" class="orderBtn">
+                🛒 Order
+            </a>
+
+            <a href="Reviews.html">Reviews</a>
+
+            <a href="About.html">About</a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<!-- CATEGORY -->
+
+<div class="categoryWrap">
+
+    <div class="categoryBar">
+
+        <button
+            class="categoryBtn active"
+            onclick="filterCategory('all',this)">
+            All Products
+        </button>
+
+        <button
+            class="categoryBtn"
+            onclick="filterCategory('syrup',this)">
+            Syrup
+        </button>
+
+        <button
+            class="categoryBtn"
+            onclick="filterCategory('dates',this)">
+            Dates
+        </button>
+
+        <button
+            class="categoryBtn"
+            onclick="filterCategory('tablet',this)">
+            Tablet
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- MAIN -->
+
+<main class="container">
+
+    <!-- PRODUCTS -->
+
+    <section id="products">
+
+        <div class="sectionHead">
+
+            <div class="sectionTitle">
+
+                <h2>Our Products</h2>
+
+                <p>
+                    মানসম্মত ও যত্নসহকারে নির্বাচিত পণ্য
+                </p>
+
+            </div>
+
+            <div class="searchBox">
+
+                <div class="searchIcon">⌕</div>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search Products..."
+                    oninput="searchProducts()">
+
+            </div>
+
+        </div>
+
+        <div
+            class="productsGrid"
+            id="productsGrid">
+        </div>
+
+    </section>
+
+
+    <!-- VIDEOS -->
+
+    <section class="videoSection">
+
+        <div class="videoHeader">
+
+            <h2>Health Videos</h2>
+
+            <p>
+                স্বাস্থ্য, Nutrition & Wellness সম্পর্কে জানুন
+            </p>
+
+        </div>
+
+        <div class="videoList">
+
+            <div class="videoCard">
+
+                <video controls preload="metadata">
+
+                    <source
+                        src="videos/health.mp4"
+                        type="video/mp4">
+
+                    Your browser does not support video.
+
+                </video>
+
+                <div class="videoInfo">
+
+                    <h3>Health Awareness</h3>
+
+                    <p>
+                        স্বাস্থ্য সচেতনতার প্রয়োজনীয় কিছু তথ্য।
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="videoCard">
+
+                <video controls preload="metadata">
+
+                    <source
+                        src="videos/vitamin.mp4"
+                        type="video/mp4">
+
+                    Your browser does not support video.
+
+                </video>
+
+                <div class="videoInfo">
+
+                    <h3>Vitamin Guide</h3>
+
+                    <p>
+                        ভিটামিন ও পুষ্টি সম্পর্কে সহজ তথ্য।
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="videoCard">
+
+                <video controls preload="metadata">
+
+                    <source
+                        src="videos/nutrition.mp4"
+                        type="video/mp4">
+
+                    Your browser does not support video.
+
+                </video>
+
+                <div class="videoInfo">
+
+                    <h3>Nutrition Tips</h3>
+
+                    <p>
+                        দৈনন্দিন Nutrition সম্পর্কে জানুন।
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="videoCard">
+
+                <video controls preload="metadata">
+
+                    <source
+                        src="videos/healthy-food.mp4"
+                        type="video/mp4">
+
+                    Your browser does not support video.
+
+                </video>
+
+                <div class="videoInfo">
+
+                    <h3>Healthy Food</h3>
+
+                    <p>
+                        স্বাস্থ্যকর খাবার বেছে নেওয়ার কিছু tips।
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="videoCard">
+
+                <video controls preload="metadata">
+
+                    <source
+                        src="videos/wellness.mp4"
+                        type="video/mp4">
+
+                    Your browser does not support video.
+
+                </video>
+
+                <div class="videoInfo">
+
+                    <h3>Wellness Tips</h3>
+
+                    <p>
+                        সুস্থ জীবনযাপনের সহজ কিছু টিপস।
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="videoCard">
+
+                <video controls preload="metadata">
+
+                    <source
+                        src="videos/health-tips.mp4"
+                        type="video/mp4">
+
+                    Your browser does not support video.
+
+                </video>
+
+                <div class="videoInfo">
+
+                    <h3>Daily Health Tips</h3>
+
+                    <p>
+                        প্রতিদিনের স্বাস্থ্য সচেতনতার tips।
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FEATURES -->
+
+    <section class="features">
+
+        <div class="feature">
+
+            <div class="featureIcon">🌿</div>
+
+            <h3>Quality Products</h3>
+
+            <p>
+                মানসম্মত পণ্য
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="featureIcon">🚚</div>
+
+            <h3>Home Delivery</h3>
+
+            <p>
+                সারাদেশে Delivery Service
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="featureIcon">💚</div>
+
+            <h3>Trusted Service</h3>
+
+            <p>
+                আপনার বিশ্বাস আমাদের দায়িত্ব
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="featureIcon">📞</div>
+
+            <h3>Easy Order</h3>
+
+            <p>
+                সহজেই Order করুন
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section class="cta">
+
+        <div>
+
+            <h2>Order Your Products</h2>
+
+            <p>
+                আপনার প্রয়োজনীয় পণ্য সহজেই Order করুন।
+            </p>
+
+        </div>
+
+        <a
+            href="Order.html"
+            class="ctaBtn">
+            🛒 Order Now
+        </a>
+
+    </section>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+    <div class="footerInner">
+
+        <div>
+
+            <h3>নিরাময় ছোঁয়া</h3>
+
+            <p>
+                যত্ন, বিশ্বাস ও Quality Products-এর সাথে
+                আপনার পাশে।
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>Quick Links</h3>
+
+            <a href="index.html">Home</a>
+
+            <a href="Videos.html">Videos</a>
+
+            <a href="Products.html">Products</a>
+
+            <a href="Order.html">Order</a>
+
+            <a href="Reviews.html">Reviews</a>
+
+            <a href="About.html">About</a>
+
+        </div>
+
+
+        <div>
+
+            <h3>Contact Us</h3>
+
+            <p>
+                📍 Haydrabad Bridge, Tongi, Gazipur
+            </p>
+
+            <a
+                href="https://wa.me/8801841088731"
+                target="_blank">
+                💬 WhatsApp: 01841088731
+            </a>
+
+            <a href="mailto:niramoychowa@gmail.com">
+                ✉️ niramoychowa@gmail.com
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footerBottom">
+
+        © 2026 Niramoy Chhoya. All Rights Reserved.
+
+    </div>
+
+</footer>
+
+
+<!-- DETAILS MODAL -->
+
+<div
+    class="modal"
+    id="detailsModal">
+
+    <div class="modalBox">
+
+        <button
+            class="closeModal"
+            onclick="closeModal()">
+            ×
+        </button>
+
+        <div
+            class="modalImage"
+            id="modalImage">
+        </div>
+
+        <h2 id="modalName"></h2>
+
+        <div
+            class="modalDesc"
+            id="modalDesc">
+        </div>
+
+        <div
+            class="rating"
+            id="modalRating">
+        </div>
+
+        <div
+            class="modalPrice"
+            id="modalPrice">
+        </div>
+
+        <a
+            href="#"
+            id="modalOrder"
+            class="modalOrder">
+            🛒 Order Now
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- MOBILE BOTTOM BAR -->
+
+<nav class="bottomBar">
+
+    <a
+        href="index.html"
+        class="bottomItem active">
+
+        <div class="bottomIcon">⌂</div>
+
+        <span>HOME</span>
+
+    </a>
+
+
+    <a
+        href="Products.html"
+        class="bottomItem">
+
+        <div class="bottomIcon">▦</div>
+
+        <span>MENU</span>
+
+    </a>
+
+
+    <a
+        href="Order.html"
+        class="bottomItem">
+
+        <div class="bottomIcon">🛍</div>
+
+        <span>CART</span>
+
+        <span class="cartNumber">0</span>
+
+    </a>
+
+
+    <a
+        href="#products"
+        class="bottomItem"
+        onclick="goToSearch(event)">
+
+        <div class="bottomIcon">⌕</div>
+
+        <span>SEARCH</span>
+
+    </a>
+
+
+    <a
+        href="About.html"
+        class="bottomItem">
+
+        <div class="bottomIcon">♙</div>
+
+        <span>ACCOUNT</span>
+
+    </a>
+
+</nav>
+
+
+<script>
+
+/* ==========================================
+   ONLY 3 PRODUCTS
+   ========================================== */
+
+const products = [
+
+    {
+        name:"Vitalking Syrup",
+        description:"স্বাস্থ্য ও পুষ্টির জন্য ব্যবহৃত একটি সিরাপ।",
+        price:265,
+        originalPrice:300,
+        rating:4.8,
+        reviews:24,
+        category:"syrup",
+        image:"images/vitalking-syrup.jpg"
+    },
+
+    {
+        name:"Safa Khurma",
+        description:"মানসম্মত খেজুরের একটি পণ্য।",
+        price:650,
+        originalPrice:900,
+        rating:4.9,
+        reviews:20,
+        category:"dates",
+        image:"images/safa-khurma.jpg"
+    },
+
+    {
+        name:"Winpex A to Z Multivitamin & Multimineral - 30 Tablets",
+        description:"দৈনন্দিন পুষ্টির জন্য মাল্টিভিটামিন ও মিনারেল সাপ্লিমেন্ট।",
+        price:450,
+        rating:4.7,
+        reviews:18,
+        category:"tablet",
+        image:"images/Winpex-A-to-Z-Multivitamin-&-Multimineral.jpg"
+    }
+
+];
+
+
+/* ESCAPE */
+
+function escapeHTML(value){
+
+    return String(value)
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
+
+}
+
+
+/* DISCOUNT */
+
+function getDiscount(product){
+
+    if(!product.originalPrice){
+        return "";
+    }
+
+    const discount =
+        ((product.originalPrice - product.price) /
+        product.originalPrice) * 100;
+
+    return Math.round(discount) + "% OFF";
+
+}
+
+
+/* PRICE */
+
+function priceHTML(product){
+
+    if(product.originalPrice){
+
+        return `
+
+            <div class="priceBox">
+
+                <span class="originalPrice">
+                    ৳ ${product.originalPrice}
+                </span>
+
+                <span class="salePrice">
+                    ৳ ${product.price}
+                </span>
+
+                <span class="discountBadge">
+                    ${getDiscount(product)}
+                </span>
+
+            </div>
+
+        `;
+
+    }
+
+    return `
+
+        <div class="priceBox">
+
+            <span class="salePrice">
+                ৳ ${product.price}
+            </span>
+
+        </div>
+
+    `;
+
+}
+
+
+/* IMAGE */
+
+function imageHTML(product){
+
+    return `
+
+        <img
+            src="${escapeHTML(product.image)}"
+            alt="${escapeHTML(product.name)}"
+            loading="lazy"
+            onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;noResult&quot;>Product image not found</div>';"
+        >
+
+    `;
+
+}
+
+
+/* RENDER */
+
+function renderProducts(list = products){
+
+    const grid =
+        document.getElementById("productsGrid");
+
+
+    if(!list.length){
+
+        grid.innerHTML = `
+
+            <div class="noResult">
+
+                <h3>No Product Found</h3>
+
+                <p>
+                    অন্য কোনো Product Name দিয়ে Search করুন।
+                </p>
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    grid.innerHTML = list.map((product,index)=>`
+
+        <article class="productCard">
+
+            <div class="productPic">
+
+                ${imageHTML(product)}
+
+            </div>
+
+
+            <div class="productInfo">
+
+                <div class="productCategory">
+
+                    ${
+                        product.category === "syrup"
+                        ? "Syrup"
+                        : product.category === "dates"
+                        ? "Dates"
+                        : product.category === "tablet"
+                        ? "Tablet"
+                        : "Product"
+                    }
+
+                </div>
+
+
+                <h3 class="productName">
+
+                    ${escapeHTML(product.name)}
+
+                </h3>
+
+
+                <p class="productDesc">
+
+                    ${escapeHTML(product.description)}
+
+                </p>
+
+
+                <div class="rating">
+
+                    ★★★★★
+
+                    <span>
+                        ${product.rating}
+                        (${product.reviews} Reviews)
+                    </span>
+
+                </div>
+
+
+                ${priceHTML(product)}
+
+
+                <div class="productActions">
+
+                    <button
+                        class="detailsBtn"
+                        onclick="showDetails(${index})">
+
+                        বিস্তারিত / Details
+
+                    </button>
+
+
+                    <a
+                        href="Order.html?product=${encodeURIComponent(product.name)}"
+                        class="orderProductBtn">
+
+                        🛒 Order
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+    `).join("");
+
+}
+
+
+/* SEARCH */
+
+function searchProducts(){
+
+    const value =
+        document
+        .getElementById("searchInput")
+        .value
+        .trim()
+        .toLowerCase();
+
+
+    const filtered =
+        products.filter(product =>
+
+            product.name
+            .toLowerCase()
+            .includes(value)
+
+            ||
+
+            product.description
+            .toLowerCase()
+            .includes(value)
+
+        );
+
+
+    renderProducts(filtered);
+
+}
+
+
+/* CATEGORY */
+
+function filterCategory(category,button){
+
+    document
+        .querySelectorAll(".categoryBtn")
+        .forEach(btn=>{
+            btn.classList.remove("active");
+        });
+
+
+    button.classList.add("active");
+
+
+    if(category === "all"){
+
+        renderProducts(products);
+
+        return;
+
+    }
+
+
+    const filtered =
+        products.filter(product =>
+            product.category === category
+        );
+
+
+    renderProducts(filtered);
+
+}
+
+
+/* DETAILS */
+
+function showDetails(index){
+
+    const product = products[index];
+
+
+    document.getElementById("modalImage").innerHTML =
+        imageHTML(product);
+
+
+    document.getElementById("modalName").textContent =
+        product.name;
+
+
+    document.getElementById("modalDesc").textContent =
+        product.description;
+
+
+    document.getElementById("modalRating").innerHTML =
+
+        `★★★★★
+        <span>
+            ${product.rating}
+            (${product.reviews} Reviews)
+        </span>`;
+
+
+    document.getElementById("modalPrice").innerHTML =
+        priceHTML(product);
+
+
+    document.getElementById("modalOrder").href =
+        "Order.html?product=" +
+        encodeURIComponent(product.name);
+
+
+    document
+        .getElementById("detailsModal")
+        .classList.add("show");
+
+}
+
+
+/* CLOSE MODAL */
+
+function closeModal(){
+
+    document
+        .getElementById("detailsModal")
+        .classList.remove("show");
+
+}
+
+
+document
+    .getElementById("detailsModal")
+    .addEventListener("click",function(event){
+
+        if(event.target === this){
+
+            closeModal();
+
+        }
+
+    });
+
+
+/* MOBILE MENU */
+
+function toggleMenu(){
+
+    document
+        .getElementById("navLinks")
+        .classList.toggle("show");
+
+}
+
+
+/* SEARCH FROM BOTTOM BAR */
+
+function goToSearch(event){
+
+    event.preventDefault();
+
+    const search =
+        document.getElementById("searchInput");
+
+
+    document
+        .getElementById("products")
+        .scrollIntoView({
+            behavior:"smooth"
+        });
+
+
+    setTimeout(()=>{
+
+        search.focus();
+
+    },500);
+
+}
+
+
+/* CLOSE MENU AFTER CLICK */
+
+document
+    .querySelectorAll(".navLinks a")
+    .forEach(link=>{
+
+        link.addEventListener("click",()=>{
+
+            document
+                .getElementById("navLinks")
+                .classList.remove("show");
+
+        });
+
+    });
+
+
+/* INITIAL LOAD */
+
+renderProducts(products);
+
+</script>
+
+</body>
+</html>
