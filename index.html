@@ -361,7 +361,7 @@ a{
 
 
 /* =====================================================
-   MOBILE MENU
+   MOBILE MENU BUTTON
 ===================================================== */
 
 .menuBtn{
@@ -388,7 +388,7 @@ a{
 
 
 /* =====================================================
-   MAIN CONTAINER
+   MAIN
 ===================================================== */
 
 .container{
@@ -551,14 +551,33 @@ a{
 
 
 /* =====================================================
-   PRODUCT IMAGE SLIDER
+   PRODUCT GALLERY
 ===================================================== */
 
-.productImages{
+.productGallery{
+
+    position:relative;
+
+    width:100%;
+
+    background:#fff;
+
+    overflow:hidden;
+
+    border-radius:18px 18px 0 0;
+
+}
+
+
+/* =====================================================
+   IMAGE TRACK
+===================================================== */
+
+.productGalleryTrack{
 
     display:flex;
 
-    gap:10px;
+    width:100%;
 
     overflow-x:auto;
 
@@ -570,20 +589,16 @@ a{
 
     scrollbar-width:none;
 
-    padding:12px;
-
-    background:#f6fbf8;
-
     -webkit-overflow-scrolling:touch;
 
-    overscroll-behavior-x:contain;
-
     touch-action:pan-x;
+
+    overscroll-behavior-x:contain;
 
 }
 
 
-.productImages::-webkit-scrollbar{
+.productGalleryTrack::-webkit-scrollbar{
 
     display:none;
 
@@ -591,14 +606,14 @@ a{
 
 
 /* =====================================================
-   PRODUCT IMAGES
+   EACH IMAGE
 ===================================================== */
 
-.productImages img{
+.productGalleryTrack img{
 
-    flex:0 0 88%;
+    flex:0 0 100%;
 
-    width:88%;
+    width:100%;
 
     aspect-ratio:4 / 3;
 
@@ -606,15 +621,9 @@ a{
 
     background:#fff;
 
-    border-radius:13px;
+    padding:10px;
 
-    border:1px solid #edf1ee;
-
-    scroll-snap-align:start;
-
-    display:block;
-
-    padding:8px;
+    scroll-snap-align:center;
 
     user-select:none;
 
@@ -622,18 +631,40 @@ a{
 
     cursor:zoom-in;
 
-    transition:.25s;
+    display:block;
 
 }
 
 
 /* =====================================================
-   SWIPE INDICATOR
+   LEFT / RIGHT ARROWS
 ===================================================== */
 
-.swipeIndicator{
+.galleryArrow{
 
-    height:32px;
+    position:absolute;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:45px;
+
+    height:75px;
+
+    border:0;
+
+    background:transparent;
+
+    color:#0795e6;
+
+    font-family:Arial,sans-serif;
+
+    font-size:62px;
+
+    font-weight:300;
+
+    line-height:1;
 
     display:flex;
 
@@ -641,65 +672,49 @@ a{
 
     justify-content:center;
 
-    gap:10px;
+    cursor:pointer;
 
-    background:#f6fbf8;
+    z-index:10;
 
-    color:#557065;
+    padding:0;
+
+    transition:.2s;
 
     user-select:none;
 
 }
 
 
-.swipeIndicator .arrow{
+.galleryArrow:hover{
 
-    font-family:Arial,sans-serif;
-
-    font-size:25px;
-
-    line-height:1;
-
-    font-weight:400;
-
-}
-
-
-.swipeLine{
-
-    width:45px;
-
-    height:2px;
-
-    background:#aabdb4;
-
-    border-radius:10px;
-
-    position:relative;
-
-}
-
-
-.swipeLine::after{
-
-    content:"";
-
-    position:absolute;
-
-    top:50%;
-
-    left:50%;
-
-    width:7px;
-
-    height:7px;
-
-    border-radius:50%;
-
-    background:#11834a;
+    color:#0078c8;
 
     transform:
-        translate(-50%,-50%);
+        translateY(-50%)
+        scale(1.08);
+
+}
+
+
+.galleryArrow:active{
+
+    transform:
+        translateY(-50%)
+        scale(.95);
+
+}
+
+
+.galleryArrow.left{
+
+    left:0;
+
+}
+
+
+.galleryArrow.right{
+
+    right:0;
 
 }
 
@@ -871,7 +886,7 @@ a{
 
 
 /* =====================================================
-   DETAILS
+   DETAILS BUTTON
 ===================================================== */
 
 .detailsBtn{
@@ -895,7 +910,7 @@ a{
 
 
 /* =====================================================
-   PREMIUM PRODUCT ORDER
+   ORDER BUTTON
 ===================================================== */
 
 .orderProductBtn{
@@ -987,7 +1002,7 @@ a{
 
 
 /* =====================================================
-   VIDEO SECTION
+   VIDEOS
 ===================================================== */
 
 .videoSection{
@@ -1322,7 +1337,7 @@ a{
 
 
 /* =====================================================
-   FULL SCREEN IMAGE VIEWER
+   FULLSCREEN IMAGE VIEWER
 ===================================================== */
 
 .imageViewer{
@@ -1333,7 +1348,7 @@ a{
 
     z-index:9999;
 
-    background:rgba(0,0,0,.94);
+    background:rgba(0,0,0,.95);
 
     display:none;
 
@@ -1373,8 +1388,6 @@ a{
 
     -webkit-user-drag:none;
 
-    border-radius:4px;
-
 }
 
 
@@ -1394,7 +1407,7 @@ a{
 
     border-radius:50%;
 
-    background:rgba(255,255,255,.14);
+    background:rgba(255,255,255,.15);
 
     color:#fff;
 
@@ -1410,12 +1423,14 @@ a{
 
     justify-content:center;
 
+    z-index:10;
+
 }
 
 
 .viewerClose:hover{
 
-    background:rgba(255,255,255,.25);
+    background:rgba(255,255,255,.28);
 
 }
 
@@ -1588,57 +1603,38 @@ a{
     }
 
 
-    /* MOBILE SWIPE */
+    /* MOBILE GALLERY */
 
-    .productImages{
-
-        padding:7px;
-
-        gap:7px;
-
-        scroll-snap-type:x mandatory;
-
-        touch-action:pan-x;
-
-    }
-
-
-    .productImages img{
-
-        flex:0 0 88%;
-
-        width:88%;
+    .productGalleryTrack img{
 
         aspect-ratio:4 / 3;
 
-        padding:5px;
-
-        border-radius:10px;
-
-        scroll-snap-align:start;
+        padding:6px;
 
     }
 
 
-    .swipeIndicator{
+    .galleryArrow{
 
-        height:28px;
+        width:36px;
 
-        gap:8px;
+        height:60px;
 
-    }
-
-
-    .swipeIndicator .arrow{
-
-        font-size:23px;
+        font-size:50px;
 
     }
 
 
-    .swipeLine{
+    .galleryArrow.left{
 
-        width:38px;
+        left:0;
+
+    }
+
+
+    .galleryArrow.right{
+
+        right:0;
 
     }
 
@@ -1857,7 +1853,7 @@ a{
     }
 
 
-    /* FULL IMAGE */
+    /* FULLSCREEN */
 
     .imageViewer{
 
@@ -2082,8 +2078,6 @@ a{
 
 
 
-            <!-- SEARCH -->
-
             <div class="searchBox">
 
                 <div class="searchIcon">
@@ -2104,7 +2098,7 @@ a{
 
 
 
-        <!-- PRODUCTS -->
+        <!-- PRODUCT GRID -->
 
         <div
             class="productsGrid"
@@ -2553,7 +2547,7 @@ a{
 
 
 <!-- =====================================================
-     FULL QUALITY IMAGE VIEWER
+     FULLSCREEN IMAGE VIEWER
 ===================================================== -->
 
 <div
@@ -2591,7 +2585,6 @@ a{
 const products = [
 
     {
-
         id:"vitalking-syrup",
 
         name:"Vitalking Syrup",
@@ -2620,12 +2613,10 @@ const products = [
             "images/vitalking-syrup-4.jpg"
 
         ]
-
     },
 
 
     {
-
         id:"safa-khurma",
 
         name:"Safa Khurma",
@@ -2654,12 +2645,10 @@ const products = [
             "images/safa-khurma-4.jpg"
 
         ]
-
     },
 
 
     {
-
         id:"winpex-a-to-z",
 
         name:
@@ -2687,7 +2676,6 @@ const products = [
             "images/Winpex-A-to-Z-4.jpg"
 
         ]
-
     }
 
 ];
@@ -2732,13 +2720,9 @@ function getDiscount(product){
     const discount =
 
         (
-
             (product.originalPrice - product.price)
-
             /
-
             product.originalPrice
-
         ) * 100;
 
 
@@ -2749,7 +2733,7 @@ function getDiscount(product){
 
 
 /* =====================================================
-   PRICE HTML
+   PRICE
 ===================================================== */
 
 function priceHTML(product){
@@ -2806,55 +2790,172 @@ function priceHTML(product){
 
 
 /* =====================================================
-   PRODUCT IMAGE HTML
+   PRODUCT GALLERY HTML
 ===================================================== */
 
 function imagesHTML(product){
 
+    const galleryId =
+        "gallery-" + product.id;
+
+
     return `
 
-        <div class="productImages">
-
-            ${product.images.map((image,index)=>`
-
-                <img
-
-                    src="${escapeHTML(image)}"
-
-                    alt="${escapeHTML(product.name)} - Image ${index + 1}"
-
-                    loading="${index === 0 ? "eager" : "lazy"}"
-
-                    draggable="false"
-
-                    onclick="openImageViewer(this.src, event)"
-
-                    onerror="this.style.display='none';"
-
-                >
-
-            `).join("")}
-
-        </div>
+        <div
+            class="productGallery"
+            id="${galleryId}">
 
 
-        <div class="swipeIndicator">
+            <!-- LEFT -->
 
-            <span class="arrow left">
+            <button
+                type="button"
+                class="galleryArrow left"
+                onclick="galleryMove('${galleryId}',-1,event)"
+                aria-label="Previous image">
+
                 ‹
-            </span>
+
+            </button>
 
 
-            <span class="swipeLine"></span>
+
+            <!-- IMAGE TRACK -->
+
+            <div
+                class="productGalleryTrack">
+
+                ${product.images.map((image,index)=>`
+
+                    <img
+
+                        src="${escapeHTML(image)}"
+
+                        alt="${escapeHTML(product.name)} - Image ${index + 1}"
+
+                        loading="${index === 0 ? "eager" : "lazy"}"
+
+                        draggable="false"
+
+                        onclick="openImageViewer(this.src,event)"
+
+                        onerror="this.style.display='none';"
+
+                    >
+
+                `).join("")}
+
+            </div>
 
 
-            <span class="arrow right">
+
+            <!-- RIGHT -->
+
+            <button
+                type="button"
+                class="galleryArrow right"
+                onclick="galleryMove('${galleryId}',1,event)"
+                aria-label="Next image">
+
                 ›
-            </span>
+
+            </button>
+
 
         </div>
 
     `;
+
+}
+
+
+
+/* =====================================================
+   GALLERY ARROW CONTROL
+===================================================== */
+
+function galleryMove(
+    galleryId,
+    direction,
+    event
+){
+
+    if(event){
+
+        event.preventDefault();
+
+        event.stopPropagation();
+
+    }
+
+
+    const gallery =
+        document.getElementById(galleryId);
+
+
+    if(!gallery){
+
+        return;
+
+    }
+
+
+    const track =
+        gallery.querySelector(
+            ".productGalleryTrack"
+        );
+
+
+    const images =
+        track.querySelectorAll("img");
+
+
+    if(!images.length){
+
+        return;
+
+    }
+
+
+    const imageWidth =
+        track.clientWidth;
+
+
+    let currentIndex =
+        Math.round(
+            track.scrollLeft / imageWidth
+        );
+
+
+    let nextIndex =
+        currentIndex + direction;
+
+
+    /* LOOP */
+
+    if(nextIndex >= images.length){
+
+        nextIndex = 0;
+
+    }
+
+
+    if(nextIndex < 0){
+
+        nextIndex =
+            images.length - 1;
+
+    }
+
+
+    track.scrollTo({
+
+        left:
+            nextIndex * imageWidth,
+
+        behavior:"smooth"
+
+    });
 
 }
 
@@ -2867,7 +2968,9 @@ function imagesHTML(product){
 function renderProducts(list = products){
 
     const grid =
-        document.getElementById("productsGrid");
+        document.getElementById(
+            "productsGrid"
+        );
 
 
     if(!list.length){
@@ -2893,83 +2996,85 @@ function renderProducts(list = products){
     }
 
 
-    grid.innerHTML = list.map(product => `
+    grid.innerHTML =
 
-        <article class="productCard">
+        list.map(product => `
 
-
-            ${imagesHTML(product)}
-
-
-            <div class="productInfo">
+            <article class="productCard">
 
 
-                <h3 class="productName">
-
-                    ${escapeHTML(product.name)}
-
-                </h3>
+                ${imagesHTML(product)}
 
 
-                <p class="productDesc">
-
-                    ${escapeHTML(product.description)}
-
-                </p>
+                <div class="productInfo">
 
 
-                <div class="rating">
+                    <h3 class="productName">
 
-                    ★★★★★
+                        ${escapeHTML(product.name)}
 
-                    <span>
+                    </h3>
 
-                        ${product.rating}
 
-                        (${product.reviews} Reviews)
+                    <p class="productDesc">
 
-                    </span>
+                        ${escapeHTML(product.description)}
+
+                    </p>
+
+
+                    <div class="rating">
+
+                        ★★★★★
+
+                        <span>
+
+                            ${product.rating}
+
+                            (${product.reviews} Reviews)
+
+                        </span>
+
+                    </div>
+
+
+                    ${priceHTML(product)}
+
+
+                    <div class="productActions">
+
+
+                        <a
+
+                            href="${escapeHTML(product.detailsPage)}"
+
+                            class="detailsBtn">
+
+                            বিস্তারিত / Details
+
+                        </a>
+
+
+                        <a
+
+                            href="Order.html?product=${encodeURIComponent(product.name)}"
+
+                            class="orderProductBtn">
+
+                            🛒 Order Now
+
+                        </a>
+
+
+                    </div>
+
 
                 </div>
 
 
-                ${priceHTML(product)}
+            </article>
 
-
-                <div class="productActions">
-
-
-                    <a
-
-                        href="${escapeHTML(product.detailsPage)}"
-
-                        class="detailsBtn">
-
-                        বিস্তারিত / Details
-
-                    </a>
-
-
-                    <a
-
-                        href="Order.html?product=${encodeURIComponent(product.name)}"
-
-                        class="orderProductBtn">
-
-                        🛒 Order Now
-
-                    </a>
-
-
-                </div>
-
-
-            </div>
-
-
-        </article>
-
-    `).join("");
+        `).join("");
 
 }
 
@@ -2985,7 +3090,9 @@ function searchProducts(){
 
         document
 
-        .getElementById("searchInput")
+        .getElementById(
+            "searchInput"
+        )
 
         .value
 
@@ -2999,18 +3106,14 @@ function searchProducts(){
         products.filter(product =>
 
             product.name
-
-            .toLowerCase()
-
-            .includes(value)
+                .toLowerCase()
+                .includes(value)
 
             ||
 
             product.description
-
-            .toLowerCase()
-
-            .includes(value)
+                .toLowerCase()
+                .includes(value)
 
         );
 
@@ -3040,7 +3143,7 @@ function toggleMenu(){
 
 
 /* =====================================================
-   CLOSE MOBILE MENU AFTER CLICK
+   CLOSE MOBILE MENU
 ===================================================== */
 
 document
@@ -3049,29 +3152,36 @@ document
 
     .forEach(link => {
 
-        link.addEventListener("click", () => {
+        link.addEventListener(
+            "click",
+            () => {
 
-            document
+                document
+                    .getElementById(
+                        "navLinks"
+                    )
+                    .classList
+                    .remove("show");
 
-                .getElementById("navLinks")
-
-                .classList
-
-                .remove("show");
-
-        });
+            }
+        );
 
     });
 
 
 
 /* =====================================================
-   FULL QUALITY IMAGE VIEWER
+   FULLSCREEN IMAGE VIEWER
 ===================================================== */
 
-function openImageViewer(src,event){
+function openImageViewer(
+    src,
+    event
+){
 
     if(event){
+
+        event.preventDefault();
 
         event.stopPropagation();
 
@@ -3079,17 +3189,16 @@ function openImageViewer(src,event){
 
 
     const viewer =
-        document.getElementById("imageViewer");
+        document.getElementById(
+            "imageViewer"
+        );
 
 
     const viewerImage =
-        document.getElementById("viewerImage");
+        document.getElementById(
+            "viewerImage"
+        );
 
-
-    /*
-       এখানে clicked image-এর original src
-       ব্যবহার করা হচ্ছে।
-    */
 
     viewerImage.src = src;
 
@@ -3097,7 +3206,8 @@ function openImageViewer(src,event){
     viewer.classList.add("show");
 
 
-    document.body.style.overflow = "hidden";
+    document.body.style.overflow =
+        "hidden";
 
 }
 
@@ -3111,27 +3221,32 @@ function closeImageViewer(event){
 
     if(event){
 
+        event.preventDefault();
+
         event.stopPropagation();
 
     }
 
 
     const viewer =
-        document.getElementById("imageViewer");
+        document.getElementById(
+            "imageViewer"
+        );
 
 
     viewer.classList.remove("show");
 
 
-    document.body.style.overflow = "";
+    document.body.style.overflow =
+        "";
 
 
     setTimeout(() => {
 
         document
-
-            .getElementById("viewerImage")
-
+            .getElementById(
+                "viewerImage"
+            )
             .src = "";
 
     },200);
@@ -3141,7 +3256,7 @@ function closeImageViewer(event){
 
 
 /* =====================================================
-   ESC KEY
+   ESC TO CLOSE
 ===================================================== */
 
 document.addEventListener(
