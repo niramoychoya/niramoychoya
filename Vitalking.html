@@ -1,1688 +1,1230 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Vitalking Syrup | নিরাময় ছোঁয়া</title>
-
-    <meta
-        name="description"
-        content="Vitalking Syrup - নিরাময় ছোঁয়া"
-    >
-
-    <style>
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family:
-                "Noto Sans Bengali",
-                "Hind Siliguri",
-                Arial,
-                sans-serif;
-
-            background: #f5f8f6;
-            color: #17251d;
-            line-height: 1.7;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        button {
-            font-family: inherit;
-        }
-
-
-        /* =========================
-           HEADER
-        ========================= */
-
-        header {
-            background: rgba(255,255,255,0.97);
-            border-bottom: 1px solid #e3ebe6;
-
-            position: sticky;
-            top: 0;
-            z-index: 100;
-
-            backdrop-filter: blur(12px);
-        }
-
-        .headerInner {
-            max-width: 1150px;
-            margin: auto;
-
-            min-height: 72px;
-            padding: 10px 20px;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            gap: 20px;
-        }
-
-
-        /* LOGO */
-
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 11px;
-        }
-
-        .brand img {
-            width: 48px;
-            height: 48px;
-
-            object-fit: contain;
-
-            border-radius: 10px;
-        }
-
-        .brandText h1 {
-            font-size: 19px;
-            color: #126b3a;
-
-            line-height: 1.2;
-            font-weight: 800;
-        }
-
-        .brandText span {
-            display: block;
-
-            font-size: 10px;
-            color: #708078;
-
-            letter-spacing: 1.2px;
-            margin-top: 2px;
-        }
-
-
-        /* BACK BUTTON */
-
-        .backBtn {
-            display: inline-flex;
-            align-items: center;
-            gap: 7px;
-
-            padding: 9px 16px;
-
-            border: 1px solid #d5e4db;
-            border-radius: 30px;
-
-            color: #126b3a;
-            background: #f5faf7;
-
-            font-size: 14px;
-            font-weight: 700;
-
-            transition: 0.25s;
-        }
-
-        .backBtn:hover {
-            background: #126b3a;
-            color: white;
-
-            transform: translateY(-1px);
-        }
-
-
-        /* =========================
-           MAIN
-        ========================= */
-
-        main {
-            max-width: 1050px;
-            margin: auto;
-
-            padding: 28px 20px 60px;
-        }
-
-
-        /* =========================
-           PAGE HEADING
-        ========================= */
-
-        .pageHeading {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .pageHeading h2 {
-            color: #126b3a;
-
-            font-size: 28px;
-            font-weight: 800;
-        }
-
-        .pageHeading p {
-            color: #718078;
-
-            font-size: 14px;
-            margin-top: 3px;
-        }
-
-
-        /* =========================
-           PRODUCT GALLERY
-        ========================= */
-
-        .gallerySection {
-            width: 100%;
-
-            display: flex;
-            justify-content: center;
-
-            margin-bottom: 30px;
-        }
-
-        .gallery {
-            position: relative;
-
-            width: 100%;
-            max-width: 600px;
-
-            background: white;
-
-            border: 1px solid #e1ebe5;
-            border-radius: 16px;
-
-            padding: 10px;
-
-            box-shadow:
-                0 8px 25px rgba(18,107,58,0.07);
-        }
-
-        .galleryTrack {
-            width: 100%;
-
-            display: flex;
-
-            overflow-x: auto;
-            overflow-y: hidden;
-
-            scroll-behavior: smooth;
-            scroll-snap-type: x mandatory;
-
-            scrollbar-width: none;
-
-            border-radius: 11px;
-
-            touch-action: pan-x;
-        }
-
-        .galleryTrack::-webkit-scrollbar {
-            display: none;
-        }
-
-        .galleryItem {
-            min-width: 100%;
-            flex: 0 0 100%;
-
-            scroll-snap-align: center;
-
-            height: 260px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            background: #fafcfb;
-
-            cursor: zoom-in;
-
-            border-radius: 11px;
-
-            overflow: hidden;
-        }
-
-        .galleryItem img {
-            width: 100%;
-            height: 100%;
-
-            object-fit: contain;
-
-            display: block;
-
-            user-select: none;
-            -webkit-user-drag: none;
-        }
-
-
-        /* =========================
-           GALLERY ARROWS
-        ========================= */
-
-        .galleryArrow {
-            position: absolute;
-
-            top: 50%;
-            transform: translateY(-50%);
-
-            width: 38px;
-            height: 38px;
-
-            border: none;
-            border-radius: 50%;
-
-            background: rgba(18,107,58,0.9);
-
-            color: white;
-
-            font-size: 23px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            cursor: pointer;
-
-            z-index: 5;
-
-            box-shadow:
-                0 4px 12px rgba(0,0,0,0.15);
-
-            transition: 0.2s;
-        }
-
-        .galleryArrow:hover {
-            background: #0d552e;
-
-            transform:
-                translateY(-50%)
-                scale(1.06);
-        }
-
-        .galleryArrow.left {
-            left: 17px;
-        }
-
-        .galleryArrow.right {
-            right: 17px;
-        }
-
-
-        /* SWIPE INDICATOR */
-
-        .swipeIndicator {
-            position: absolute;
-
-            bottom: 16px;
-            left: 50%;
-
-            transform: translateX(-50%);
-
-            background: rgba(0,0,0,0.58);
-
-            color: white;
-
-            border-radius: 20px;
-
-            padding: 4px 11px;
-
-            font-size: 12px;
-
-            pointer-events: none;
-
-            white-space: nowrap;
-        }
-
-
-        /* =========================
-           FULLSCREEN IMAGE
-        ========================= */
-
-        .imageViewer {
-            position: fixed;
-
-            inset: 0;
-
-            background: rgba(0,0,0,0.94);
-
-            z-index: 9999;
-
-            display: none;
-
-            align-items: center;
-            justify-content: center;
-
-            padding: 25px;
-        }
-
-        .imageViewer.active {
-            display: flex;
-        }
-
-        .imageViewer img {
-            max-width: 96vw;
-            max-height: 92vh;
-
-            width: auto;
-            height: auto;
-
-            object-fit: contain;
-
-            border-radius: 6px;
-        }
-
-        .closeViewer {
-            position: absolute;
-
-            top: 18px;
-            right: 20px;
-
-            width: 42px;
-            height: 42px;
-
-            border: none;
-            border-radius: 50%;
-
-            background: white;
-            color: #111;
-
-            font-size: 25px;
-
-            cursor: pointer;
-
-            z-index: 2;
-        }
-
-
-        /* =========================
-           DETAILS
-        ========================= */
-
-        .details {
-            max-width: 900px;
-
-            margin: 0 auto 35px;
-        }
-
-        .detailCard {
-            background: white;
-
-            border: 1px solid #e3ebe6;
-
-            border-radius: 15px;
-
-            padding: 22px;
-
-            margin-bottom: 15px;
-
-            box-shadow:
-                0 5px 18px rgba(18,107,58,0.045);
-        }
-
-        .detailCard h2 {
-            font-size: 20px;
-
-            color: #126b3a;
-
-            margin-bottom: 10px;
-
-            font-weight: 800;
-
-            position: relative;
-
-            padding-left: 12px;
-        }
-
-        .detailCard h2::before {
-            content: "";
-
-            position: absolute;
-
-            left: 0;
-            top: 6px;
-
-            width: 4px;
-            height: 20px;
-
-            border-radius: 5px;
-
-            background: #126b3a;
-        }
-
-        .detailCard p {
-            color: #4d5d54;
-
-            font-size: 15px;
-        }
-
-        .detailCard ul {
-            padding-left: 21px;
-
-            color: #4d5d54;
-
-            font-size: 15px;
-        }
-
-        .detailCard li {
-            margin-bottom: 7px;
-        }
-
-
-        /* NOTICE */
-
-        .notice {
-            background: #f0f8f3;
-
-            border-left: 4px solid #126b3a;
-
-            padding: 13px 15px;
-
-            border-radius: 8px;
-
-            color: #3f5749;
-
-            font-size: 14px;
-        }
-
-
-        /* =========================
-           VIDEO
-        ========================= */
-
-        .productVideo {
-            max-width: 520px;
-
-            margin: 30px auto;
-
-            text-align: center;
-        }
-
-        .productVideo h2 {
-            color: #126b3a;
-
-            font-size: 21px;
-
-            margin-bottom: 10px;
-        }
-
-        .videoBox {
-            width: 100%;
-
-            background: #111;
-
-            border-radius: 13px;
-
-            overflow: hidden;
-
-            box-shadow:
-                0 8px 22px rgba(0,0,0,0.12);
-        }
-
-        .videoBox video {
-            width: 100%;
-
-            height: 290px;
-
-            display: block;
-
-            object-fit: contain;
-
-            background: #000;
-        }
-
-
-        /* =========================
-           PRODUCT INFO
-        ========================= */
-
-        .productInfo {
-            max-width: 620px;
-
-            margin: 35px auto 0;
-
-            text-align: center;
-
-            background: white;
-
-            border: 1px solid #e2ebe6;
-
-            border-radius: 17px;
-
-            padding: 25px 20px;
-
-            box-shadow:
-                0 8px 28px rgba(18,107,58,0.08);
-        }
-
-        .productName {
-            color: #126b3a;
-
-            font-size: 27px;
-
-            font-weight: 800;
-
-            margin-bottom: 5px;
-        }
-
-        .price {
-            font-size: 27px;
-
-            color: #d26b17;
-
-            font-weight: 900;
-
-            margin-bottom: 17px;
-        }
-
-
-        /* =========================
-           ORDER BUTTON
-        ========================= */
-
-        .orderBtn {
-            display: inline-flex;
-
-            align-items: center;
-            justify-content: center;
-
-            min-width: 240px;
-
-            padding: 13px 25px;
-
-            border-radius: 10px;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #158447,
-                    #0d6033
-                );
-
-            color: white;
-
-            font-size: 17px;
-
-            font-weight: 800;
-
-            box-shadow:
-                0 8px 18px rgba(18,107,58,0.25);
-
-            transition: 0.25s;
-        }
-
-        .orderBtn:hover {
-            transform: translateY(-2px);
-
-            box-shadow:
-                0 12px 24px rgba(18,107,58,0.32);
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #0d6033,
-                    #084725
-                );
-        }
-
-
-        /* =========================
-           FOOTER
-        ========================= */
-
-        footer {
-            background: #103d28;
-
-            color: #d9e8df;
-
-            text-align: center;
-
-            padding: 22px 15px;
-
-            font-size: 13px;
-        }
-
-        footer strong {
-            color: white;
-        }
-
-
-        /* =========================
-           MOBILE
-        ========================= */
-
-        @media (max-width: 700px) {
-
-            .headerInner {
-                min-height: 64px;
-
-                padding: 8px 13px;
-            }
-
-            .brand img {
-                width: 42px;
-                height: 42px;
-            }
-
-            .brandText h1 {
-                font-size: 16px;
-            }
-
-            .brandText span {
-                font-size: 8px;
-            }
-
-            .backBtn {
-                padding: 7px 12px;
-
-                font-size: 13px;
-            }
-
-
-            main {
-                padding:
-                    20px
-                    12px
-                    45px;
-            }
-
-
-            .pageHeading {
-                margin-bottom: 15px;
-            }
-
-            .pageHeading h2 {
-                font-size: 23px;
-            }
-
-            .pageHeading p {
-                font-size: 12px;
-            }
-
-
-            /* GALLERY */
-
-            .gallery {
-                max-width: 100%;
-
-                padding: 7px;
-
-                border-radius: 13px;
-            }
-
-            .galleryItem {
-                height: 210px;
-
-                border-radius: 9px;
-            }
-
-            .galleryArrow {
-                width: 34px;
-                height: 34px;
-
-                font-size: 20px;
-            }
-
-            .galleryArrow.left {
-                left: 12px;
-            }
-
-            .galleryArrow.right {
-                right: 12px;
-            }
-
-            .swipeIndicator {
-                bottom: 10px;
-
-                font-size: 10px;
-
-                padding: 3px 8px;
-            }
-
-
-            /* DETAILS */
-
-            .details {
-                margin-bottom: 25px;
-            }
-
-            .detailCard {
-                padding: 17px 15px;
-
-                border-radius: 12px;
-
-                margin-bottom: 11px;
-            }
-
-            .detailCard h2 {
-                font-size: 18px;
-            }
-
-            .detailCard p,
-            .detailCard ul {
-                font-size: 14px;
-            }
-
-
-            /* VIDEO */
-
-            .productVideo {
-                max-width: 100%;
-
-                margin:
-                    25px
-                    auto;
-            }
-
-            .productVideo h2 {
-                font-size: 18px;
-            }
-
-            .videoBox {
-                border-radius: 11px;
-            }
-
-            .videoBox video {
-                height: auto;
-
-                aspect-ratio: 16 / 9;
-
-                object-fit: contain;
-            }
-
-
-            /* PRODUCT INFO */
-
-            .productInfo {
-                margin-top: 25px;
-
-                padding: 21px 15px;
-
-                border-radius: 13px;
-            }
-
-            .productName {
-                font-size: 23px;
-            }
-
-            .price {
-                font-size: 24px;
-            }
-
-            .orderBtn {
-                width: 100%;
-
-                min-width: 0;
-
-                font-size: 16px;
-
-                padding: 12px 18px;
-            }
-
-        }
-
-
-        /* =========================
-           SMALL MOBILE
-        ========================= */
-
-        @media (max-width: 380px) {
-
-            .brandText h1 {
-                font-size: 15px;
-            }
-
-            .backBtn {
-                padding: 6px 9px;
-
-                font-size: 12px;
-            }
-
-            .galleryItem {
-                height: 195px;
-            }
-
-            .detailCard {
-                padding: 15px 13px;
-            }
-
-        }
-
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Vital King Syrup | নিরাময় ছোঁয়া</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f7faf8;
+      color: #222;
+      line-height: 1.7;
+    }
+
+    /* ================= HEADER ================= */
+
+    header {
+      background: #fff;
+      border-bottom: 1px solid #e5e5e5;
+      padding: 12px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .header-inner {
+      max-width: 1150px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: #166534;
+    }
+
+    .brand img {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+      border-radius: 10px;
+    }
+
+    .brand-text h1 {
+      font-size: 20px;
+      line-height: 1.2;
+      font-weight: 700;
+    }
+
+    .brand-text span {
+      display: block;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      color: #777;
+      margin-top: 2px;
+    }
+
+    .back-btn {
+      text-decoration: none;
+      color: #166534;
+      font-weight: 600;
+      border: 1px solid #166534;
+      padding: 8px 16px;
+      border-radius: 8px;
+      transition: 0.3s;
+      white-space: nowrap;
+    }
+
+    .back-btn:hover {
+      background: #166534;
+      color: #fff;
+    }
+
+    /* ================= MAIN ================= */
+
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 35px 18px 60px;
+    }
+
+    .product-title {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .product-title h2 {
+      font-size: 30px;
+      color: #14532d;
+      margin-bottom: 5px;
+    }
+
+    .product-title p {
+      color: #777;
+      font-size: 14px;
+    }
+
+    /* ================= GALLERY ================= */
+
+    .gallery-section {
+      margin-bottom: 40px;
+    }
+
+    .gallery {
+      position: relative;
+      max-width: 600px;
+      height: 260px;
+      margin: auto;
+      overflow: hidden;
+      border-radius: 16px;
+      background: #fff;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      touch-action: pan-y;
+    }
+
+    .gallery-track {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      transition: transform 0.35s ease;
+    }
+
+    .gallery-slide {
+      min-width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      cursor: zoom-in;
+    }
+
+    .gallery-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+
+    /* ================= GALLERY ARROWS ================= */
+
+    .gallery-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 42px;
+      height: 42px;
+      border: none;
+      border-radius: 50%;
+      background: rgba(0,0,0,0.55);
+      color: #fff;
+      font-size: 25px;
+      cursor: pointer;
+      z-index: 5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.25s;
+    }
+
+    .gallery-arrow:hover {
+      background: #166534;
+    }
+
+    .gallery-arrow.left {
+      left: 12px;
+    }
+
+    .gallery-arrow.right {
+      right: 12px;
+    }
+
+    /* ================= DETAILS ================= */
+
+    .details-title {
+      text-align: center;
+      margin-bottom: 22px;
+      color: #14532d;
+      font-size: 28px;
+    }
+
+    .detail-card {
+      background: #fff;
+      margin-bottom: 17px;
+      padding: 23px;
+      border-radius: 15px;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.06);
+      border-left: 4px solid #22c55e;
+    }
+
+    .detail-card h3 {
+      color: #166534;
+      font-size: 20px;
+      margin-bottom: 11px;
+    }
+
+    .detail-card p {
+      color: #444;
+      font-size: 15px;
+    }
+
+    .detail-card ul {
+      padding-left: 22px;
+      color: #444;
+    }
+
+    .detail-card li {
+      margin-bottom: 8px;
+      font-size: 15px;
+    }
+
+    /* ================= FAQ ================= */
+
+    .faq-question {
+      font-weight: 700;
+      color: #14532d;
+      margin-top: 15px;
+      margin-bottom: 5px;
+    }
+
+    .faq-answer {
+      color: #444;
+    }
+
+    /* ================= VIDEO ================= */
+
+    .video-section {
+      margin-top: 42px;
+      text-align: center;
+    }
+
+    .video-section h2 {
+      color: #14532d;
+      margin-bottom: 18px;
+      font-size: 27px;
+    }
+
+    .video-wrapper {
+      max-width: 520px;
+      height: 290px;
+      margin: auto;
+      border-radius: 15px;
+      overflow: hidden;
+      background: #000;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.10);
+    }
+
+    .video-wrapper video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ================= ORDER ================= */
+
+    .order-section {
+      text-align: center;
+      margin-top: 38px;
+      background: #fff;
+      padding: 30px 20px;
+      border-radius: 18px;
+      box-shadow: 0 7px 25px rgba(0,0,0,0.07);
+    }
+
+    .order-section h2 {
+      color: #14532d;
+      margin-bottom: 5px;
+      font-size: 24px;
+    }
+
+    .price {
+      font-size: 32px;
+      font-weight: 800;
+      color: #15803d;
+      margin: 8px 0 22px;
+    }
+
+    .order-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-width: 210px;
+      padding: 14px 28px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #166534, #22c55e);
+      color: #fff;
+      text-decoration: none;
+      font-size: 17px;
+      font-weight: 700;
+      box-shadow: 0 8px 20px rgba(22,101,52,0.28);
+      transition: all 0.3s ease;
+    }
+
+    .order-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 26px rgba(22,101,52,0.35);
+    }
+
+    .order-btn:active {
+      transform: scale(0.97);
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer {
+      background: #14532d;
+      color: #fff;
+      text-align: center;
+      padding: 25px 15px;
+      margin-top: 30px;
+    }
+
+    footer h3 {
+      margin-bottom: 5px;
+    }
+
+    footer p {
+      font-size: 13px;
+      opacity: 0.9;
+    }
+
+    footer a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    /* ================= FULLSCREEN VIEWER ================= */
+
+    .image-viewer {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.95);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      padding: 20px;
+    }
+
+    .image-viewer.active {
+      display: flex;
+    }
+
+    .image-viewer img {
+      max-width: 95%;
+      max-height: 90vh;
+      object-fit: contain;
+    }
+
+    .close-viewer {
+      position: absolute;
+      top: 18px;
+      right: 22px;
+      width: 42px;
+      height: 42px;
+      border: none;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.15);
+      color: #fff;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    /* ================= MOBILE ================= */
+
+    @media (max-width: 600px) {
+
+      header {
+        padding: 10px 13px;
+      }
+
+      .brand img {
+        width: 42px;
+        height: 42px;
+      }
+
+      .brand-text h1 {
+        font-size: 17px;
+      }
+
+      .brand-text span {
+        font-size: 9px;
+      }
+
+      .back-btn {
+        padding: 7px 12px;
+        font-size: 13px;
+      }
+
+      main {
+        padding: 25px 12px 45px;
+      }
+
+      .product-title h2 {
+        font-size: 25px;
+      }
+
+      .gallery {
+        height: 210px;
+        border-radius: 13px;
+      }
+
+      .gallery-arrow {
+        width: 36px;
+        height: 36px;
+        font-size: 21px;
+      }
+
+      .gallery-arrow.left {
+        left: 8px;
+      }
+
+      .gallery-arrow.right {
+        right: 8px;
+      }
+
+      .details-title {
+        font-size: 24px;
+      }
+
+      .detail-card {
+        padding: 18px 16px;
+      }
+
+      .detail-card h3 {
+        font-size: 18px;
+      }
+
+      .detail-card p,
+      .detail-card li {
+        font-size: 14px;
+      }
+
+      .video-wrapper {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+      }
+
+      .video-wrapper video {
+        object-fit: contain;
+      }
+
+      .price {
+        font-size: 29px;
+      }
+
+      .order-btn {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+  </style>
 </head>
-
 
 <body>
 
+  <!-- ================= HEADER ================= -->
 
-<!-- =========================
-     HEADER
-========================= -->
+  <header>
+    <div class="header-inner">
 
-<header>
+      <a href="index.html" class="brand">
 
-    <div class="headerInner">
-
-        <a href="index.html" class="brand">
-
-            <img
-                src="images/logo.png"
-                alt="নিরাময় ছোঁয়া Logo"
-            >
-
-            <div class="brandText">
-
-                <h1>
-                    নিরাময় ছোঁয়া
-                </h1>
-
-                <span>
-                    NIRAMOY CHHOYA
-                </span>
-
-            </div>
-
-        </a>
-
-
-        <a
-            href="index.html"
-            class="backBtn"
+        <img
+          src="images/logo.png"
+          alt="নিরাময় ছোঁয়া Logo"
         >
-            ← Back
-        </a>
+
+        <div class="brand-text">
+          <h1>নিরাময় ছোঁয়া</h1>
+          <span>NIRAMOY CHHOYA</span>
+        </div>
+
+      </a>
+
+      <a href="index.html" class="back-btn">
+        ← Back
+      </a>
+
+    </div>
+  </header>
+
+
+  <!-- ================= MAIN ================= -->
+
+  <main>
+
+    <!-- PRODUCT TITLE -->
+
+    <div class="product-title">
+
+      <h2>
+        Vital King Syrup
+      </h2>
+
+      <p>
+        Product Details
+      </p>
 
     </div>
 
-</header>
 
+    <!-- ================= PRODUCT GALLERY ================= -->
 
+    <section class="gallery-section">
 
-<!-- =========================
-     MAIN
-========================= -->
+      <div
+        class="gallery"
+        id="gallery"
+      >
 
-<main>
+        <div
+          class="gallery-track"
+          id="galleryTrack"
+        >
 
-
-    <!-- PAGE TITLE -->
-
-    <div class="pageHeading">
-
-        <h2>
-            Vitalking Syrup
-        </h2>
-
-        <p>
-            Product Details
-        </p>
-
-    </div>
-
-
-
-    <!-- =========================
-         PRODUCT IMAGES
-    ========================= -->
-
-    <section class="gallerySection">
-
-        <div class="gallery">
-
-            <div
-                class="galleryTrack"
-                id="galleryTrack"
+          <div class="gallery-slide">
+            <img
+              src="images/vitalking-syrup.jpg"
+              alt="Vital King Syrup"
             >
+          </div>
 
-
-                <div class="galleryItem">
-
-                    <img
-                        src="images/vitalking-syrup.jpg"
-                        alt="Vitalking Syrup"
-                        draggable="false"
-                    >
-
-                </div>
-
-
-                <div class="galleryItem">
-
-                    <img
-                        src="images/vitalking-syrup-2.jpg"
-                        alt="Vitalking Syrup"
-                        draggable="false"
-                    >
-
-                </div>
-
-
-                <div class="galleryItem">
-
-                    <img
-                        src="images/vitalking-syrup-3.jpg"
-                        alt="Vitalking Syrup"
-                        draggable="false"
-                    >
-
-                </div>
-
-
-                <div class="galleryItem">
-
-                    <img
-                        src="images/vitalking-syrup-4.jpg"
-                        alt="Vitalking Syrup"
-                        draggable="false"
-                    >
-
-                </div>
-
-
-            </div>
-
-
-            <!-- LEFT ARROW -->
-
-            <button
-                class="galleryArrow left"
-                id="prevBtn"
-                type="button"
-                aria-label="Previous image"
+          <div class="gallery-slide">
+            <img
+              src="images/vitalking-syrup-2.jpg"
+              alt="Vital King Syrup Image 2"
             >
-                ‹
-            </button>
+          </div>
 
-
-            <!-- RIGHT ARROW -->
-
-            <button
-                class="galleryArrow right"
-                id="nextBtn"
-                type="button"
-                aria-label="Next image"
+          <div class="gallery-slide">
+            <img
+              src="images/vitalking-syrup-3.jpg"
+              alt="Vital King Syrup Image 3"
             >
-                ›
-            </button>
+          </div>
 
-
-            <!-- SWIPE INDICATOR -->
-
-            <div class="swipeIndicator">
-                ← Swipe →
-            </div>
+          <div class="gallery-slide">
+            <img
+              src="images/vitalking-syrup-4.jpg"
+              alt="Vital King Syrup Image 4"
+            >
+          </div>
 
         </div>
+
+
+        <button
+          class="gallery-arrow left"
+          id="prevBtn"
+          aria-label="Previous image"
+        >
+          ‹
+        </button>
+
+
+        <button
+          class="gallery-arrow right"
+          id="nextBtn"
+          aria-label="Next image"
+        >
+          ›
+        </button>
+
+      </div>
 
     </section>
 
 
-
-    <!-- =========================
-         DETAILED INFORMATION
-    ========================= -->
+    <!-- ================= PRODUCT DETAILS ================= -->
 
     <section class="details">
 
+      <h2 class="details-title">
+        Product Details
+      </h2>
 
-        <!-- 1. WHAT IS IT -->
 
-        <div class="detailCard">
+      <!-- OVERVIEW -->
 
-            <h2>
-                এটা কী?
-            </h2>
+      <div class="detail-card">
 
-            <p>
-                Vitalking Syrup সম্পর্কে সংক্ষিপ্ত ও
-                প্রয়োজনীয় পরিচিতি এখানে থাকবে। পণ্যটি কী,
-                কোন ধরনের product এবং এর মূল উদ্দেশ্য
-                কী—এই অংশে সহজ ভাষায় তুলে ধরা হবে।
-            </p>
+        <h3>
+          পণ্য পরিচিতি (Overview)
+        </h3>
 
+        <p>
+          আপনার ক্লান্তি দূর করে শরীরে ফিরিয়ে আনুন প্রাকৃতিক
+          শক্তি ও নতুন প্রাণচাঞ্চল্য! Vital King Syrup একটি
+          প্রিমিয়াম কোয়ালিটির হার্বাল সম্পূরক হিসেবে
+          উপস্থাপিত, যা শারীরিক ক্লান্তি, দুর্বলতা ও
+          দৈনন্দিন কর্মক্ষমতা বজায় রাখতে সহায়ক হিসেবে
+          বাজারজাত করা হয়।
+        </p>
+
+      </div>
+
+
+      <!-- KEY BENEFITS -->
+
+      <div class="detail-card">
+
+        <h3>
+          প্রধান উপকারিতাসমূহ (Key Benefits)
+        </h3>
+
+        <ul>
+
+          <li>
+            <strong>শক্তি ও স্ট্যামিনা:</strong>
+            দৈনন্দিন শারীরিক দুর্বলতা ও ক্লান্তির সময়ে
+            শক্তি ও স্ট্যামিনা বজায় রাখতে সহায়ক।
+          </li>
+
+          <li>
+            <strong>সামগ্রিক কর্মক্ষমতা:</strong>
+            দৈনন্দিন কাজের সময় শরীরের কর্মক্ষমতা বজায়
+            রাখতে সহায়তা করতে পারে।
+          </li>
+
+          <li>
+            <strong>মানসিক অবসাদ:</strong>
+            দৈনন্দিন মানসিক চাপ ও ক্লান্তির সময়ে
+            শরীরের সামগ্রিক সুস্থতা বজায় রাখতে সহায়ক।
+          </li>
+
+          <li>
+            <strong>হজম ও রুচি:</strong>
+            স্বাভাবিক হজমশক্তি ও রুচি বজায় রাখতে সহায়ক
+            হতে পারে।
+          </li>
+
+          <li>
+            <strong>হার্বাল ফর্মুলেশন:</strong>
+            বিভিন্ন ভেষজ উপাদানের সমন্বয়ে প্রস্তুত।
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <!-- INGREDIENTS -->
+
+      <div class="detail-card">
+
+        <h3>
+          উপাদানসমূহ (Key Ingredients)
+        </h3>
+
+        <ul>
+
+          <li>
+            <strong>অশ্বগন্ধা (Ashwagandha):</strong>
+            শরীরের সামগ্রিক শক্তি ও স্ট্যামিনা বজায় রাখতে
+            ঐতিহ্যগতভাবে ব্যবহৃত একটি ভেষজ উপাদান।
+          </li>
+
+          <li>
+            <strong>জিনসেং (Ginseng):</strong>
+            এনার্জি ও দৈনন্দিন কর্মক্ষমতা বজায় রাখতে
+            ব্যবহৃত একটি পরিচিত ভেষজ উপাদান।
+          </li>
+
+          <li>
+            <strong>শিলাজিৎ (Shilajit):</strong>
+            ঐতিহ্যগতভাবে প্রাণশক্তি ও সামগ্রিক
+            সুস্থতার জন্য ব্যবহৃত হয়।
+          </li>
+
+          <li>
+            <strong>আমলকী (Amloki) ও মেথি (Fenugreek)
+            Extract:</strong>
+            হজম ও সামগ্রিক সুস্থতা বজায় রাখতে ব্যবহৃত
+            ভেষজ উপাদান।
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <!-- DOSAGE -->
+
+      <div class="detail-card">
+
+        <h3>
+          সেবনবিধি (Dosage & How to Use)
+        </h3>
+
+        <ul>
+
+          <li>
+            <strong>প্রাপ্তবয়স্কদের জন্য:</strong>
+            দৈনিক ১–২ চা চামচ, দিনে ২ বার।
+          </li>
+
+          <li>
+            <strong>সেবনের সময়:</strong>
+            সকালে ও রাতে খাবারের পর।
+          </li>
+
+          <li>
+            প্রয়োজন অনুযায়ী চিকিৎসক বা স্বাস্থ্যসেবা
+            পেশাদারের পরামর্শ অনুসরণ করুন।
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <!-- PRECAUTIONS -->
+
+      <div class="detail-card">
+
+        <h3>
+          সতর্কতা (Precautions & Warnings)
+        </h3>
+
+        <ul>
+
+          <li>
+            ১৮ বছরের নিচে ব্যবহার করার আগে চিকিৎসকের
+            পরামর্শ নিন।
+          </li>
+
+          <li>
+            গর্ভবতী বা দুগ্ধদানকারী মায়েদের ব্যবহারের
+            আগে চিকিৎসকের পরামর্শ নেওয়া উচিত।
+          </li>
+
+          <li>
+            ডায়াবেটিস, কিডনি সমস্যা বা অন্য কোনো
+            দীর্ঘস্থায়ী শারীরিক সমস্যা থাকলে ব্যবহারের
+            আগে চিকিৎসকের পরামর্শ নিন।
+          </li>
+
+          <li>
+            নির্ধারিত মাত্রার অতিরিক্ত সেবন করবেন না।
+          </li>
+
+          <li>
+            শিশুদের নাগালের বাইরে রাখুন।
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <!-- SPECIFICATIONS -->
+
+      <div class="detail-card">
+
+        <h3>
+          পণ্যের স্পেসিফিকেশন (Product Specifications)
+        </h3>
+
+        <ul>
+
+          <li>
+            <strong>প্যাক সাইজ:</strong>
+            450 ml / 200 ml
+          </li>
+
+          <li>
+            <strong>পণ্যের ধরন:</strong>
+            আয়ুর্বেদিক / হার্বাল সিরাপ
+          </li>
+
+          <li>
+            <strong>সংরক্ষণ:</strong>
+            সূর্যালোক থেকে দূরে, ঠান্ডা ও শুষ্ক স্থানে
+            রাখুন।
+          </li>
+
+          <li>
+            <strong>শিশুদের নিরাপত্তা:</strong>
+            শিশুদের নাগালের বাইরে রাখুন।
+          </li>
+
+          <li>
+            <strong>মেয়াদ:</strong>
+            প্যাকেজিংয়ে উল্লেখিত মেয়াদ অনুসরণ করুন।
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <!-- FAQ -->
+
+      <div class="detail-card">
+
+        <h3>
+          প্রায়শই জিজ্ঞাসিত প্রশ্নাবলী (FAQ)
+        </h3>
+
+
+        <div class="faq-question">
+          প্রশ্ন: এটি কি শতভাগ প্রাকৃতিক?
         </div>
 
+        <p class="faq-answer">
+          এটি হার্বাল উপাদানের সমন্বয়ে প্রস্তুত করা হয়েছে।
+          সঠিক উপাদান ও ফর্মুলেশন জানতে পণ্যের
+          প্যাকেজিংয়ের তথ্য দেখুন।
+        </p>
 
 
-        <!-- 2. WHAT IS IT USED FOR -->
-
-        <div class="detailCard">
-
-            <h2>
-                কী কাজে লাগে?
-            </h2>
-
-            <p>
-                Vitalking কোন উদ্দেশ্যে ব্যবহার করা হয়
-                এবং কোন ধরনের প্রয়োজনের জন্য এটি
-                ব্যবহৃত হয়—এই অংশে বিস্তারিতভাবে
-                তুলে ধরা হবে।
-            </p>
-
+        <div class="faq-question">
+          প্রশ্ন: কতদিন ব্যবহার করলে ফলাফল পাওয়া যাবে?
         </div>
 
+        <p class="faq-answer">
+          ফলাফল ব্যক্তি, শারীরিক অবস্থা ও ব্যবহারের
+          নিয়মের ওপর নির্ভর করতে পারে। নির্দিষ্ট সময়ের
+          মধ্যে ফলাফল পাওয়ার নিশ্চয়তা দেওয়া যায় না।
+        </p>
 
 
-        <!-- 3. BENEFITS -->
-
-        <div class="detailCard">
-
-            <h2>
-                উপকারিতা
-            </h2>
-
-            <ul>
-
-                <li>
-                    Product-এর নির্দিষ্ট উদ্দেশ্য অনুযায়ী
-                    সম্ভাব্য উপকারিতা।
-                </li>
-
-                <li>
-                    নিয়মিত ও সঠিক ব্যবহারের মাধ্যমে
-                    label-এ উল্লেখিত সুবিধাগুলো।
-                </li>
-
-                <li>
-                    Product-এর বৈশিষ্ট্য অনুযায়ী
-                    অন্যান্য উপকারিতা।
-                </li>
-
-            </ul>
-
+        <div class="faq-question">
+          প্রশ্ন: এর কোনো পার্শ্বপ্রতিক্রিয়া আছে কি?
         </div>
 
+        <p class="faq-answer">
+          ব্যক্তি ও শারীরিক অবস্থাভেদে প্রতিক্রিয়া
+          ভিন্ন হতে পারে। অস্বাভাবিক কোনো প্রতিক্রিয়া
+          দেখা দিলে ব্যবহার বন্ধ করে চিকিৎসকের
+          পরামর্শ নিন।
+        </p>
 
-
-        <!-- 4. INGREDIENTS -->
-
-        <div class="detailCard">
-
-            <h2>
-                মূল উপাদান / Ingredients
-            </h2>
-
-            <p>
-                Vitalking-এর মূল উপাদান বা Ingredients
-                এখানে সুন্দরভাবে তালিকা আকারে দেওয়া হবে।
-                Product packaging-এর Composition অনুযায়ী
-                exact তথ্য এখানে যুক্ত করা যাবে।
-            </p>
-
-        </div>
-
-
-
-        <!-- 5. PRECAUTIONS -->
-
-        <div class="detailCard">
-
-            <h2>
-                সতর্কতা
-            </h2>
-
-            <p>
-                Product ব্যবহারের আগে packaging-এর
-                নির্দেশনা ভালোভাবে পড়ুন। Recommended
-                নির্দেশনার বাইরে product ব্যবহার না করাই
-                উচিত।
-            </p>
-
-            <div
-                class="notice"
-                style="margin-top:12px;"
-            >
-
-                কোনো অস্বাভাবিক সমস্যা বা অ্যালার্জির
-                প্রতিক্রিয়া দেখা দিলে product ব্যবহার
-                বন্ধ করে প্রয়োজন অনুযায়ী চিকিৎসকের
-                পরামর্শ নিন।
-
-            </div>
-
-        </div>
-
-
-
-        <!-- 6. SIDE EFFECTS -->
-
-        <div class="detailCard">
-
-            <h2>
-                সম্ভাব্য পার্শ্বপ্রতিক্রিয়া
-            </h2>
-
-            <p>
-                Product ব্যবহারের পর কোনো অস্বাভাবিক
-                শারীরিক প্রতিক্রিয়া দেখা দিলে ব্যবহার
-                বন্ধ করে স্বাস্থ্য বিশেষজ্ঞের পরামর্শ
-                নেওয়া উচিত।
-            </p>
-
-            <p style="margin-top:10px;">
-                নির্দিষ্ট পার্শ্বপ্রতিক্রিয়ার তথ্য থাকলে
-                তা manufacturer-এর official label অনুযায়ী
-                এখানে উল্লেখ করা হবে।
-            </p>
-
-        </div>
-
-
-
-        <!-- 7. STORAGE -->
-
-        <div class="detailCard">
-
-            <h2>
-                কীভাবে সংরক্ষণ করতে হবে?
-            </h2>
-
-            <ul>
-
-                <li>
-                    বোতলটি ভালোভাবে বন্ধ করে রাখুন।
-                </li>
-
-                <li>
-                    শিশুদের নাগালের বাইরে রাখুন।
-                </li>
-
-                <li>
-                    Product-এর packaging-এ দেওয়া
-                    storage instruction অনুসরণ করুন।
-                </li>
-
-                <li>
-                    মেয়াদ শেষ হয়ে গেলে ব্যবহার করবেন না।
-                </li>
-
-            </ul>
-
-        </div>
-
+      </div>
 
     </section>
 
 
+    <!-- ================= PRODUCT VIDEO ================= -->
 
-    <!-- =========================
-         PRODUCT VIDEO
-    ========================= -->
+    <section class="video-section">
 
-    <section class="productVideo">
+      <h2>
+        Product Video
+      </h2>
 
-        <h2>
-            Vitalking Product Video
-        </h2>
+      <div class="video-wrapper">
 
-        <div class="videoBox">
-
-            <video
-                controls
-                playsinline
-                preload="metadata"
-            >
-
-                <source
-                    src="videos/vitalking.mp4"
-                    type="video/mp4"
-                >
-
-                আপনার browser ভিডিওটি support করছে না।
-
-            </video>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================
-         PRICE + ORDER
-    ========================= -->
-
-    <section class="productInfo">
-
-        <h1 class="productName">
-            Vitalking Syrup
-        </h1>
-
-        <div class="price">
-            ৳265
-        </div>
-
-        <a
-            href="Order.html?product=Vitalking%20Syrup"
-            class="orderBtn"
+        <video
+          controls
+          playsinline
+          preload="metadata"
         >
-            🛒 Order Now — ৳265
-        </a>
+
+          <source
+            src="videos/vitalking.mp4"
+            type="video/mp4"
+          >
+
+          আপনার ব্রাউজার ভিডিও প্লে করতে পারছে না।
+
+        </video>
+
+      </div>
 
     </section>
 
 
-</main>
+    <!-- ================= ORDER ================= -->
+
+    <section class="order-section">
+
+      <h2>
+        Vital King Syrup
+      </h2>
+
+      <div class="price">
+        ৳265
+      </div>
+
+      <a
+        href="Order.html?product=Vitalking%20Syrup"
+        class="order-btn"
+      >
+        🛒 Order Now
+      </a>
+
+    </section>
+
+  </main>
 
 
+  <!-- ================= FOOTER ================= -->
 
-<!-- =========================
-     FOOTER
-========================= -->
+  <footer>
 
-<footer>
+    <h3>
+      নিরাময় ছোঁয়া
+    </h3>
 
-    <strong>
-        নিরাময় ছোঁয়া
-    </strong>
+    <p>
+      আপনার বিশ্বস্ত অনলাইন শপ
+    </p>
 
-    <br>
+    <p style="margin-top:7px;">
+      Email:
+      <a href="mailto:niramoychoya@gmail.com">
+        niramoychoya@gmail.com
+      </a>
+    </p>
 
-    © 2026 NIRAMOY CHHOYA. All Rights Reserved.
-
-</footer>
+  </footer>
 
 
+  <!-- ================= FULLSCREEN IMAGE VIEWER ================= -->
 
-<!-- =========================
-     FULLSCREEN IMAGE VIEWER
-========================= -->
-
-<div
-    class="imageViewer"
+  <div
+    class="image-viewer"
     id="imageViewer"
->
+  >
 
     <button
-        class="closeViewer"
-        id="closeViewer"
-        type="button"
-        aria-label="Close"
+      class="close-viewer"
+      id="closeViewer"
+      aria-label="Close"
     >
-        ×
+      ×
     </button>
 
     <img
-        id="viewerImage"
-        src=""
-        alt="Full Size Product Image"
+      id="viewerImage"
+      src=""
+      alt="Product Image"
     >
 
-</div>
+  </div>
 
 
+  <!-- ================= JAVASCRIPT ================= -->
 
-<script>
+  <script>
 
-    /* =========================
-       GALLERY
-    ========================= */
+    const gallery =
+      document.getElementById("gallery");
 
     const track =
-        document.getElementById(
-            "galleryTrack"
-        );
+      document.getElementById("galleryTrack");
 
     const prevBtn =
-        document.getElementById(
-            "prevBtn"
-        );
+      document.getElementById("prevBtn");
 
     const nextBtn =
-        document.getElementById(
-            "nextBtn"
-        );
+      document.getElementById("nextBtn");
+
+    let slides =
+      Array.from(
+        document.querySelectorAll(".gallery-slide")
+      );
 
     let currentIndex = 0;
 
 
-    function getItems() {
+    /* ================= UPDATE GALLERY ================= */
 
-        return Array.from(
-            document.querySelectorAll(
-                ".galleryItem"
-            )
+    function updateGallery() {
+
+      slides =
+        Array.from(
+          document.querySelectorAll(".gallery-slide")
         );
+
+      if (slides.length === 0) {
+
+        prevBtn.style.display = "none";
+        nextBtn.style.display = "none";
+
+        return;
+      }
+
+      track.style.transform =
+        `translateX(-${currentIndex * 100}%)`;
+
+
+      if (slides.length <= 1) {
+
+        prevBtn.style.display = "none";
+        nextBtn.style.display = "none";
+
+      } else {
+
+        prevBtn.style.display = "flex";
+        nextBtn.style.display = "flex";
+
+      }
 
     }
 
 
-    function goToImage(index) {
+    /* ================= NEXT IMAGE ================= */
 
-        const items = getItems();
+    function nextImage() {
 
-        if (!items.length) return;
+      if (slides.length <= 1) return;
 
-        currentIndex =
-            Math.max(
-                0,
-                Math.min(
-                    index,
-                    items.length - 1
-                )
-            );
+      currentIndex++;
 
-        items[
-            currentIndex
-        ].scrollIntoView({
+      if (currentIndex >= slides.length) {
+        currentIndex = 0;
+      }
 
-            behavior: "smooth",
+      updateGallery();
 
-            block: "nearest",
+    }
 
-            inline: "center"
 
-        });
+    /* ================= PREVIOUS IMAGE ================= */
+
+    function previousImage() {
+
+      if (slides.length <= 1) return;
+
+      currentIndex--;
+
+      if (currentIndex < 0) {
+        currentIndex = slides.length - 1;
+      }
+
+      updateGallery();
 
     }
 
 
     nextBtn.addEventListener(
-        "click",
-        function () {
-
-            goToImage(
-                currentIndex + 1
-            );
-
-        }
+      "click",
+      nextImage
     );
-
 
     prevBtn.addEventListener(
-        "click",
-        function () {
-
-            goToImage(
-                currentIndex - 1
-            );
-
-        }
+      "click",
+      previousImage
     );
 
 
-    /* =========================
-       ARROW VISIBILITY
-    ========================= */
+    /* ================= TOUCH SWIPE ================= */
 
-    function updateGallery() {
+    let startX = 0;
+    let endX = 0;
 
-        const items = getItems();
 
-        if (items.length <= 1) {
+    gallery.addEventListener(
+      "touchstart",
+      function(event) {
 
-            prevBtn.style.display = "none";
-            nextBtn.style.display = "none";
+        startX =
+          event.touches[0].clientX;
+
+      },
+      {
+        passive: true
+      }
+    );
+
+
+    gallery.addEventListener(
+      "touchend",
+      function(event) {
+
+        endX =
+          event.changedTouches[0].clientX;
+
+        const distance =
+          endX - startX;
+
+        if (Math.abs(distance) < 50) {
+          return;
+        }
+
+        if (distance < 0) {
+
+          nextImage();
 
         } else {
 
-            prevBtn.style.display = "flex";
-            nextBtn.style.display = "flex";
+          previousImage();
 
         }
 
-    }
-
-
-    updateGallery();
-
-
-    /* =========================
-       DETECT SWIPED IMAGE
-    ========================= */
-
-    let scrollTimer;
-
-    track.addEventListener(
-        "scroll",
-        function () {
-
-            clearTimeout(scrollTimer);
-
-            scrollTimer =
-                setTimeout(
-                    function () {
-
-                        const items =
-                            getItems();
-
-                        if (!items.length)
-                            return;
-
-                        const center =
-                            track.scrollLeft +
-                            track.clientWidth / 2;
-
-                        let closest = 0;
-
-                        let smallestDistance =
-                            Infinity;
-
-
-                        items.forEach(
-                            function (
-                                item,
-                                index
-                            ) {
-
-                                const itemCenter =
-                                    item.offsetLeft +
-                                    item.offsetWidth / 2;
-
-                                const distance =
-                                    Math.abs(
-                                        center -
-                                        itemCenter
-                                    );
-
-                                if (
-                                    distance <
-                                    smallestDistance
-                                ) {
-
-                                    smallestDistance =
-                                        distance;
-
-                                    closest =
-                                        index;
-
-                                }
-
-                            }
-                        );
-
-
-                        currentIndex =
-                            closest;
-
-                    },
-                    80
-                );
-
-        }
+      },
+      {
+        passive: true
+      }
     );
 
 
-    /* =========================
-       KEYBOARD
-    ========================= */
-
-    document.addEventListener(
-        "keydown",
-        function (event) {
-
-            if (
-                event.key ===
-                "ArrowRight"
-            ) {
-
-                goToImage(
-                    currentIndex + 1
-                );
-
-            }
-
-            if (
-                event.key ===
-                "ArrowLeft"
-            ) {
-
-                goToImage(
-                    currentIndex - 1
-                );
-
-            }
-
-        }
-    );
-
-
-    /* =========================
-       FULLSCREEN IMAGE
-    ========================= */
+    /* ================= FULLSCREEN IMAGE ================= */
 
     const imageViewer =
-        document.getElementById(
-            "imageViewer"
-        );
+      document.getElementById("imageViewer");
 
     const viewerImage =
-        document.getElementById(
-            "viewerImage"
-        );
+      document.getElementById("viewerImage");
 
     const closeViewer =
-        document.getElementById(
-            "closeViewer"
-        );
+      document.getElementById("closeViewer");
 
 
     document
-        .querySelectorAll(
-            ".galleryItem img"
-        )
-        .forEach(
-            function (img) {
+      .querySelectorAll(".gallery-slide img")
+      .forEach(function(img) {
 
-                img.addEventListener(
-                    "click",
-                    function () {
+        img.addEventListener(
+          "click",
+          function() {
 
-                        viewerImage.src =
-                            img.src;
+            viewerImage.src = img.src;
 
-                        viewerImage.alt =
-                            img.alt;
+            imageViewer.classList.add("active");
 
-                        imageViewer.classList.add(
-                            "active"
-                        );
+            document.body.style.overflow = "hidden";
 
-                        document.body.style.overflow =
-                            "hidden";
-
-                    }
-                );
-
-            }
+          }
         );
 
+      });
+
+
+    /* ================= CLOSE VIEWER ================= */
 
     function closeImageViewer() {
 
-        imageViewer.classList.remove(
-            "active"
-        );
+      imageViewer.classList.remove("active");
 
-        viewerImage.src = "";
+      viewerImage.src = "";
 
-        document.body.style.overflow = "";
+      document.body.style.overflow = "";
 
     }
 
 
     closeViewer.addEventListener(
-        "click",
-        closeImageViewer
+      "click",
+      closeImageViewer
     );
 
 
     imageViewer.addEventListener(
-        "click",
-        function (event) {
+      "click",
+      function(event) {
 
-            if (
-                event.target ===
-                imageViewer
-            ) {
-
-                closeImageViewer();
-
-            }
-
+        if (event.target === imageViewer) {
+          closeImageViewer();
         }
+
+      }
     );
 
+
+    /* ================= ESC KEY ================= */
 
     document.addEventListener(
-        "keydown",
-        function (event) {
+      "keydown",
+      function(event) {
 
-            if (
-                event.key === "Escape" &&
-                imageViewer.classList.contains(
-                    "active"
-                )
-            ) {
-
-                closeImageViewer();
-
-            }
-
+        if (event.key === "Escape") {
+          closeImageViewer();
         }
+
+      }
     );
 
 
-    /* =========================
-       REMOVE BROKEN IMAGES
-    ========================= */
+    /* ================= BROKEN IMAGE ================= */
 
     document
-        .querySelectorAll(
-            ".galleryItem img"
-        )
-        .forEach(
-            function (img) {
+      .querySelectorAll(".gallery-slide img")
+      .forEach(function(img) {
 
-                img.addEventListener(
-                    "error",
-                    function () {
+        img.addEventListener(
+          "error",
+          function() {
 
-                        const item =
-                            img.closest(
-                                ".galleryItem"
-                            );
+            const slide =
+              img.closest(".gallery-slide");
 
-                        if (item) {
-                            item.remove();
-                        }
-
-                        updateGallery();
-
-                    }
-                );
-
+            if (slide) {
+              slide.remove();
             }
+
+            currentIndex = 0;
+
+            updateGallery();
+
+          }
         );
 
-</script>
+      });
 
+
+    /* ================= INITIAL LOAD ================= */
+
+    updateGallery();
+
+  </script>
 
 </body>
 </html>
